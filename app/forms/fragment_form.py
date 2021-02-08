@@ -10,4 +10,3 @@ class FragmentForm(FlaskForm):
     setting = StringField('Setting')
     description = TextAreaField('Description')
     user_id = IntegerField('User', validators=[DataRequired()])
-    
