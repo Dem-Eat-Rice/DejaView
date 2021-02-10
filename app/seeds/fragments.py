@@ -21,5 +21,5 @@ def seed_users():
 
 
 def undo_users():
-    db.session.execute('TRUNCATE fragments;')
+    db.session.execute('TRUNCATE fragments CASCADE;')
     db.session.commit()

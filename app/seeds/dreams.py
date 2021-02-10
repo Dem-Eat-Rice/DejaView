@@ -19,5 +19,5 @@ def seed_users():
 
 
 def undo_users():
-    db.session.execute('TRUNCATE dreams;')
+    db.session.execute('TRUNCATE dreams CASCADE;')
     db.session.commit()
