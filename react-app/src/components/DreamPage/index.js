@@ -5,9 +5,15 @@ function DreamPage() {
     
     return (
         <>
-            <div>
+            <div className="dream-header">
                 <h1> What Dreams Are Made Of </h1>
+            </div>
+            <div className="dream-body">
+                <div className="fragment-container">
+                </div>
             </div>
         </>
     )
 }
+
+export default DreamPage;
