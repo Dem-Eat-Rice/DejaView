@@ -12,6 +12,7 @@ def dreams():
     dreams = Dream.query.all()
     return jsonify([dream.to_dict() for dream in dreams])
 
+
 @dreams_routes.route('/<int:id>')
 def dream(id):
     dream = Dream.query.get(id)
