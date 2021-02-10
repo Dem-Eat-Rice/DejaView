@@ -5,8 +5,10 @@ from app.models import db, Dream
 
 def seed_users():
 
-    demo = Dream(title='DemoDream', keywords='Demonstration NotReal',
-                 notes='Practice CodingWindow Deadlines', dreamer_id=1)
+    demo = Dream(title='DemoFragment', emotions='Demonstration NotReal',
+                 setting='Practice CodingWindow Deadlines',
+                 description='just dumb stuff happening one night',
+                 user_id=1)
 
     db.session.add(demo)
 
@@ -19,5 +21,5 @@ def seed_users():
 
 
 def undo_users():
-    db.session.execute('TRUNCATE dreams;')
+    db.session.execute('TRUNCATE fragments;')
     db.session.commit()
