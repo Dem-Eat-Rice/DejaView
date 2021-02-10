@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
+import DreamPage from "./components/DreamPage";
 import { authenticate } from "./services/auth";
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route path="/sign-up" exact={true}>
           <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
+        </Route>
+        <Route>
+          <DreamPage exact path="/dreams" />
         </Route>
         <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
           <UsersList/>
