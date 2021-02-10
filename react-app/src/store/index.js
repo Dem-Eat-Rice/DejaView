@@ -1,12 +1,9 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import sessionReducer from './session.js';
-import groupsReducer from './groups.js';
-import eventsReducer from './events.js';
+import dreamsReducer from './dreams.js';
+import fragmentsReducer from './fragments.js';
 import usersReducer from './users.js';
-import commentsReducer from './comments.js';
-import userGroupsReducer from './userGroups.js';
-import RSVPsReducer from './rsvps.js';
 
 const rootReducer = combineReducers({
 	session: sessionReducer,
