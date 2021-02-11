@@ -5,7 +5,7 @@ from app.models import db, Dreams_Fragment
 
 def seed_dreams_fragments():
 
-    demo = Dream(dream_id=1, fragment_id=1)
+    demo = Dreams_Fragment(dream_id=1, fragment_id=1)
 
     db.session.add(demo)
 
