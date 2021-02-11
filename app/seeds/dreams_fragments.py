@@ -1,12 +1,11 @@
-from app.models import db, Dream
+from app.models import db, Dreams_Fragment
 
 # Adds a demo user, you can add other users here if you want
 
 
-def seed_dreams():
+def seed_dreams_fragments():
 
-    demo = Dream(title='DemoDream', keywords='Demonstration NotReal',
-                 notes='Practice CodingWindow Deadlines', dreamer_id=1)
+    demo = Dream(dream_id=1, fragment_id=1)
 
     db.session.add(demo)
 
@@ -18,6 +17,6 @@ def seed_dreams():
 # the auto incrementing primary key
 
 
-def undo_dreams():
+def undo_dreams_fragments():
     db.session.execute('TRUNCATE dreams CASCADE;')
     db.session.commit()
