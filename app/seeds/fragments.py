@@ -6,7 +6,7 @@ from app.models import db, Fragment
 def seed_fragments():
 
     demo = Fragment(title='DemoFragment', emotions='Demonstration NotReal',
-                    setting='Practice CodingWindow Deadlines',
+                    setting='Practice Coding Window Deadlines',
                     description='just dumb stuff happening one night',
                     user_id=1)
 
