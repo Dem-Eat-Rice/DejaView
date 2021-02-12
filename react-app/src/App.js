@@ -40,9 +40,6 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
         </Route>
-        <Route>
-          <DreamPage exact path="/dreams" />
-        </Route>
         <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
           <UsersList/>
         </ProtectedRoute>
@@ -52,6 +49,9 @@ function App() {
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
           <h1>My Home Page</h1>
         </ProtectedRoute>
+        <Route>
+          <DreamPage exact={true} path="/dreams" />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

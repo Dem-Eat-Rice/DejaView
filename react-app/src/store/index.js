@@ -1,14 +1,10 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import sessionReducer from './session.js';
-import dreamsReducer from './dreams.js';
-import fragmentsReducer from './fragments.js';
 import usersReducer from './users.js';
 
 const rootReducer = combineReducers({
 	session: sessionReducer,
-    dreams: dreamsReducer,
-    fragments: fragmentsReducer,
     users: usersReducer
 });
 

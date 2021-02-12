@@ -10,7 +10,12 @@ def seed_fragments():
                     description='just dumb stuff happening one night',
                     user_id=1)
 
-    db.session.add(demo)
+    demo2 = Fragment(title='DemoFragment2', emotions='Demonstration NotReal',
+                     setting='Practice Coding Window Deadlines',
+                     description='just dumb stuff happening one night',
+                     user_id=1)
+
+    db.session.add(demo, demo2)
 
     db.session.commit()
 
