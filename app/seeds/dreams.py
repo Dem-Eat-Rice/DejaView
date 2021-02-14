@@ -8,7 +8,15 @@ def seed_dreams():
     demo = Dream(title='DemoDream', keywords='Demonstration NotReal',
                  notes='Practice CodingWindow Deadlines', dreamer_id=1)
 
+    demo2 = Dream(title='JimmyDream', keywords='Dream Seed',
+                  notes='Wild ride', dreamer_id=2)
+
+    demo3 = Dream(title='Spongebob Dream', keywords='Krusty Krab',
+                  notes='Pizza', dreamer_id=1)
+
     db.session.add(demo)
+    db.session.add(demo2)
+    db.session.add(demo3)
 
     db.session.commit()
 

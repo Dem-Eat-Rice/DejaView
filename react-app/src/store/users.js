@@ -71,13 +71,13 @@ export const fetchSingleUserFragment = (userId, fragmentId) => {
     }
 }
 
-export const fetchAllUsers = () => {
-    return async (dispatch) => {
-        response = await fetch('api/users/');
-        users = response.json();
-        dispatch(setAllUsers(users));
-    }
-}
+// export const fetchAllUsers = () => {
+//     return async (dispatch) => {
+//         response = await fetch('api/users/');
+//         users = response.json();
+//         dispatch(setAllUsers(users));
+//     }
+// }
 
 export const fetchUserDreams = (userId) => {
     return async(dispatch) => {

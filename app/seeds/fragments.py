@@ -15,7 +15,20 @@ def seed_fragments():
                      description='just dumb stuff happening one night',
                      user_id=1)
 
-    db.session.add(demo, demo2)
+    demo3 = Fragment(title='DemoFragment3', emotions='Fear',
+                     setting='Mr Bones Wild Ride',
+                     description='It never ended',
+                     user_id=2)
+
+    demo4 = Fragment(title='DemoFragment4', emotions='Tired',
+                     setting='Nighttime',
+                     description='sleepytime',
+                     user_id=1)
+
+    db.session.add(demo)
+    db.session.add(demo2)
+    db.session.add(demo3)
+    db.session.add(demo4)
 
     db.session.commit()
 

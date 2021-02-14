@@ -6,8 +6,14 @@ from app.models import db, Dreams_Fragment
 def seed_dreams_fragments():
 
     demo = Dreams_Fragment(dream_id=1, fragment_id=1)
+    demo2 = Dreams_Fragment(dream_id=1, fragment_id=2)
+    demo3 = Dreams_Fragment(dream_id=2, fragment_id=3)
+    demo4 = Dreams_Fragment(dream_id=3, fragment_id=4)
 
     db.session.add(demo)
+    db.session.add(demo2)
+    db.session.add(demo3)
+    db.session.add(demo4)
 
     db.session.commit()
 

@@ -9,7 +9,11 @@ def seed_users():
     demo = User(name='Demo', email='demo@aa.io',
                 password='password')
 
+    demo2 = User(name='Jimmy', email='jimmy@aa.io',
+                 password='password')
+
     db.session.add(demo)
+    db.session.add(demo2)
 
     db.session.commit()
 
