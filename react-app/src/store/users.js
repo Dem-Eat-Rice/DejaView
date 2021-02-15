@@ -1,7 +1,7 @@
 const SET_SINGLE_USER = "SET_SINGLE_USER";
 const SET_USERS_SINGLE_DREAM = "SET_USERS_SINGLE_DREAM";
 const SET_USERS_SINGLE_FRAGMENT = "SET_USERS_SINGLE_FRAGMENT";
-const SET_ALL_USERS = "SET_ALL_USERS";
+// const SET_ALL_USERS = "SET_ALL_USERS";
 const SET_USERS_DREAMS = "SET_USERS_DREAMS";
 const SET_USERS_FRAGMENTS = "SET_USERS_FRAGMENTS";
 
@@ -12,12 +12,12 @@ const setSingleUser = (user) => {
    }
 }
 
-const setAllUsers = () => {
-    return {
-        type: SET_ALL_USERS,
-        users: users,
-    }
-}
+// const setAllUsers = () => {
+//     return {
+//         type: SET_ALL_USERS,
+//         users: users,
+//     }
+// }
 
 const setUserDreams = () => {
     return {
@@ -104,9 +104,9 @@ const reducer = (state=initialState, action) => {
         case SET_SINGLE_USER:
             newState = action.user;
             return newState;
-        case SET_ALL_USERS:
-            newState = action.users;
-            return newState;
+        // case SET_ALL_USERS:
+        //     newState = action.users;
+        //     return newState;
         case SET_USERS_DREAMS:
             newState = action.dreams;
             return newState;

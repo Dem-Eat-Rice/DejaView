@@ -16,6 +16,8 @@ def dreams():
 @dreams_routes.route("/", methods=["POST"])
 def post_a_dream():
     form = DreamForm()  # need to create a form
+    form['csrf_token'].data = request.cookies['csrf_token']
+
     if form.validate_on_submit():
         new_dream = Dream()
         new_dream.user_id = request.json["user_id"]
@@ -30,6 +32,7 @@ def post_a_dream():
 @login_required
 def edit_dreams(id):
     dream = Dream.query.get(id)
+    dream['csrf_token'].data = request.cookies['csrf_token']
 
     if "title" in request.json:
         dream.title = request.json["title"]
