@@ -18,8 +18,9 @@ def post_a_dream():
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
+        print(request)
         new_dream = Dream()
-        new_dream.user_id = request.json["user_id"]
+        new_dream.dreamer_id = request.json["dreamer_id"]
         form.populate_obj(new_dream)
         db.session.add(new_dream)
         db.session.commit()
@@ -28,10 +29,9 @@ def post_a_dream():
 
 
 @dreams_routes.route("/<int:id>", methods=["PUT"])
-@login_required
+# @login_required
 def edit_dreams(id):
     dream = Dream.query.get(id)
-    dream['csrf_token'].data = request.cookies['csrf_token']
 
     if "title" in request.json:
         dream.title = request.json["title"]
