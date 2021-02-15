@@ -1,7 +1,6 @@
 from flask import Blueprint, jsonify, session, request
 from app.models import User, Dream, Fragment, db
-from app.forms import LoginForm
-from app.forms import SignUpForm
+from app.forms import DreamForm, FragmentForm, LoginForm, SignUpForm
 from flask_login import login_required
 
 dreams_routes = Blueprint("dreams", __name__)

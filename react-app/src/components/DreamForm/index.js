@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 
 const createDream = async (title, keywords, notes, dreamer_id) => {
-    const response = await fetch("/api/events/test", {
+    const response = await fetch("/api/dreams/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -36,6 +36,11 @@ function DreamForm() {
         <>
             <form onSubmit={onSubmit}>
                 <div className="title">
+                    <input
+                        type="text"
+                        name="title"
+
+                    ></input>
                 </div>
                 <div className="keywords">
                 </div>
