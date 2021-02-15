@@ -47,8 +47,11 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
+        {/* <ProtectedRoute path="/users/:userId/dreams" exact={true} authenticated={authenticated}>
+          <DreamPage />
+        </ProtectedRoute> */}
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <h1>My Home Page</h1>
+          <h1>QuickStart</h1>
           <DreamForm />
         </ProtectedRoute>
         <Route>

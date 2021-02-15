@@ -28,9 +28,7 @@ function DreamPage() {
                 <h1> Dreams, Dreams, Dreams... </h1>
                 {userDreams.map(dream => {
                     return (
-                    <Link to={`/dreams/${dream.id}`}>
                         <h1 key={dream.id}>{dream.title}</h1>
-                    </Link>
                     )
                 })}
 
