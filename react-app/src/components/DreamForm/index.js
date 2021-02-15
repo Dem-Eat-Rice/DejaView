@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getCurrentUser } from "../../store/session";
 
 
 const createDream = async (title, keywords, notes, dreamer_id) => {
@@ -22,35 +22,67 @@ const createDream = async (title, keywords, notes, dreamer_id) => {
 
 function DreamForm() {
 
-    const [title, setTitle] = useState();
-    const [keywords, setKeywords] = useState();
-    const [notes, setNotes] = useState();
+    const dreamer = useSelector(state => {
+       return state.session
+    });
+
+    const dispatch = useDispatch();
+
+    const [title, setTitle] = useState("");
+    const [keywords, setKeywords] = useState("");
+    const [notes, setNotes] = useState("");
+    const dreamer_id = dreamer.id
 
     const onSubmit = async(e) => {
         e.preventDefault();
         await createDream(title, keywords, notes, dreamer_id)
+        setTitle("");
+        setKeywords("");
+        setNotes("");
 
     }
 
-    return (
-        <>
-            <form onSubmit={onSubmit}>
-                <div className="title">
-                    <input
-                        type="text"
-                        name="title"
+    useEffect(() => {
+        dispatch(getCurrentUser())
+    }, [dispatch])
 
-                    ></input>
-                </div>
-                <div className="keywords">
-                </div>
-                <div className="notes">
-                </div>
-                <div className="">
-                </div>
-                <div className="">
-                </div>
-            </form>
-        </>
+    return (
+        <form onSubmit={onSubmit}>
+            <div className="title">
+                <label>Title</label>
+                <br />
+                <input
+                    type="text"
+                    name="title"
+                    value={title}
+                    onChange={e => setTitle(e.target.value)}
+                ></input>
+            </div>
+            <div className="keywords">
+                <label>Keywords</label>
+                <br />
+                <input
+                    type="text"
+                    name="keywords"
+                    value={keywords}
+                    onChange={e => setKeywords(e.target.value)}
+                ></input>
+            </div>
+            <div className="notes">
+                <label>Notes...</label>
+                <br />
+                <textarea
+                type="text"
+                name="notes"
+                value={notes}
+                onChange={e => setNotes(e.target.value)}
+                ></textarea>
+            </div>
+            <div className="submit">
+                <button type="submit">Save Dream</button>
+            </div>
+        </form>
     )
 }
+
+export default DreamForm;

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import DreamForm from "./DreamForm";
+import DreamPage from "./DreamPage";
 
 function User() {
   const [user, setUser] = useState({});
@@ -33,6 +35,7 @@ function User() {
       <li>
         <strong>Email</strong> {user.email}
       </li>
+      <DreamPage />
     </ul>
   );
 }

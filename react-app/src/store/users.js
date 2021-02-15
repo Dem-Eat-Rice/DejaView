@@ -19,14 +19,14 @@ const setSingleUser = (user) => {
 //     }
 // }
 
-const setUserDreams = () => {
+const setUserDreams = (dreams) => {
     return {
         type: SET_USERS_DREAMS,
         dreams: dreams,
     }
 }
 
-const setUserFragments = () => {
+const setUserFragments = (fragments) => {
     return {
         type: SET_USERS_FRAGMENTS,
         fragments: fragments,
@@ -49,24 +49,24 @@ const setSingleUserFragment = (fragment) => {
 
 export const fetchSingleUser = (userId) => {
     return async (dispatch) => {
-        response = await fetch(`api/users/${userId}`);
-        user = await response.json();
+        const response = await fetch(`api/users/${userId}`);
+        const user = await response.json();
         dispatch(setSingleUser(user));
     }
 }
 
 export const fetchSingleUserDream = (userId, dreamId) => {
     return async (dispatch) => {
-        response = await fetch(`api/users/${userId}/dreams/${dreamId}`);
-        dream = await response.json();
+        const response = await fetch(`api/users/${userId}/dreams/${dreamId}`);
+        const dream = await response.json();
         dispatch(setSingleUserDream(dream));
     }
 }
 
 export const fetchSingleUserFragment = (userId, fragmentId) => {
     return async (dispatch) => {
-        response = await fetch(`api/users/${userId}/fragments/${fragmentId}`);
-        fragment = await response.json();
+        const response = await fetch(`api/users/${userId}/fragments/${fragmentId}`);
+        const fragment = await response.json();
         dispatch(setSingleUserFragment(fragment));
     }
 }
@@ -81,16 +81,16 @@ export const fetchSingleUserFragment = (userId, fragmentId) => {
 
 export const fetchUserDreams = (userId) => {
     return async(dispatch) => {
-        response = await fetch(`api/users/${userId}/dreams`); //this route should return all dreams belonging to a specific user
-        dreams = await response.json();
+        const response = await fetch(`api/users/${userId}/dreams`); //this route should return all dreams belonging to a specific user
+        const dreams = await response.json();
         dispatch(setUserDreams(dreams));
     }
 }
 
 export const fetchUserFragments = (userId) => {
     return async(dispatch) => {
-        response = await fetch(`api/users/${userId}/fragments`); //this route should return all dreams belonging to a specific user
-        fragments = await response.json();
+        const response = await fetch(`api/users/${userId}/fragments`); //this route should return all dreams belonging to a specific user
+        const fragments = await response.json();
         dispatch(setUserFragments(fragments));
     }
 }

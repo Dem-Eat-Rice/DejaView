@@ -7,6 +7,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import DreamPage from "./components/DreamPage";
+import DreamForm from "./components/DreamForm";
 import { authenticate } from "./services/auth";
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
           <h1>My Home Page</h1>
+          <DreamForm />
         </ProtectedRoute>
         <Route>
           <DreamPage exact={true} path="/dreams" />
