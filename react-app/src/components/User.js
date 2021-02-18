@@ -5,6 +5,7 @@ import DreamPage from "./DreamPage";
 
 function User() {
   const [user, setUser] = useState({});
+  const [form, setForm] = useState([])
   // Notice we use useParams here instead of getting the params
   // From props.
   const { userId }  = useParams();
@@ -19,6 +20,10 @@ function User() {
       setUser(user);
     })();
   }, [userId]);
+
+  useEffect(() => {
+    setForm(DreamForm)
+  })
 
   if (!user) {
     return null;

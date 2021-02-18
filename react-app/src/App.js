@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
@@ -47,16 +47,16 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
-        {/* <ProtectedRoute path="/users/:userId/dreams" exact={true} authenticated={authenticated}>
-          <DreamPage />
-        </ProtectedRoute> */}
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
           <h1>QuickStart</h1>
           <DreamForm />
         </ProtectedRoute>
-        <Route>
-          <DreamPage exact={true} path="/dreams" />
-        </Route>
+        <ProtectedRoute path="/dreams" exact={true} authenticated={authenticated}>
+          <DreamPage />
+        </ProtectedRoute>
+        <ProtectedRoute path="/dreams/create" exact={true} authenticated={authenticated}>
+          <DreamForm />
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );
