@@ -7,7 +7,7 @@ import "./DreamList.css";
 
 import { fetchUserDreams } from "../../store/users"
 
-function User() {
+function UserDreamList() {
 
   const dispatch = useDispatch();
   const dreams = useSelector(state => {
@@ -67,4 +67,4 @@ function User() {
     </div>
   );
 }
-export default User;
+export default UserDreamList;

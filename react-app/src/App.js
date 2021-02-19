@@ -5,9 +5,8 @@ import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
-import User from "./components/DreamListPage";
+import UserDreamList from "./components/DreamListPage";
 import DreamPage from "./components/DreamPage";
-import DreamForm from "./components/DreamForm";
 import HomePage from "./components/HomePage";
 import { authenticate } from "./services/auth";
 
@@ -46,7 +45,7 @@ function App() {
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
-          <User />
+          <UserDreamList />
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
           <HomePage />

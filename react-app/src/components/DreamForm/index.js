@@ -32,6 +32,7 @@ function DreamForm() {
     const [title, setTitle] = useState("");
     const [keywords, setKeywords] = useState("");
     const [notes, setNotes] = useState("");
+    const [createdDream, setCreatedDream] = useState("")
     const dreamer_id = dreamer.id
 
     const onSubmit = async(e) => {
@@ -40,13 +41,22 @@ function DreamForm() {
         setTitle("");
         setKeywords("");
         setNotes("");
-        <Redirect to={`/users/${dreamer_id}/dreams/${dream.id}`}/>
-    }
+        setCreatedDream(dream)
 
+    }
+    
     useEffect(() => {
         dispatch(getCurrentUser())
+        
+        if (createdDream) {
+            return <Redirect to={`/users/${dreamer_id}/dreams/${createdDream.id}`}/>
+        };
+        
+        setCreatedDream("")
+
     }, [dispatch])
 
+    
     return (
         <form onSubmit={onSubmit}>
             <div className="title">
