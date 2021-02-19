@@ -5,9 +5,10 @@ import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
-import User from "./components/User";
+import User from "./components/DreamListPage";
 import DreamPage from "./components/DreamPage";
 import DreamForm from "./components/DreamForm";
+import HomePage from "./components/HomePage";
 import { authenticate } from "./services/auth";
 
 function App() {
@@ -48,15 +49,14 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <h1>QuickStart</h1>
-          <DreamForm />
+          <HomePage />
         </ProtectedRoute>
-        <ProtectedRoute path="/dreams" exact={true} authenticated={authenticated}>
+        <ProtectedRoute path="/users/:userId/dreams/:dreamId" exact={true} authenticated={authenticated}>
           <DreamPage />
         </ProtectedRoute>
-        <ProtectedRoute path="/dreams/create" exact={true} authenticated={authenticated}>
+        {/* <ProtectedRoute path="/dreams/create" exact={true} authenticated={authenticated}>
           <DreamForm />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
       </Switch>
     </BrowserRouter>
   );

@@ -1,36 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { Link, Redirect, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUserDreams } from "../../store/users";
+import { fetchSingleUserDream } from "../../store/users";
 import { getCurrentUser } from "../../store/session";
 import DreamForm from "../DreamForm";
 
 function DreamPage() {
-    
-    const currentUser = useSelector(state => {
-        return state.session
-    })
 
-    const userDreams = useSelector(state => {
+    const { userId, dreamId } = useParams();
+
+    const userDream = useSelector(state => {
         return state.users
     })
 
     const dispatch = useDispatch()
+    const [singleDream, setSingleDream] = useState({})
 
     useEffect(() => {
         dispatch(getCurrentUser());
-        dispatch(fetchUserDreams(currentUser.id))
-    }, [dispatch, currentUser.id])
+        dispatch(fetchSingleUserDream(userId, dreamId))
+    }, [dispatch, userId, dreamId])
 
     return (
         <>
             <div className="dream-header">
                 <h1> Dreams, Dreams, Dreams... </h1>
-                {userDreams.map(dream => {
-                    return (
-                        <h1 key={dream.id}>{dream.title}</h1>
-                    )
-                })}
+                {setSingleDream(userDream.filter((dream) => dream !== []))}
+                {singleDream.title}
 
             </div>
             <div className="dream-body">

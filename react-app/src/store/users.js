@@ -49,7 +49,7 @@ const setSingleUserFragment = (fragment) => {
 
 export const fetchSingleUser = (userId) => {
     return async (dispatch) => {
-        const response = await fetch(`api/users/${userId}`);
+        const response = await fetch(`/api/users/${userId}`);
         const user = await response.json();
         dispatch(setSingleUser(user));
     }
@@ -57,7 +57,7 @@ export const fetchSingleUser = (userId) => {
 
 export const fetchSingleUserDream = (userId, dreamId) => {
     return async (dispatch) => {
-        const response = await fetch(`api/users/${userId}/dreams/${dreamId}`);
+        const response = await fetch(`/api/users/${userId}/dreams/${dreamId}`);
         const dream = await response.json();
         dispatch(setSingleUserDream(dream));
     }
@@ -65,7 +65,7 @@ export const fetchSingleUserDream = (userId, dreamId) => {
 
 export const fetchSingleUserFragment = (userId, fragmentId) => {
     return async (dispatch) => {
-        const response = await fetch(`api/users/${userId}/fragments/${fragmentId}`);
+        const response = await fetch(`/api/users/${userId}/fragments/${fragmentId}`);
         const fragment = await response.json();
         dispatch(setSingleUserFragment(fragment));
     }
@@ -73,7 +73,7 @@ export const fetchSingleUserFragment = (userId, fragmentId) => {
 
 // export const fetchAllUsers = () => {
 //     return async (dispatch) => {
-//         response = await fetch('api/users/');
+//         response = await fetch('/api/users/');
 //         users = response.json();
 //         dispatch(setAllUsers(users));
 //     }
@@ -81,7 +81,7 @@ export const fetchSingleUserFragment = (userId, fragmentId) => {
 
 export const fetchUserDreams = (userId) => {
     return async(dispatch) => {
-        const response = await fetch(`api/users/${userId}/dreams`); //this route should return all dreams belonging to a specific user
+        const response = await fetch(`/api/users/${userId}/dreams`); //this route should return all dreams belonging to a specific user
         const dreams = await response.json();
         dispatch(setUserDreams(dreams));
     }
@@ -89,7 +89,7 @@ export const fetchUserDreams = (userId) => {
 
 export const fetchUserFragments = (userId) => {
     return async(dispatch) => {
-        const response = await fetch(`api/users/${userId}/fragments`); //this route should return all dreams belonging to a specific user
+        const response = await fetch(`/api/users/${userId}/fragments`); //this route should return all dreams belonging to a specific user
         const fragments = await response.json();
         dispatch(setUserFragments(fragments));
     }
@@ -104,9 +104,6 @@ const reducer = (state=initialState, action) => {
         case SET_SINGLE_USER:
             newState = action.user;
             return newState;
-        // case SET_ALL_USERS:
-        //     newState = action.users;
-        //     return newState;
         case SET_USERS_DREAMS:
             newState = action.dreams;
             return newState;
