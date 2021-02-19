@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { getCurrentUser } from "../../store/session";
 
 
@@ -35,11 +36,11 @@ function DreamForm() {
 
     const onSubmit = async(e) => {
         e.preventDefault();
-        await createDream(title, keywords, notes, dreamer_id)
+        const dream = await createDream(title, keywords, notes, dreamer_id)
         setTitle("");
         setKeywords("");
         setNotes("");
-
+        <Redirect to={`/users/${dreamer_id}/dreams/${dream.id}`}/>
     }
 
     useEffect(() => {
