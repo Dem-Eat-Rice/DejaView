@@ -1,0 +1,36 @@
+body {
+    max-height: 800px;
+    height: 800px;
+    width: 100vw;
+    background-image: url("https://images.fineartamerica.com/images-medium-large-5/view-of-the-night-lake-randall-branham.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: black */
+}
+
+.login-form {
+    margin-top: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-page-form {
+    padding: 50px;
+    padding-bottom: 20px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgba(131, 29, 199, 0.7);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.login-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#login {
+    font-weight: bolder;
+    padding-bottom: 5px;
+}

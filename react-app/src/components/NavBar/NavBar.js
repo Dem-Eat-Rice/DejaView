@@ -1,38 +1,79 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
+import { useHistory } from "react-router-dom";
 import './NavBar.css';
+import logo from "./logo.png";
 
-const NavBar = ({ setAuthenticated }) => {
-  return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/" exact={true} activeClassName="active">
-            Home
+const NavBar = ({ authenticated, setAuthenticated }) => {
+  const history = useHistory();
+
+  if (authenticated) {
+    return (
+      <nav>
+        <div className="home">
+          <NavLink to="/">
+            <img
+              className="header_logo"
+              onClick={() => history.push('/')}
+              src={logo}
+              alt=""
+            />
           </NavLink>
-        </li>
-        <li>
-          <NavLink to="/login" exact={true} activeClassName="active">
-            Login
+				</div>
+        <ul>
+          <li>
+            <NavLink to="/" exact={true} activeClassName="active">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <LogoutButton setAuthenticated={setAuthenticated} />
+          </li>
+        </ul>
+      </nav>
+    );
+  } else {
+    return (
+      <nav>
+        <div className="home">
+          <NavLink to="/login">
+            <img
+              className="header_logo"
+              onClick={() => history.push('/')}
+              src={logo}
+              alt=""
+            />
           </NavLink>
-        </li>
-        <li>
-          <NavLink to="/sign-up" exact={true} activeClassName="active">
-            Sign Up
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/users" exact={true} activeClassName="active">
-            Users
-          </NavLink>
-        </li>
-        <li>
-          <LogoutButton setAuthenticated={setAuthenticated} />
-        </li>
-      </ul>
-    </nav>
-  );
+				</div>
+        <ul>
+          <li>
+            <NavLink to="/" exact={true} activeClassName="active">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/login" exact={true} activeClassName="active">
+              Login
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/sign-up" exact={true} activeClassName="active">
+              Sign Up
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/users" exact={true} activeClassName="active">
+              Users
+            </NavLink>
+          </li>
+          <li>
+            <LogoutButton setAuthenticated={setAuthenticated} />
+          </li>
+        </ul>
+      </nav>
+    );
+  }
 }
 
 export default NavBar;

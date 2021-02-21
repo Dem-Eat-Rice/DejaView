@@ -1,3 +1,13 @@
 nav li {
     list-style: none;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header_logo {
+    width: 100px;
+    height: 65px;
+    overflow: hidden;
+    margin-top: -6px;
+    margin-left: -6px;
 }

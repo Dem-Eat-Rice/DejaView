@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { login } from "../../services/auth";
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
@@ -37,34 +37,48 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   }
 
   return (
-    <form onSubmit={onLogin}>
+    <div>
+      <form 
+      onSubmit={onLogin}
+      className="login-page-form"
+      >
+        <div>
+          {errors.map((error) => (
+            <div>{error}</div>
+          ))}
+        </div>
+        <div id="login">LOGIN</div>
+        <br />
+        <div>
+          <input
+            name="email"
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={updateEmail}
+          />
+        </div>
+        <br />
+        <div>
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={updatePassword}
+          />
+        </div>
+        <div className="login-button">
+          <button 
+          type="submit">Login</button>
+        </div>
+      </form>
       <div>
-        {errors.map((error) => (
-          <div>{error}</div>
-        ))}
+        <Link to="/sign-up">
+          Create an Account
+        </Link>
       </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          name="email"
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type="submit">Login</button>
-      </div>
-    </form>
+    </div>
   );
 };
 
