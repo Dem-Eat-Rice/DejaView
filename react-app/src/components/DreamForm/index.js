@@ -73,6 +73,7 @@ function DreamForm({ user }) {
                 name="notes"
                 value={notes}
                 onChange={e => setNotes(e.target.value)}
+                rows="5" cols="35"
                 ></textarea>
             </div>
             <div className="submit">

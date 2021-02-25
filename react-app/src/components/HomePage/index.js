@@ -33,9 +33,10 @@ function HomePage() {
                 <div className="dream-form">
                     <DreamForm className="homepage-form" user={user} />
                 </div>
-                <div className="dream-list">
-                    <DreamList user={user}/>
-                </div>
+            </div>
+            <div className="dream-list">
+                <h2>Dream Collection:</h2>
+                <DreamList user={user}/>
             </div>
         </>
     )

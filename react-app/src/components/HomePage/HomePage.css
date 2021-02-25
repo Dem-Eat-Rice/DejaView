@@ -30,12 +30,13 @@ h2 {
     justify-content: flex-end;
 }
 
-.dream-list {
-    background-color: rgba(131, 29, 199, 1);
-}
+
 
 .dream-card {
     border: 2px solid rgb(255, 255, 255, 0.9);
+    margin: 5px;
+    background-color: rgba(131, 29, 199, 1);
+
 }
 
 .page-body {
@@ -44,4 +45,14 @@ h2 {
     flex-flow: column;
     margin: auto;
     /* align-content: center; */
+}
+
+.dream-list {
+    margin-top: 40px;
+    margin-left: 0px;
+}
+
+.dream-list > h2 {
+    display: flex;
+    justify-content: flex-start;
 }
