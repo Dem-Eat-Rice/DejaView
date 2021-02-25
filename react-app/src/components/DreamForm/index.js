@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { getCurrentUser } from "../../store/session";
 
 
@@ -21,19 +21,16 @@ const createDream = async (title, keywords, notes, dreamer_id) => {
 };
 
 
-function DreamForm() {
-
-    const dreamer = useSelector(state => {
-       return state.session
-    });
+function DreamForm({ user }) {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [title, setTitle] = useState("");
     const [keywords, setKeywords] = useState("");
     const [notes, setNotes] = useState("");
-    const [createdDream, setCreatedDream] = useState("")
-    const dreamer_id = dreamer.id
+    const [createdDream, setCreatedDream] = useState("");
+    const dreamer_id = user.id;
 
     const onSubmit = async(e) => {
         e.preventDefault();
@@ -42,20 +39,9 @@ function DreamForm() {
         setKeywords("");
         setNotes("");
         setCreatedDream(dream)
+        history.push(`/users/${dreamer_id}/dreams/${dream.id}`)
 
     }
-    
-    useEffect(() => {
-        dispatch(getCurrentUser())
-        
-        if (createdDream) {
-            return <Redirect to={`/users/${dreamer_id}/dreams/${createdDream.id}`}/>
-        };
-        
-        setCreatedDream("")
-
-    }, [dispatch])
-
     
     return (
         <form onSubmit={onSubmit}>

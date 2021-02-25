@@ -12,13 +12,6 @@ const setSingleUser = (user) => {
    }
 }
 
-// const setAllUsers = () => {
-//     return {
-//         type: SET_ALL_USERS,
-//         users: users,
-//     }
-// }
-
 const setUserDreams = (dreams) => {
     return {
         type: SET_USERS_DREAMS,

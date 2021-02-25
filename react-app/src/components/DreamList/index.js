@@ -7,29 +7,24 @@ import "./DreamList.css";
 
 import { fetchUserDreams } from "../../store/users"
 
-function UserDreamList() {
+function UserDreamList({ user }) {
 
   const dispatch = useDispatch();
+  
   const dreams = useSelector(state => {
     return state.users
   })
 
-  const [user, setUser] = useState({});
-
-  const { userId }  = useParams();
-  
-
   useEffect(() => {
-    if (!userId) {
+    if (!user.id) {
       return
     }
     (async () => {
-      const response = await fetch(`/api/users/${userId}`);
-      const user = await response.json();
-      setUser(user);
-      dispatch(fetchUserDreams(userId))
+      const response = await fetch(`/api/users/${user.id}`);
+      user = await response.json();
     })();
-  }, [userId]);
+    dispatch(fetchUserDreams(user.id))
+  }, [dispatch, user.id]);
   
   if (!user) {
     return null;
@@ -51,7 +46,7 @@ function UserDreamList() {
             <div>
               <h2>
                 <Link 
-                  to={`/users/${userId}/dreams/${dream.id}`}
+                  to={`/users/${user.id}/dreams/${dream.id}`}
                   style={{textDecoration: 'none'}}
                   >
                   {dream.title}

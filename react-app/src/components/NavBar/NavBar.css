@@ -1,7 +1,8 @@
-nav li {
-    list-style: none;
+nav {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    /* background-color: rgb(18, 27, 158); */
+    width: 98vw;
 }
 
 .header_logo {
@@ -10,4 +11,8 @@ nav li {
     overflow: hidden;
     margin-top: -6px;
     margin-left: -6px;
+}
+
+.home {
+    width: 65px;
 }

@@ -25,8 +25,6 @@ function DreamPage() {
         <>
             <div className="dream-header">
                 <h1> Dreams, Dreams, Dreams... </h1>
-                {setSingleDream(userDream.filter((dream) => dream !== []))}
-                {singleDream.title}
 
             </div>
             <div className="dream-body">

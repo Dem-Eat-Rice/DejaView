@@ -75,6 +75,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
             value={password}
           ></input>
         </div>
+        <br />
         <div>
           <input
             type="password"
