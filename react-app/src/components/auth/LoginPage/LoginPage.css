@@ -1,11 +1,11 @@
 .page-container {
     height: 50vw;
-    width: 95vw;
+    width: 100vw;
     margin-top: 7px;
     background-image: url("https://images.fineartamerica.com/images-medium-large-5/view-of-the-night-lake-randall-branham.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 85%;
     background-color: black;
     position: fixed;
 }

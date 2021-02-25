@@ -63,9 +63,6 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
                 Sign Up
               </NavLink>
             </li>
-            <li>
-              <LogoutButton className="logout-button"setAuthenticated={setAuthenticated} />
-            </li>
           </ul>
         </nav>
       </div>
