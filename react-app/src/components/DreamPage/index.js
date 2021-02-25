@@ -16,15 +16,13 @@ function DreamPage() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getCurrentUser());
-        // dispatch(fetchSingleUserDream(userId, dreamId))
+        dispatch(fetchSingleUserDream(userId, dreamId))
     }, [dispatch, userId, dreamId])
 
     return (
         <>
             <div className="dream-header">
                 <h1> Dreams, Dreams, Dreams... </h1>
-
             </div>
             <div className="dream-body">
                 <div className="fragment-container">

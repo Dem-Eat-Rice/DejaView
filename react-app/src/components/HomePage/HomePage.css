@@ -3,6 +3,11 @@ h1, h2, .homepage-form {
     color: white;
 }
 
+h1 {
+    margin: 20px;
+    margin-top: 20px;
+}
+
 h2 {
     text-align: center;
 }
@@ -38,9 +43,20 @@ h2 {
     border-radius: 5px;
     margin: 5px;
     background-color: rgba(131, 29, 199, 0.7);
-    ;
     width: 60vw;
     height: 100px;
+    display: table;
+}
+
+.dream-card p {
+    margin: 0px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    /* display: table-column; */
+}
+
+.dream-card h4 > p {
+    margin-bottom: 5px;
 }
 
 .page-body {
@@ -72,7 +88,8 @@ h2 {
     position: fixed;
     margin-left: 70vw;
     margin-bottom: 80vw;
-    color: whitesmoke
+    color: whitesmoke;
+    font-size: 20px;
 }
 
 .tips li {
@@ -93,5 +110,12 @@ h2 a {
 }
 
 .home-container {
+    /* height: 100vw; */
+    color: whitesmoke;
+    width: 98.2vw;
     background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/64/53/PM0xVJ.jpg");
+}
+
+textarea {
+    resize: none;
 }
