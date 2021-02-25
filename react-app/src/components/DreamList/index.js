@@ -10,19 +10,13 @@ import { fetchUserDreams } from "../../store/users"
 function UserDreamList({ user }) {
 
   const dispatch = useDispatch();
-  
+  const { userId, dreamId } = useParams();
   const dreams = useSelector(state => {
     return state.users
   })
 
   useEffect(() => {
-    if (!user.id) {
-      return
-    }
-    (async () => {
-      const response = await fetch(`/api/users/${user.id}`);
-      user = await response.json();
-    })();
+    
     dispatch(fetchUserDreams(user.id))
   }, [dispatch, user.id]);
   
@@ -32,18 +26,10 @@ function UserDreamList({ user }) {
 
   return (
     <div>
-      <ul>
-        <li>
-          <strong>Name</strong> {user.name}
-        </li>
-        <li>
-          <strong>Email</strong> {user.email}
-        </li>
-      </ul>
       <div>
         {dreams.map(dream => {
           return (
-            <div>
+            <div className="dream-card">
               <h2>
                 <Link 
                   to={`/users/${user.id}/dreams/${dream.id}`}

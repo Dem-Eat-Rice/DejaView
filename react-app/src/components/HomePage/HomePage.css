@@ -18,9 +18,30 @@ h2 {
     border: 2px solid rgb(0, 0, 0);
     background-color: rgba(131, 29, 199, 1);
     border-radius: 5px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
 }
 
 .dream-button {
     display: flex;
     justify-content: flex-end;
+}
+
+.dream-list {
+    background-color: rgba(131, 29, 199, 1);
+}
+
+.dream-card {
+    border: 2px solid rgb(255, 255, 255, 0.9);
+}
+
+.page-body {
+    width: 500px;
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+    /* align-content: center; */
 }

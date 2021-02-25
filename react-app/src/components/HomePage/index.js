@@ -14,21 +14,30 @@ function HomePage() {
         return state.session
     })
 
+    const dreams = useSelector(state => {
+        return state.users
+    })
+
 
     useEffect(() => {
         dispatch(getCurrentUser(user.id))
         dispatch(fetchUserDreams(user.id))
+        
     }, [dispatch]) 
 
     return (
-        <div>
+        <>
             <h1>Hello {user.name}...</h1>
             <h2>QuickStart</h2>
-            <div className="dream-form">
-                <DreamForm className="homepage-form" user={user} />
-                <DreamList user={user}/>
+            <div className="page-body">
+                <div className="dream-form">
+                    <DreamForm className="homepage-form" user={user} />
+                </div>
+                <div className="dream-list">
+                    <DreamList user={user}/>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

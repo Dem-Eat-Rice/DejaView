@@ -22,8 +22,8 @@ def user(id):
 @user_routes.route('/<int:id>/dreams')
 # @login_required
 def current_users_dreams(id):
-    desc = db.desc()
-    user_dreams = Dream.query.filter(Dream.dreamer_id == id).order_by(desc(Dream.created_at)).all()
+    desc = db.desc(Dream.created_at)
+    user_dreams = db.session.query(Dream).filter(Dream.dreamer_id == id).order_by(desc).all()
     return jsonify([dream.to_dict() for dream in user_dreams])
 
 
