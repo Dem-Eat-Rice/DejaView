@@ -6,17 +6,25 @@ user_routes = Blueprint('users', __name__)
 
 
 @user_routes.route('/')
-@login_required
+# @login_required
 def users():
     users = User.query.all()
     return {"users": [user.to_dict() for user in users]}
 
 
 @user_routes.route('/<int:id>')
-@login_required
+# @login_required
 def user(id):
     user = User.query.get(id)
     return user.to_dict()
+
+
+@user_routes.route('/<int:id>/dreams')
+# @login_required
+def current_users_dreams(id):
+    desc = db.desc()
+    user_dreams = Dream.query.filter(Dream.dreamer_id == id).order_by(desc(Dream.created_at)).all()
+    return jsonify([dream.to_dict() for dream in user_dreams])
 
 
 @user_routes.route('/<int:id>/dreams/<int:dreamId>')

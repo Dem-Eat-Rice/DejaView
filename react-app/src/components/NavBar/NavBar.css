@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: rgb(18, 27, 158); */
+    width: 98vw;
+}
+
+.header_logo {
+    width: 100px;
+    height: 65px;
+    overflow: hidden;
+    margin-top: -6px;
+    margin-left: -6px;
+}
+
+.home {
+    width: 65px;
+}

@@ -1,0 +1,26 @@
+
+h1, h2, .homepage-form {
+    color: white;
+}
+
+h2 {
+    text-align: center;
+}
+
+.homepage-form {
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dream-form {
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgba(131, 29, 199, 1);
+    border-radius: 5px;
+}
+
+.dream-button {
+    display: flex;
+    justify-content: flex-end;
+}

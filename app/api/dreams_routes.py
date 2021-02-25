@@ -1,7 +1,6 @@
 from flask import Blueprint, jsonify, session, request
 from app.models import User, Dream, Fragment, db
-from app.forms import LoginForm
-from app.forms import SignUpForm
+from app.forms import DreamForm, FragmentForm, LoginForm, SignUpForm
 from flask_login import login_required
 
 dreams_routes = Blueprint("dreams", __name__)
@@ -16,9 +15,12 @@ def dreams():
 @dreams_routes.route("/", methods=["POST"])
 def post_a_dream():
     form = DreamForm()  # need to create a form
+    form['csrf_token'].data = request.cookies['csrf_token']
+
     if form.validate_on_submit():
+        print(request)
         new_dream = Dream()
-        new_dream.user_id = request.json["user_id"]
+        new_dream.dreamer_id = request.json["dreamer_id"]
         form.populate_obj(new_dream)
         db.session.add(new_dream)
         db.session.commit()
@@ -27,7 +29,7 @@ def post_a_dream():
 
 
 @dreams_routes.route("/<int:id>", methods=["PUT"])
-@login_required
+# @login_required
 def edit_dreams(id):
     dream = Dream.query.get(id)
 

@@ -8,5 +8,4 @@ class DreamForm(FlaskForm):
     title = StringField('Title')
     keywords = StringField('Keywords')
     notes = TextAreaField('Notes')
-    description = TextAreaField('Description')
     dreamer_id = IntegerField('Dreamer', validators=[DataRequired()])
