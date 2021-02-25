@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../store/session";
-import { fetchUserDreams } from "../../store/users";
+import { fetchSingleUserDream, fetchUserDreams } from "../../store/users";
 import DreamForm from "../DreamForm";
 import DreamList from "../DreamList";
 import "./HomePage.css";
@@ -14,10 +14,6 @@ function HomePage() {
         return state.session
     })
 
-    const dreams = useSelector(state => {
-        return state.users
-    })
-
 
     useEffect(() => {
         dispatch(getCurrentUser(user.id))
@@ -26,7 +22,7 @@ function HomePage() {
     }, [dispatch]) 
 
     return (
-        <>
+        <div className="home-container">
             <h1>Hello {user.name}...</h1>
             <h2>QuickStart</h2>
             <div className="page-body">
@@ -34,11 +30,20 @@ function HomePage() {
                     <DreamForm className="homepage-form" user={user} />
                 </div>
             </div>
+            <div className="tips">
+                            <h2>Tips</h2>
+                        <ul style={{"overflow-wrap": "break-word"}}>
+                            <li> Try to be in the same position that you woke up in </li>
+                            <li> Try to recall any emotions </li>
+                        </ul>
+                    </div>
             <div className="dream-list">
                 <h2>Dream Collection:</h2>
-                <DreamList user={user}/>
+                <div className="sub-dream-list">
+                    <DreamList user={user}/>
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 

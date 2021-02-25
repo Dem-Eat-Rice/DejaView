@@ -15,10 +15,11 @@ h2 {
 }
 
 .dream-form {
-    border: 2px solid rgb(0, 0, 0);
-    background-color: rgba(131, 29, 199, 1);
+    border: 2px solid white;
+    background-color: rgba(131, 29, 199, 0.7);
     border-radius: 5px;
     width: 300px;
+    height: 230px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -34,9 +35,12 @@ h2 {
 
 .dream-card {
     border: 2px solid rgb(255, 255, 255, 0.9);
+    border-radius: 5px;
     margin: 5px;
-    background-color: rgba(131, 29, 199, 1);
-
+    background-color: rgba(131, 29, 199, 0.7);
+    ;
+    width: 60vw;
+    height: 100px;
 }
 
 .page-body {
@@ -49,10 +53,45 @@ h2 {
 
 .dream-list {
     margin-top: 40px;
-    margin-left: 0px;
+    margin-left: 40px;
+}
+
+.sub-dream-list {
+    display: flex;
+}
+
+.tips {
+    word-wrap: normal;
+    max-height: 100vw;
+    height: 300px;
+    width: 350px;
+    border: 2px solid rgb(255, 255, 255, 0.9);
+    border-radius: 5px;
+    margin: 5px;
+    background-color: rgba(131, 29, 199, 0.9);
+    position: fixed;
+    margin-left: 70vw;
+    margin-bottom: 80vw;
+    color: whitesmoke
+}
+
+.tips li {
+    margin-right: 25px;
+}
+
+.tips h2 {
+    margin-top: 5px;
 }
 
 .dream-list > h2 {
     display: flex;
     justify-content: flex-start;
+}
+
+h2 a {
+    color: white;
+}
+
+.home-container {
+    background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/64/53/PM0xVJ.jpg");
 }

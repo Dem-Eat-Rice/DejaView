@@ -39,7 +39,8 @@ function UserDreamList({ user }) {
                 </Link>
               </h2>
               <h4>Keywords: {dream.keywords}</h4>
-              <h4>Notes: {dream.notes}</h4>
+              <h4>Notes: </h4>
+              <p style={{"white-space": "pre-line"}}>{dream.notes}</p>
               <br/>
             </div>
           )

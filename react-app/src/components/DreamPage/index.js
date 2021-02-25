@@ -14,11 +14,10 @@ function DreamPage() {
     })
 
     const dispatch = useDispatch()
-    const [singleDream, setSingleDream] = useState({})
 
     useEffect(() => {
         dispatch(getCurrentUser());
-        dispatch(fetchSingleUserDream(userId, dreamId))
+        // dispatch(fetchSingleUserDream(userId, dreamId))
     }, [dispatch, userId, dreamId])
 
     return (

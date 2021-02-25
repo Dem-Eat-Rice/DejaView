@@ -10,7 +10,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
 
   if (authenticated) {
     return (
-      <>
+      <div className="navlogo">
         <div className="home">
           <NavLink to="/">
             <img
@@ -31,7 +31,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
               <LogoutButton setAuthenticated={setAuthenticated} />
           </div>
         </nav>
-      </>
+      </div>
     );
   } else {
     return (

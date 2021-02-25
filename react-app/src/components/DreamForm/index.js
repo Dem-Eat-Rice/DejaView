@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect, useHistory, useParams } from "react-router-dom";
 import { getCurrentUser } from "../../store/session";
+import { fetchSingleUserDream } from "../../store/users";
 
 
 const createDream = async (title, keywords, notes, dreamer_id) => {
@@ -40,8 +41,10 @@ function DreamForm({ user }) {
         setNotes("");
         setCreatedDream(dream)
         history.push(`/users/${dreamer_id}/dreams/${dream.id}`)
+        dispatch(fetchSingleUserDream(user.id, dream.id))
 
     }
+
     
     return (
         <form onSubmit={onSubmit}>
@@ -74,6 +77,7 @@ function DreamForm({ user }) {
                 value={notes}
                 onChange={e => setNotes(e.target.value)}
                 rows="5" cols="35"
+                style={{"resize": "none"}, {"white-space": "pre-line"}}
                 ></textarea>
             </div>
             <div className="submit">
