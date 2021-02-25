@@ -10,7 +10,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
 
   if (authenticated) {
     return (
-      <nav>
+      <>
         <div className="home">
           <NavLink to="/">
             <img
@@ -20,20 +20,22 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
               alt=""
             />
           </NavLink>
-				</div>
-        <div>
-            <NavLink to="/" exact={true} activeClassName="active">
-              <p>
-                Home  
-              </p>
-            </NavLink>
-            <LogoutButton setAuthenticated={setAuthenticated} />
         </div>
-      </nav>
+        <nav>
+          <div>
+              <NavLink to="/" exact={true} activeClassName="active">
+                <p>
+                  Home  
+                </p>
+              </NavLink>
+              <LogoutButton setAuthenticated={setAuthenticated} />
+          </div>
+        </nav>
+      </>
     );
   } else {
     return (
-      <nav>
+      <div className="page">
         <div className="home">
           <NavLink to="/login">
             <img
@@ -43,33 +45,30 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
               alt=""
             />
           </NavLink>
-				</div>
-        <ul>
-          <li>
-            <NavLink to="/" exact={true} activeClassName="active">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/login" exact={true} activeClassName="active">
-              Login
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/sign-up" exact={true} activeClassName="active">
-              Sign Up
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/users" exact={true} activeClassName="active">
-              Users
-            </NavLink>
-          </li>
-          <li>
-            <LogoutButton setAuthenticated={setAuthenticated} />
-          </li>
-        </ul>
-      </nav>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/" exact={true} activeClassName="active">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/login" exact={true} activeClassName="active">
+                Login
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/sign-up" exact={true} activeClassName="active">
+                Sign Up
+              </NavLink>
+            </li>
+            <li>
+              <LogoutButton className="logout-button"setAuthenticated={setAuthenticated} />
+            </li>
+          </ul>
+        </nav>
+      </div>
     );
   }
 }
