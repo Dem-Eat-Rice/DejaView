@@ -2,10 +2,13 @@ import React from "react";
 import SignUpForm from "../SignUpForm";
 import "./SignUpPage.css"
 
-function SignUpPage() {
+function SignUpPage({ authenticated, setAuthenticated}) {
     return (
         <div className="signup-form">
-            <SignUpForm />
+            <SignUpForm 
+            authenticated={authenticated}
+            setAuthenticated={setAuthenticated}
+            />
         </div>
     )
 }

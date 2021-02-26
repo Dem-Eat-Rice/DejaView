@@ -96,6 +96,7 @@ function UserDreamList({ user }) {
             <>
               <div className="dream-card">
                 <h2>
+                  <h4>Title</h4>
                   <input 
                   placeholder={dream.title}
                   value={title}
@@ -103,17 +104,19 @@ function UserDreamList({ user }) {
                   ></input>
                 </h2>
                 <h4>Keywords: </h4>
-                  <input 
+                  <textarea 
                   placeholder={dream.keywords}
                   value={keywords}
                   onChange={(e) => setKeywords(e.target.value)}
-                  ></input>
+                  rows="3" cols="10"
+                  />
                 <h4>Notes: </h4>
-                  <input 
+                  <textarea 
                   placeholder={dream.notes}
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  ></input>
+                  rows="3"
+                  />
                 <br/>
                 <button value={dream.id} onClick={saveOnClick}>Save</button>
                 <button value={dream.id} onClick={deleteOnClick}>Delete</button>

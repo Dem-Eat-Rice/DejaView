@@ -10,23 +10,28 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
 
   if (authenticated) {
     return (
-      <div className="navlogo">
-        <div className="home">
-          <NavLink to="/">
-            <img
-              className="header_logo"
-              onClick={() => history.push('/')}
-              src={logo}
-              alt=""
-            />
-          </NavLink>
-        </div>
-        <nav>
-          <div>
-              <LogoutButton setAuthenticated={setAuthenticated} />
+      <>
+        <div className="navlogo">
+          <div className="home">
+            <NavLink to="/">
+              <img
+                className="header_logo"
+                onClick={() => history.push('/')}
+                src={logo}
+                alt=""
+                />
+            </NavLink>
+            <NavLink to="/">
+              <h1>DejaView</h1>
+            </NavLink>
           </div>
-        </nav>
-      </div>
+          <nav>
+            <div>
+                <LogoutButton setAuthenticated={setAuthenticated} />
+            </div>
+          </nav>
+        </div>
+      </>
     );
   } else {
     return (
@@ -38,7 +43,10 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
               onClick={() => history.push('/')}
               src={logo}
               alt=""
-            />
+              />
+          </NavLink>
+          <NavLink to="/">
+            <h1>DejaView</h1>
           </NavLink>
         </div>
         <nav>

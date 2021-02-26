@@ -5,7 +5,7 @@ nav {
 nav > ul {
     display: flex;
     justify-content: space-evenly;
-    width: 90vw;
+    width: 80vw;
 }
 
 ul .logout-button {
@@ -21,9 +21,15 @@ ul .logout-button {
 }
 
 .home {
-    width: 65px;
+    display: flex;
+    width: 365px;
     height: 50px;
     background-color: black;
+}
+
+a h1:hover {
+    background-color: rgb(70, 43, 226);
+    background-size: 3px;
 }
 
 .page {
@@ -32,3 +38,27 @@ ul .logout-button {
     background-color: black;
     width: 98vw;
 }
+
+.home h1 {
+    margin: 0px;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 40px;
+    color: blueviolet;
+}
+
+.navlogo {
+    display: flex;
+    justify-content: space-between;    
+}
+
+nav button {
+    margin-top: 20px;
+}
+
+/* nav div{
+    display: flex;
+    align-items: flex-end;
+    margin-left: 200px;
+    width: 80vw;
+} */
