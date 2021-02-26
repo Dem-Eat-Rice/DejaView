@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchSingleUserDream } from "../../store/users";
 import { getCurrentUser } from "../../store/session";
 import DreamForm from "../DreamForm";
+import { DragAndDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function DreamPage() {
 
@@ -20,7 +21,7 @@ function DreamPage() {
     }, [dispatch, userId, dreamId])
 
     return (
-        <>
+        <div className="dream-page-container">
             <div className="dream-header">
                 <h1> Dreams, Dreams, Dreams... </h1>
             </div>
@@ -28,7 +29,7 @@ function DreamPage() {
                 <div className="fragment-container">
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

@@ -8,4 +8,5 @@ nav div{
     display: flex;
     align-items: flex-end;
     margin-left: 200px;
+    width: 98vw;
 }

@@ -10,7 +10,6 @@ import { fetchUserDreams } from "../../store/users"
 function UserDreamList({ user }) {
 
   const dispatch = useDispatch();
-  const { userId, dreamId } = useParams();
   const dreams = useSelector(state => {
     return state.users
   })
