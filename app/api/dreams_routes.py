@@ -18,7 +18,6 @@ def post_a_dream():
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-        print(request)
         new_dream = Dream()
         new_dream.dreamer_id = request.json["dreamer_id"]
         form.populate_obj(new_dream)

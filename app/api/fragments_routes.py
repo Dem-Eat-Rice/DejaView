@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, session, request
 from app.models import User, Dream, Fragment
 from app.forms import LoginForm
 from app.forms import SignUpForm
+from app.forms import FragmentForm
 from flask_login import login_required
 
 fragments_routes = Blueprint("fragments", __name__)
@@ -11,6 +12,21 @@ fragments_routes = Blueprint("fragments", __name__)
 # @login_required
 def fragments():
     fragment = Fragment.query.get(id)
+
+
+@fragments_routes.route("/", methods=["POST"])
+def post_fragment():
+    form = FragmentForm() 
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+        new_fragment = Fragment()
+        new_dream.user_id = request.json["user_id"]
+        form.populate_obj(new_fragment)
+        db.session.add(new_fragment)
+        db.session.commit()
+        return new_fragment.to_dict()
+    return "Bad Data"
 
 
 @fragments_routes.route("/<int:id>", methods=["PUT"])

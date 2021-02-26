@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchSingleUserDream } from "../../store/users";
 import { getCurrentUser } from "../../store/session";
 import DreamForm from "../DreamForm";
+import FragmentForm from "../FragmentForm";
 import { DragAndDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function DreamPage() {
