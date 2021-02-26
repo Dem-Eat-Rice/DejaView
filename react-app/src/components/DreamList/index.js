@@ -14,39 +14,114 @@ function UserDreamList({ user }) {
     return state.users
   })
 
+  const [deleteDream, setDeleteDream] = useState();
+  const [editDream, setEditDream] = useState(false);
+  const [title, setTitle] = useState();
+  const [keywords, setKeywords] = useState();
+  const [notes, setNotes] = useState();
+
   useEffect(() => {
-    
+    setDeleteDream();
     dispatch(fetchUserDreams(user.id))
-  }, [dispatch, user.id]);
+  }, [dispatch, editDream, user.id, deleteDream, title, keywords, notes]);
   
   if (!user) {
     return null;
   }
 
-  return (
-    <div>
+  const deleteOnClick = async (e) => {
+    e.preventDefault();
+    setDeleteDream("");
+    await fetch(`/api/dreams/${e.target.value}`, {
+      method: "DELETE"
+    });
+  }
+  const editOnClick = async (e) => {
+    e.preventDefault();
+    setEditDream(true);
+  }
+
+  const saveOnClick = async (e) => {
+    e.preventDefault();
+    await fetch(`/api/dreams/${e.target.value}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title,
+        keywords,
+        notes
+      })
+    })
+    setTitle(title);
+    setKeywords(keywords);
+    setNotes(notes);
+    setEditDream(false);
+  }
+
+  if (editDream === false) {
+    return (
+        <div>
+          {dreams.map(dream => {
+            return (
+              <>
+                <div className="dream-card">
+                  <h2>
+                    <Link 
+                      to={`/users/${user.id}/dreams/${dream.id}`}
+                      // style={{textDecoration: 'none'}}
+                      >
+                      {dream.title}
+                    </Link>
+                  </h2>
+                  <h4>Keywords: </h4>
+                  <p style={{"whiteSpace": "pre-line"}}>{dream.keywords}</p>
+                  <h4>Notes: </h4>
+                  <p style={{"whiteSpace": "pre-line"}}>{dream.notes}</p>
+                  <br/>
+                  <button value={dream.id} onClick={editOnClick}>Edit</button>
+                  <button value={dream.id} onClick={deleteOnClick}>Delete</button>
+                </div>
+              </>
+            )
+          })}
+        </div>
+    );
+  } else {
+    return (
       <div>
         {dreams.map(dream => {
           return (
-            <div className="dream-card">
-              <h2>
-                <Link 
-                  to={`/users/${user.id}/dreams/${dream.id}`}
-                  style={{textDecoration: 'none'}}
-                  >
-                  {dream.title}
-                </Link>
-              </h2>
-              <h4>Keywords: </h4>
-              <p style={{"white-space": "pre-line"}}>{dream.keywords}</p>
-              <h4>Notes: </h4>
-              <p style={{"white-space": "pre-line"}}>{dream.notes}</p>
-              <br/>
-            </div>
+            <>
+              <div className="dream-card">
+                <h2>
+                  <input 
+                  placeholder={dream.title}
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  ></input>
+                </h2>
+                <h4>Keywords: </h4>
+                  <input 
+                  placeholder={dream.keywords}
+                  value={keywords}
+                  onChange={(e) => setKeywords(e.target.value)}
+                  ></input>
+                <h4>Notes: </h4>
+                  <input 
+                  placeholder={dream.notes}
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  ></input>
+                <br/>
+                <button value={dream.id} onClick={saveOnClick}>Save</button>
+                <button value={dream.id} onClick={deleteOnClick}>Delete</button>
+              </div>
+            </>
           )
         })}
       </div>
-    </div>
-  );
+  );  }
 }
 export default UserDreamList;

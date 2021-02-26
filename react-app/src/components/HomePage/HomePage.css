@@ -48,6 +48,11 @@ h2 {
     display: table;
 }
 
+.dream-card button {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .dream-card p {
     margin: 0px;
     margin-bottom: 5px;

@@ -43,6 +43,15 @@ def edit_dreams(id):
 
     return {"message": "success"}
 
+@dreams_routes.route("/<int:id>", methods=["DELETE"])
+# @login_required
+def delete_dreams(id):
+    dream = Dream.query.get(id)
+
+    db.session.delete(dream)
+    db.session.commit()
+    return  {"message": "Dream Deleted"}
+
 
 @dreams_routes.route("/<int:id>")
 def dream(id):
