@@ -16,7 +16,7 @@ def fragments():
 
 @fragments_routes.route("/", methods=["POST"])
 def post_fragment():
-    form = FragmentForm() 
+    form = FragmentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():

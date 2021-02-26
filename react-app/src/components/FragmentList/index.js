@@ -19,7 +19,6 @@ function UserDreamList({ user }) {
   const [title, setTitle] = useState();
   const [keywords, setKeywords] = useState();
   const [notes, setNotes] = useState();
-  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     setDeleteDream();
@@ -32,33 +31,14 @@ function UserDreamList({ user }) {
 
   const deleteOnClick = async (e) => {
     e.preventDefault();
-    const confirmation = window.confirm("Are you sure you want to delete this dream?");
-    if (confirmation) {
-      setDeleteDream("");
-      await fetch(`/api/dreams/${e.target.value}`, {
-        method: "DELETE"
-      });
-    }
+    setDeleteDream("");
+    await fetch(`/api/dreams/${e.target.value}`, {
+      method: "DELETE"
+    });
   }
   const editOnClick = async (e) => {
     e.preventDefault();
     setEditDream(true);
-  }
-
-  const cancelEditOnClick = (e) => {
-    if (editDream) {
-      document.addEventListener("click", (e) => {
-        if (e.target.type === "text" || e.target.type === "submit" || e.target.type === "textarea") {
-          return null;
-        } else {
-          setEditDream(false)
-        }
-      })
-    }
-  }
-
-  const cancelEditButtonClick = (e) => {
-      setEditDream(false)
   }
 
   const saveOnClick = async (e) => {
@@ -87,14 +67,8 @@ function UserDreamList({ user }) {
             return (
               <>
                 <div className="dream-card">
-                  <h2>
-                    <Link 
-                      to={`/users/${user.id}/dreams/${dream.id}`}
-                      // style={{textDecoration: 'none'}}
-                      >
-                      {dream.title}
-                    </Link>
-                  </h2>
+                  <h4>Title</h4>
+                  <p>{dream.title}</p>
                   <h4>Keywords: </h4>
                   <p style={{"whiteSpace": "pre-line"}}>{dream.keywords}</p>
                   <h4>Notes: </h4>
@@ -114,7 +88,7 @@ function UserDreamList({ user }) {
         {dreams.map(dream => {
           return (
             <>
-              <div onClick={cancelEditOnClick} className="dream-card">
+              <div className="dream-card">
                 <h2>
                   <h4>Title</h4>
                   <input 
@@ -139,7 +113,7 @@ function UserDreamList({ user }) {
                   />
                 <br/>
                 <button value={dream.id} onClick={saveOnClick}>Save</button>
-                <button value={dream.id} type="cancel" onClick={cancelEditButtonClick}>Cancel</button>
+                <button value={dream.id} onClick={deleteOnClick}>Delete</button>
               </div>
             </>
           )

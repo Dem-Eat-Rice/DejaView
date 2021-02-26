@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import User, Dream, Fragment, db
+from app.models import User, Dream, Fragment, Dreams_Fragment, db
 from app.forms import DreamForm, FragmentForm, LoginForm, SignUpForm
 from flask_login import login_required
 
@@ -42,6 +42,7 @@ def edit_dreams(id):
 
     return {"message": "success"}
 
+
 @dreams_routes.route("/<int:id>", methods=["DELETE"])
 # @login_required
 def delete_dreams(id):
@@ -49,10 +50,13 @@ def delete_dreams(id):
 
     db.session.delete(dream)
     db.session.commit()
-    return  {"message": "Dream Deleted"}
+    return {"message": "Dream Deleted"}
 
 
-@dreams_routes.route("/<int:id>")
+@dreams_routes.route("/<int:id>/fragments")
+# @login_required
 def dream(id):
-    dream = Dream.query.get(id)
-    return jsonify(dream.to_dict())
+    fragments = Fragment.query.join(Dreams_Fragment).filter(
+            Dreams_Fragment.dream_id == id).all()
+    frag = [fragment.to_dict() for fragment in fragments]
+    return jsonify(frag)

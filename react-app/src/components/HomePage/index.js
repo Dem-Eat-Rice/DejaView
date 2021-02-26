@@ -21,6 +21,7 @@ function HomePage() {
         
     }, [dispatch]) 
 
+
     return (
         <div className="home-container">
             <h1>Hello {user.name}...</h1>

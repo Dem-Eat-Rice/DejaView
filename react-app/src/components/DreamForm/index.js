@@ -6,7 +6,7 @@ import { fetchSingleUserDream } from "../../store/users";
 
 
 const createDream = async (title, keywords, notes, dreamer_id) => {
-    const response = await fetch("/api/fragments/", {
+    const response = await fetch("/api/dreams/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -21,7 +21,7 @@ const createDream = async (title, keywords, notes, dreamer_id) => {
     return await response.json();
 };
 
-// still need something to post to dreams_fragments joins table
+// still need something to post to dreams_fragments joins table I think?
 
 
 function DreamForm({ user }) {
