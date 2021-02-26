@@ -38,7 +38,7 @@
 
 .input-frag {
     flex-flow: column wrap;
-    margin: 10px;
+    margin: 5px;
     border: 3px solid white;
     border-radius: 5px;
     height: 30%;
