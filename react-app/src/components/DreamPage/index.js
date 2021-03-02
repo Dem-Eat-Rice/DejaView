@@ -13,15 +13,15 @@ function DreamPage() {
 
     const { userId, dreamId } = useParams();
 
-    const dreamsFragments = useSelector(state => {
-        return state.dreams
+    const wholeDream = useSelector(state => {
+        return state.users
     })
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchSingleUserDream(userId, dreamId))
-    }, [dispatch, userId, dreamId])
+    }, [dispatch, userId, dreamId]);
 
     return (
         <div className="dream-page-container">
