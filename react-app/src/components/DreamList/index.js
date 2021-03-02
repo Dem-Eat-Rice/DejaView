@@ -115,31 +115,31 @@ function UserDreamList({ user }) {
           return (
             <>
               <div onClick={cancelEditOnClick} className="dream-card">
-                <h2>
-                  <h4>Title</h4>
-                  <input 
-                  placeholder={dream.title}
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  ></input>
-                </h2>
-                <h4>Keywords: </h4>
-                  <textarea 
-                  placeholder={dream.keywords}
-                  value={keywords}
-                  onChange={(e) => setKeywords(e.target.value)}
-                  rows="3" cols="10"
-                  />
-                <h4>Notes: </h4>
-                  <textarea 
-                  placeholder={dream.notes}
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
-                  rows="3"
-                  />
-                <br/>
-                <button value={dream.id} onClick={saveOnClick}>Save</button>
-                <button value={dream.id} type="cancel" onClick={cancelEditButtonClick}>Cancel</button>
+                <form>
+                  <h2>
+                    <h4>Title</h4>
+                    <input 
+                    id={`${dream.id}`}
+                    placeholder={dream.title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    ></input>
+                  </h2>
+                  <h4>Keywords: </h4>
+                    <textarea 
+                    placeholder={dream.keywords}
+                    onChange={(e) => setKeywords(e.target.value)}
+                    rows="3" cols="10"
+                    />
+                  <h4>Notes: </h4>
+                    <textarea 
+                    placeholder={dream.notes}
+                    onChange={(e) => setNotes(e.target.value)}
+                    rows="3"
+                    />
+                  <br/>
+                  <button value={dream.id} type="submit" onClick={saveOnClick}>Save</button>
+                </form>
+                <button value={dream.id} onClick={cancelEditButtonClick}>Cancel</button>
               </div>
             </>
           )
