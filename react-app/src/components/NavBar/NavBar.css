@@ -1,34 +1,7 @@
-nav {
-    margin-left: 5px;
-}
-
-nav > ul {
-    display: flex;
-    justify-content: space-evenly;
-    width: 90vw;
-}
-
-ul .logout-button {
-    align-items: flex-end;
-}
-
 .header_logo {
     width: 100px;
     height: 65px;
     overflow: hidden;
     margin-top: -6px;
     margin-left: -6px;
-}
-
-.home {
-    width: 65px;
-    height: 50px;
-    background-color: black;
-}
-
-.page {
-    display: absolute;
-    display: flex;
-    background-color: black;
-    width: 98vw;
 }

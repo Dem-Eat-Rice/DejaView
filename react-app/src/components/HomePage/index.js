@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../store/session";
 import { fetchUserDreams } from "../../store/users";
-import DreamForm from "../DreamForm";
-import DreamList from "../DreamList";
 import "./HomePage.css";
 
 function HomePage() {
@@ -25,8 +23,6 @@ function HomePage() {
             <h1>Hello {user.name}...</h1>
             <h2>QuickStart</h2>
             <div className="dream-form">
-                <DreamForm className="homepage-form" user={user} />
-                <DreamList user={user}/>
             </div>
         </div>
     )

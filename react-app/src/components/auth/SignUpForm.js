@@ -7,6 +7,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [errors, setErrors] = useState([])
 
   const onSignUp = async (e) => {
     e.preventDefault();
@@ -14,6 +15,8 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
       const user = await signUp(name, email, password);
       if (!user.errors) {
         setAuthenticated(true);
+      } else {
+        setErrors(user.errors);
       }
     }
   };
@@ -45,6 +48,11 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
       className="signup-page-form"
       >
         <div id="signup">SIGN-UP</div>
+        <div className="errors">
+          {errors.map((error) => (
+            <div>{error}</div>
+          ))}
+        </div>
         <br />
         <div>
           <input
