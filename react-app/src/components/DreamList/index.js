@@ -91,14 +91,14 @@ function UserDreamList({ user }) {
                     <Link 
                       to={`/users/${user.id}/dreams/${dream.id}`}
                       // style={{textDecoration: 'none'}}
-                      >
+                      > 
                       {dream.title}
                     </Link>
                   </h2>
                   <h4>Keywords: </h4>
-                  <p style={{"whiteSpace": "pre-line"}}>{dream.keywords}</p>
+                  <p style={{"whiteSpace": "pre-wrap"}}>{dream.keywords}</p>
                   <h4>Notes: </h4>
-                  <p style={{"whiteSpace": "pre-line"}}>{dream.notes}</p>
+                  <p style={{"whiteSpace": "pre-wrap"}}>{dream.notes}</p>
                   <br/>
                   <button value={dream.id} onClick={editOnClick}>Edit</button>
                   <button value={dream.id} onClick={deleteOnClick}>Delete</button>
@@ -111,7 +111,7 @@ function UserDreamList({ user }) {
   } else {
     return (
       <div>
-        {dreams.map(dream => {
+        {dreams && dreams.map(dream => {
           return (
             <>
               <div onClick={cancelEditOnClick} className="dream-card">
@@ -128,13 +128,13 @@ function UserDreamList({ user }) {
                     <textarea 
                     placeholder={dream.keywords}
                     onChange={(e) => setKeywords(e.target.value)}
-                    rows="3" cols="10"
+                    rows="3" cols="50"
                     />
                   <h4>Notes: </h4>
                     <textarea 
                     placeholder={dream.notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    rows="3"
+                    rows="5" cols="100"
                     />
                   <br/>
                   <button value={dream.id} type="submit" onClick={saveOnClick}>Save</button>
