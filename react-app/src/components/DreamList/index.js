@@ -91,24 +91,9 @@ function UserDreamList({ user }) {
     return (
         <div>
           {dreams.map(dream => {
-            const currentDiv = document.getElementsByClassName("edit-button")  
 
             return (
-                <div key={`${dream.id}`} className="dream-card">
-                  <h2>
-                    <Link 
-                      to={`/users/${user.id}/dreams/${dream.id}`}
-                      > 
-                      {dream.title}
-                    </Link>
-                  </h2>
-                  <h4>Keywords: </h4>
-                  <p style={{"whiteSpace": "pre-wrap"}}>{dream.keywords}</p>
-                  <h4>Notes: </h4>
-                  <p style={{"whiteSpace": "pre-wrap"}}>{dream.notes}</p>
-                  <br/>
-                  <button value={currentDiv} id="potato" className="edit-button" onClick={editOnClick}>Edit</button>
-                  <button value={dream.id} onClick={deleteOnClick}>Delete</button>
+                <div>
                 </div>
             )
           })}
