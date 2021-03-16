@@ -5,7 +5,7 @@ import DreamForm from "../DreamForm";
 import DreamPage from "../DreamPage";
 import "./DreamList.css";
 
-import { fetchUserDreams } from "../../store/users"
+import { fetchUserDreams } from "../../store/users";
 
 function UserDreamList({ user }) {
 
@@ -121,7 +121,7 @@ function UserDreamList({ user }) {
                     rows="3" cols="50"
                     />
                   <h4>Notes: </h4>
-                    <textarea 
+                    <textarea
                     placeholder={dream.notes}
                     onChange={(e) => setNotes(e.target.value)}
                     rows="5" cols="100"
