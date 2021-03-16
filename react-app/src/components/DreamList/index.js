@@ -14,8 +14,12 @@ function UserDreamList({ user }) {
     return state.users
   })
 
+  
+
+
   const [deleteDream, setDeleteDream] = useState();
-  const [editDream, setEditDream] = useState(false);
+  const [editDream, setEditDream] = useState(false); // Possibly create new state or array based off of length of "dreams" (state holding dreams)
+  const [holdValue, setHoldValue] = useState() // Want to try putting dream.id here so that it can referenced
   const [title, setTitle] = useState();
   const [keywords, setKeywords] = useState();
   const [notes, setNotes] = useState();
@@ -24,6 +28,7 @@ function UserDreamList({ user }) {
   useEffect(() => {
     setDeleteDream();
     dispatch(fetchUserDreams(user.id))
+
   }, [dispatch, editDream, user.id, deleteDream, title, keywords, notes]);
   
   if (!user) {
@@ -42,8 +47,11 @@ function UserDreamList({ user }) {
   }
   const editOnClick = async (e) => {
     e.preventDefault();
+
+    setHoldValue(e.target.value);
     setEditDream(true);
   }
+
 
   const cancelEditOnClick = (e) => {
     if (editDream) {
@@ -81,12 +89,17 @@ function UserDreamList({ user }) {
   }
 
   if (editDream === false) {
+    // const editButton = document.getElementsByClassName("edit-button");
+    // console.log(editButton)
+    
     return (
         <div>
           {dreams.map(dream => {
+            const currentDiv = document.getElementsByClassName("edit-button")  
+
+            // console.log(holdValue)
             return (
-              <>
-                <div className="dream-card">
+                <div key={`${dream.id}`} className="dream-card">
                   <h2>
                     <Link 
                       to={`/users/${user.id}/dreams/${dream.id}`}
@@ -94,16 +107,16 @@ function UserDreamList({ user }) {
                       > 
                       {dream.title}
                     </Link>
+                    {/* <IndividualDream user={user} dream={dream}/> */}
                   </h2>
                   <h4>Keywords: </h4>
                   <p style={{"whiteSpace": "pre-wrap"}}>{dream.keywords}</p>
                   <h4>Notes: </h4>
                   <p style={{"whiteSpace": "pre-wrap"}}>{dream.notes}</p>
                   <br/>
-                  <button value={dream.id} onClick={editOnClick}>Edit</button>
+                  <button value={currentDiv} id="potato" className="edit-button" onClick={editOnClick}>Edit</button>
                   <button value={dream.id} onClick={deleteOnClick}>Delete</button>
                 </div>
-              </>
             )
           })}
         </div>
@@ -113,16 +126,15 @@ function UserDreamList({ user }) {
       <div>
         {dreams && dreams.map(dream => {
           return (
-            <>
-              <div onClick={cancelEditOnClick} className="dream-card">
+              <div key={dream.id} onClick={cancelEditOnClick} className="dream-card">
                 <form>
                   <h2>
-                    <h4>Title</h4>
-                    <input 
-                    id={`${dream.id}`}
-                    placeholder={dream.title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    ></input>
+                  <h4>Title</h4>
+                  <input 
+                  id={`${dream.id}`}
+                  placeholder={dream.title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  ></input>
                   </h2>
                   <h4>Keywords: </h4>
                     <textarea 
@@ -141,7 +153,6 @@ function UserDreamList({ user }) {
                 </form>
                 <button value={dream.id} onClick={cancelEditButtonClick}>Cancel</button>
               </div>
-            </>
           )
         })}
       </div>
