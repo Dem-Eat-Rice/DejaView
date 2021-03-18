@@ -22,8 +22,9 @@ function UserDreamList({ user }) {
   const [holdValue, setHoldValue] = useState() // Want to try putting dream.id here so that it can referenced
   const [title, setTitle] = useState();
   const [keywords, setKeywords] = useState();
-  const [notes, setNotes] = useState();
   
+  const [notes, setNotes] = useState();
+
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
