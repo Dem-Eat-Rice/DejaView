@@ -21,7 +21,6 @@ function UserDreamList({ user }) {
   const [editDream, setEditDream] = useState(false);
   const [holdValue, setHoldValue] = useState() 
   const [title, setTitle] = useState();
-
   const [keywords, setKeywords] = useState();
 
   const [notes, setNotes] = useState();
