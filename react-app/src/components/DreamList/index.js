@@ -18,7 +18,7 @@ function UserDreamList({ user }) {
 
 
   const [deleteDream, setDeleteDream] = useState();
-  const [editDream, setEditDream] = useState(false); // Possibly create new state or array based off of length of "dreams" (state holding dreams)
+  const [editDream, setEditDream] = useState(false);
   const [holdValue, setHoldValue] = useState() 
   const [title, setTitle] = useState();
 
