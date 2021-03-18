@@ -23,7 +23,6 @@ function UserDreamList({ user }) {
   const [title, setTitle] = useState();
   const [keywords, setKeywords] = useState();
   const [notes, setNotes] = useState();
-
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
