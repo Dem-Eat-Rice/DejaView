@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Redirect, useHistory, useParams } from "react-router-dom";
-import { getCurrentUser } from "../../store/session";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { fetchSingleUserDream } from "../../store/users";
 
 
