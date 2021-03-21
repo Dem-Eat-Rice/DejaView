@@ -16,7 +16,7 @@ function HomePage() {
 
 
     useEffect(() => {
-        dispatch(getCurrentUser(user.id))
+        dispatch(getCurrentUser())
         dispatch(fetchUserDreams(user.id))
         
     }, [dispatch]) 
