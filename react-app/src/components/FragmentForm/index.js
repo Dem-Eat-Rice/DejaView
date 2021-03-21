@@ -83,7 +83,7 @@ function FragmentForm ({ user, dreamId }) {
                 value={description}
                 onChange={e => setDescription(e.target.value)}
                 rows="5" cols="35"
-                style={{"resize": "none"}, {"white-space": "pre-line"}}
+                style={{"resize": "none", "white-space": "pre-wrap"}}
                 ></textarea>
             </div>
             <div className="submit">
