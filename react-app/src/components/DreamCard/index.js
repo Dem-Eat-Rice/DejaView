@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-
+import { Link } from "react-router-dom";
 
 function DreamCard({ user, dream }) {
 
@@ -12,7 +10,7 @@ function DreamCard({ user, dream }) {
     const [deleteDream, setDeleteDream] = useState();
 
     useEffect(() => {
-        setDeleteDream();
+
     }, [deleteDream, title, keywords, notes])
 
     const deleteOnClick = async (e) => {
@@ -110,7 +108,7 @@ function DreamCard({ user, dream }) {
                     <h4>Notes: </h4>
                     <textarea
                         placeholder={dream.notes}
-                        onChange={(e) => setNotes(e.target.value)}
+                        onChange={(e) => setNotes(dream.notes, e.target.value)}
                         rows="5" cols="100"
                     />
                     <br />

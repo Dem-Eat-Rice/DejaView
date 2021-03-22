@@ -8,7 +8,7 @@ import "./DreamList.css";
 function UserDreamList({ user }) {
 
   const dispatch = useDispatch();
-  const dreams = useSelector(state => {
+  const dreamsList = useSelector(state => {
     return state.users
   })
 
@@ -23,10 +23,10 @@ function UserDreamList({ user }) {
 
   return (
     <div>
-      {dreams.map(dream => {
+      {dreamsList.map(dream => {
         return (
           <div className="dream-card_container">
-            <DreamCard user={user} dream={dream} />
+            <DreamCard user={user} dream={dream} dreamsList={dreamsList} />
           </div>
         )
       })}
