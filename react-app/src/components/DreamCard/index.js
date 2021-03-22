@@ -1,32 +1,24 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 function DreamCard({ user, dream }) {
+
+    const dispatch = useDispatch();
 
     const [title, setTitle] = useState();
     const [keywords, setKeywords] = useState();
     const [notes, setNotes] = useState();
     const [editDream, setEditDream] = useState();
-    const [deleteDream, setDeleteDream] = useState();
 
     useEffect(() => {
 
-    }, [deleteDream, title, keywords, notes])
+    }, [ title, keywords, notes])
 
-    const deleteOnClick = async (e) => {
-        e.preventDefault();
-        const confirmation = window.confirm("Are you sure you want to delete this dream?");
-        if (confirmation) {
-            setDeleteDream("");
-            await fetch(`/api/dreams/${e.target.value}`, {
-                method: "DELETE"
-            });
-        }
-    }
+
 
     const editOnClick = async (e) => {
         e.preventDefault();
-
         setEditDream(true);
     }
 
@@ -41,6 +33,7 @@ function DreamCard({ user, dream }) {
     }
 
     const cancelEditButtonClick = (e) => {
+        e.preventDefault();
         setEditDream(false)
     }
 
@@ -84,7 +77,6 @@ function DreamCard({ user, dream }) {
                     </p>
                 </div>
                 <button className="edit-button" onClick={editOnClick}>Edit</button>
-                <button value={dream.id} className="delete-button" onClick={deleteOnClick}>Delete</button>
             </div>
         )
     } else {
