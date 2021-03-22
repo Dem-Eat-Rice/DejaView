@@ -36,7 +36,7 @@ function UserDreamList({ user }) {
       {dreamsList.map(dream => {
         return (
           <div className="dream-card_container">
-            <DreamCard user={user} dream={dream} dreamsList={dreamsList} />
+            <DreamCard user={user} dream={dream} />
             <button value={dream.id} className="delete-button" onClick={deleteOnClick}>Delete</button>
           </div>
         )
