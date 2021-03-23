@@ -11,7 +11,7 @@ function UserDreamList({ user }) {
 
   const dreamsList = useSelector(state => {
     return state.users
-  })
+  });
 
   const [deleteDream, setDeleteDream] = useState(true);
 
@@ -20,24 +20,13 @@ function UserDreamList({ user }) {
     dispatch(fetchUserDreams(user.id))
   }, [dispatch, user.id, deleteDream]);
 
-  const deleteOnClick = async (e) => {
-    e.preventDefault();
-    const confirmation = window.confirm("Are you sure you want to delete this dream?");
-    if (confirmation) {
-        setDeleteDream("");
-        await fetch(`/api/dreams/${e.target.value}`, {
-            method: "DELETE"
-        });
-    }
-}
 
   return (
     <div>
       {dreamsList.map(dream => {
         return (
           <div className="dream-card_container">
-            <DreamCard user={user} dream={dream} />
-            <button value={dream.id} className="delete-button" onClick={deleteOnClick}>Delete</button>
+            <DreamCard user={user} dream={dream} setDeleteDream={setDeleteDream} />
           </div>
         )
       })}
