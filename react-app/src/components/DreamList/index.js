@@ -13,11 +13,12 @@ function UserDreamList({ user }) {
     return state.users
   });
 
-  const [deleteDream, setDeleteDream] = useState(true);
+  const [deleteDream, setDeleteDream] = useState();
 
 
   useEffect(() => {
     dispatch(fetchUserDreams(user.id))
+    setDeleteDream(false)
   }, [dispatch, user.id, deleteDream]);
 
 

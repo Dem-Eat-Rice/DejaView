@@ -60,7 +60,7 @@ function DreamCard({ user, dream, setDeleteDream }) {
         e.preventDefault();
         const confirmation = window.confirm("Are you sure you want to delete this dream?");
         if (confirmation) {
-            setDeleteDream("");
+            setDeleteDream(true);
             await fetch(`/api/dreams/${e.target.value}`, {
                 method: "DELETE"
             });
