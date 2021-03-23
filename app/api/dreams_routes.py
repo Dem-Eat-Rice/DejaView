@@ -14,7 +14,7 @@ def dreams():
 
 @dreams_routes.route("/", methods=["POST"])
 def post_a_dream():
-    form = DreamForm()  # need to create a form
+    form = DreamForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
@@ -25,6 +25,14 @@ def post_a_dream():
         db.session.commit()
         return new_dream.to_dict()
     return "Bad Data"
+
+
+@dreams_routes.route("/<int:id>")
+# @login_required
+def get_single_dream(id):
+    dream = Dream.query.get(id)
+
+    return dream.to_dict()
 
 
 @dreams_routes.route("/<int:id>", methods=["PUT"])
@@ -57,6 +65,6 @@ def delete_dreams(id):
 # @login_required
 def dream(id):
     fragments = Fragment.query.join(Dreams_Fragment).filter(
-            Dreams_Fragment.dream_id == id).all()
+        Dreams_Fragment.dream_id == id).all()
     frag = [fragment.to_dict() for fragment in fragments]
     return jsonify(frag)
