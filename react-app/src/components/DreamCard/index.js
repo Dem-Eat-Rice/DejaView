@@ -4,16 +4,14 @@ import { Link } from "react-router-dom";
 
 function DreamCard({ user, dream, setDeleteDream }) {
 
-    const dispatch = useDispatch();
-
     const [title, setTitle] = useState();
     const [keywords, setKeywords] = useState();
     const [notes, setNotes] = useState();
     const [editDream, setEditDream] = useState();
 
-    useEffect(() => {
-
-    }, [title, keywords, notes])
+    // useEffect(() => {
+    //     setTitle()
+    // }, [title])
 
 
 

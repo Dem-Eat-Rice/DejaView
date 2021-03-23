@@ -17,8 +17,8 @@ function UserDreamList({ user }) {
 
 
   useEffect(() => {
-    dispatch(fetchUserDreams(user.id))
-    setDeleteDream(false)
+    dispatch(fetchUserDreams(user.id));
+    setDeleteDream(false);
   }, [dispatch, user.id, deleteDream]);
 
 
