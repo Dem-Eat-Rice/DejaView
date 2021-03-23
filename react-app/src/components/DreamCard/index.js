@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import fetchSingleUserDream from "../../store/users";
 
 function DreamCard({ user, dream, setDeleteDream }) {
+
+    const dispatch = useDispatch();
 
     const [title, setTitle] = useState();
     const [keywords, setKeywords] = useState();
@@ -10,8 +13,8 @@ function DreamCard({ user, dream, setDeleteDream }) {
     const [editDream, setEditDream] = useState();
 
     useEffect(() => {
-        setTitle()
-    }, [title])
+        dispatch(fetchSingleUserDream(user.id, dream.id))
+    }, [user, dream])
 
 
 
