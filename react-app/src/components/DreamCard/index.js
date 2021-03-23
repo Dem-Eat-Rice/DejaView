@@ -13,7 +13,7 @@ function DreamCard({ user, dream }) {
 
     useEffect(() => {
 
-    }, [ title, keywords, notes])
+    }, [title, keywords, notes])
 
 
 
