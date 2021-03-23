@@ -22,14 +22,16 @@ function DreamCard({ user, dream, setDeleteDream }) {
         setEditDream(true);
     }
 
-    const cancelEditOnClick = (e) => {
-        if (editDream) {
-            if (e.target.type === "text" || e.target.type === "submit" || e.target.type === "textarea") {
-                return null;
-            } else {
-                setEditDream(false)
+    const cancelEditOnClick = () => {
+        document.addEventListener("click", (e) => {
+            if (editDream) {
+                if (e.target.type === "text" || e.target.type === "submit" || e.target.type === "textarea") {
+                    return null;
+                } else {
+                    setEditDream(false)
+                }
             }
-        }
+        })
     }
 
     const cancelEditButtonClick = (e) => {
