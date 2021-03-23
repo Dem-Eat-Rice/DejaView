@@ -9,9 +9,9 @@ function DreamCard({ user, dream, setDeleteDream }) {
     const [notes, setNotes] = useState();
     const [editDream, setEditDream] = useState();
 
-    // useEffect(() => {
-    //     setTitle()
-    // }, [title])
+    useEffect(() => {
+        setTitle()
+    }, [title])
 
 
 
@@ -112,7 +112,7 @@ function DreamCard({ user, dream, setDeleteDream }) {
                     <h4>Notes: </h4>
                     <textarea
                         placeholder={dream.notes}
-                        onChange={(e) => setNotes(dream.notes, e.target.value)}
+                        onChange={(e) => setNotes(e.target.value)}
                         rows="5" cols="100"
                     />
                     <br />
