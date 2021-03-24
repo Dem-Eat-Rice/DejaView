@@ -3,18 +3,20 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import fetchSingleUserDream from "../../store/users";
 
-function DreamCard({ user, dream, setDeleteDream }) {
+function DreamCard({ user, dream, setDeleteDream, key }) {
 
     const dispatch = useDispatch();
 
     const [title, setTitle] = useState();
     const [keywords, setKeywords] = useState();
     const [notes, setNotes] = useState();
-    const [editDream, setEditDream] = useState();
+    const [editDream, setEditDream] = useState(false);
 
     useEffect(() => {
-        dispatch(fetchSingleUserDream(user.id, dream.id))
-    }, [user, dream])
+        setTitle(title);
+        setKeywords(keywords);
+        setNotes(notes);
+    }, [editDream, dream, key])
 
 
 
@@ -119,8 +121,8 @@ function DreamCard({ user, dream, setDeleteDream }) {
                         rows="5" cols="100"
                     />
                     <br />
-                    <button value={dream.id} type="submit" onClick={saveOnClick}>Save</button>
                 </form>
+                <button value={dream.id} onClick={saveOnClick}>Save</button>
                 <button value={dream.id} onClick={cancelEditButtonClick}>Cancel</button>
             </div>
         )

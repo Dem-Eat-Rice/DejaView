@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUserDreams } from "../../store/users";
 import DreamCard from "../DreamCard";
+import fetchSingleUserDream from "../../store/users";
+
 import "./DreamList.css";
 
 
@@ -19,6 +21,7 @@ function UserDreamList({ user }) {
   useEffect(() => {
     dispatch(fetchUserDreams(user.id));
     setDeleteDream(false);
+    // dispatch(fetchSingleUserDream(user.id, dream.id))
   }, [dispatch, user.id, deleteDream]);
 
 
@@ -26,8 +29,8 @@ function UserDreamList({ user }) {
     <div>
       {dreamsList.map(dream => {
         return (
-          <div className="dream-card_container">
-            <DreamCard user={user} dream={dream} setDeleteDream={setDeleteDream} />
+          <div key={dream.id} className="dream-card_container">
+            <DreamCard key={dream.id} user={user} dream={dream} setDeleteDream={setDeleteDream} />
           </div>
         )
       })}

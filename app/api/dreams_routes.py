@@ -31,7 +31,6 @@ def post_a_dream():
 # @login_required
 def get_single_dream(id):
     dream = Dream.query.get(id)
-
     return dream.to_dict()
 
 
