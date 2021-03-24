@@ -27,9 +27,9 @@ function DreamCard({ user, dream, setDeleteDream, key }) {
 
     const cancelEditOnClick = () => {
         document.addEventListener("click", (e) => {
-            console.log(e.target.className)
+            console.log(e.target.className, e.target.type)
             if (editDream) {
-                if (e.target.type === "text" || e.target.type === "submit" || e.target.type === "textarea" || e.target.className === "dream-card" || e.target.className === "") {
+                if (e.target.type === "text" || e.target.type === "submit" || e.target.type === "textarea" || e.target.className === "") {
                     return null;
                 } else {
                     setEditDream(false)
