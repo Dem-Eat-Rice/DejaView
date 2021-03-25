@@ -5,6 +5,7 @@ import fetchSingleUserDream from "../../store/users";
 
 function DreamCard({ user, dream, setDeleteDream, key }) {
 
+    // const dispatch = useDispatch();
 
     const [title, setTitle] = useState();
     const [keywords, setKeywords] = useState();
