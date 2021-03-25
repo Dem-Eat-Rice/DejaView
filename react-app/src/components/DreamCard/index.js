@@ -100,6 +100,7 @@ function DreamCard({ user, dream, setDeleteDream, key }) {
             </div>
         )
     } else {
+        
         return (
             <div key={dream.id} onClick={cancelEditOnClick} className="dream-card">
                 <form>
