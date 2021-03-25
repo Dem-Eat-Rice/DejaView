@@ -1,5 +1,5 @@
 const SET_DREAM_FRAGMENTS = "SET_DREAM_FRAGMENTS";
-const SET_DREAM = "SET_DREAM";
+const SET_SINGLE_DREAM = "SET_SINGLE_DREAM";
 
 const setDreamFragments = (fragment) => {
     return {
@@ -8,9 +8,9 @@ const setDreamFragments = (fragment) => {
     }
 }
 
-const setDream = (dream) => {
+const setSingleDream = (dream) => {
     return {
-        type: SET_DREAM,
+        type: SET_SINGLE_DREAM,
         dream: dream
     }
 }
@@ -27,11 +27,11 @@ export const fetchDream = (dreamId) => {
     return async (dispatch) => {
         const response = await fetch(`/api/dreams/${dreamId}`);
         const dream = await response.json();
-        dispatch(setDream(dream));
+        dispatch(setSingleDream(dream));
     }
 }
 
-const initialState = [];
+const initialState = {};
 
 const reducer = (state=initialState, action) => {
     let newState;
@@ -39,8 +39,8 @@ const reducer = (state=initialState, action) => {
         case SET_DREAM_FRAGMENTS:
             newState = action.fragment;
             return newState;
-        case SET_DREAM:
-            newState = action.dream;
+        case SET_SINGLE_DREAM:
+            newState = {state, ...action.dream};
             return newState;
         default:
             return state;

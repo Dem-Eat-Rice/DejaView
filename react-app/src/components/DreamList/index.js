@@ -16,21 +16,33 @@ function UserDreamList({ user }) {
   });
 
   const [deleteDream, setDeleteDream] = useState();
+  const [editTitle, setEditTitle] = useState();
+  const [editKeywords, setEditKeywords] = useState();
+  const [editNotes, setEditNotes] = useState();
 
 
   useEffect(() => {
     dispatch(fetchUserDreams(user.id));
     setDeleteDream(false);
-    // dispatch(fetchSingleUserDream(user.id, dream.id))
-  }, [dispatch, user.id, deleteDream]);
+    setEditTitle(false);
+    setEditKeywords(false);
+    setEditNotes(false)
+  }, [dispatch, user.id, deleteDream, editTitle, editKeywords, editNotes]);
 
 
   return (
     <div>
       {dreamsList.map(dream => {
         return (
-          <div key={dream.id} className="dream-card_container">
-            <DreamCard key={dream.id} user={user} dream={dream} setDeleteDream={setDeleteDream} />
+          <div className="dream-card_container">
+            <DreamCard key={dream.id} 
+            user={user} 
+            dream={dream} 
+            setDeleteDream={setDeleteDream} 
+            setEditTitle={setEditTitle}
+            setEditKeywords={setEditKeywords}
+            setEditNotes={setEditNotes}
+            />
           </div>
         )
       })}

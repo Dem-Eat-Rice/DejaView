@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-// import fetchSingleUserDream from "../../store/users";
+import fetchDream from "../../store/dreams";
 
-function DreamCard({ user, dream, setDeleteDream, key }) {
+function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords, setEditNotes }) {
 
-    // const dispatch = useDispatch();
 
     const [title, setTitle] = useState();
     const [keywords, setKeywords] = useState();
@@ -16,7 +15,7 @@ function DreamCard({ user, dream, setDeleteDream, key }) {
         setTitle(title);
         setKeywords(keywords);
         setNotes(notes);
-    }, [editDream, dream, key])
+    }, [editDream, dream])
 
 
 
@@ -60,6 +59,10 @@ function DreamCard({ user, dream, setDeleteDream, key }) {
         setKeywords(keywords);
         setNotes(notes);
         setEditDream(false);
+
+        setEditTitle(true);
+        setEditKeywords(true);
+        setEditNotes(true)
     }
 
     const deleteOnClick = async (e) => {
