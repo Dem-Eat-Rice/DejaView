@@ -36,7 +36,7 @@ function UserDreamList({ user }) {
           <div className="dream-card_container">
             <DreamCard key={dream.id} 
             user={user} 
-            dream={dream} 
+            dream={dream}
             setDeleteDream={setDeleteDream} 
             setEditTitle={setEditTitle}
             setEditKeywords={setEditKeywords}
