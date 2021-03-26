@@ -86,7 +86,7 @@ function FragmentForm ({ user, dreamId }) {
                 style={{"resize": "none", "white-space": "pre-wrap"}}
                 ></textarea>
             </div>
-            <div className="submit">
+            <div className="submit-button">
                 <button type="submit">Save</button>
             </div>
         </form>
