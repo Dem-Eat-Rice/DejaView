@@ -47,44 +47,18 @@ function FragmentForm ({ user, dreamId }) {
             <div className="title">
                 <label>Title</label>
                 <br />
-                <input
-                    type="text"
-                    name="title"
-                    value={title}
-                    onChange={e => setTitle(e.target.value)}
-                ></input>
             </div>
             <div className="emotions">
                 <label>Keywords</label>
                 <br />
-                <input
-                    type="text"
-                    name="emotions"
-                    value={emotions}
-                    onChange={e => setEmotions(e.target.value)}
-                ></input>
             </div>
             <div className="setting">
                 <label>Keywords</label>
                 <br />
-                <input
-                    type="text"
-                    name="emotions"
-                    value={setting}
-                    onChange={e => setSetting(e.target.value)}
-                ></input>
             </div>
             <div className="description">
                 <label>Notes...</label>
                 <br />
-                <textarea
-                type="text"
-                name="description"
-                value={description}
-                onChange={e => setDescription(e.target.value)}
-                rows="5" cols="35"
-                style={{"resize": "none", "white-space": "pre-wrap"}}
-                ></textarea>
             </div>
             <div className="submit-button">
                 <button type="submit">Save</button>
