@@ -6,6 +6,14 @@
     color: white;
 }
 
+.submit-button_dream-form button:hover{
+    margin: 5px;
+    background-color: rgba(99, 43, 253, 0.856);
+    border-top-color: white;
+    border-left-color: white;
+    color: white;
+}
+
 .title input,
 .keywords input {
     width: 50%;

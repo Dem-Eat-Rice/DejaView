@@ -5,7 +5,7 @@ h2, h4 {
 .dream-title,
 .dream-keywords,
 .dream-notes {
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 .dream-keywords,
@@ -37,8 +37,7 @@ h2, h4 {
     display: flex;
 }
 
-.dream-keywords h3,
-.dream-keywords p {
+.dream-keywords h3 {
     padding: 5px;
 }
 
@@ -59,6 +58,17 @@ h2, h4 {
 .delete-button {
     margin: 5px;
     background-color: rgb(184, 60, 241);
+    border-top-color: white;
+    border-left-color: white;
+    color: white;
+}
+
+.edit-button:hover,
+.save-button:hover,
+.cancel-button:hover,
+.delete-button:hover {
+    margin: 5px;
+    background-color: rgba(99, 43, 253, 0.856);
     border-top-color: white;
     border-left-color: white;
     color: white;
