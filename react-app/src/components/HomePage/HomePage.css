@@ -31,6 +31,10 @@ h2 {
     margin: auto;
 }
 
+.dream-form:hover {
+    background-color: rgba(99, 43, 253, 0.856);
+}
+
 .dream-button {
     display: flex;
     justify-content: flex-end;
@@ -47,6 +51,10 @@ h2 {
     width: 50vw;
     height: 100px;
     display: table;
+}
+
+.dream-card_container:hover {
+    background-color: rgb(99, 43, 253, 0.856)
 }
 
 .dream-card button {
@@ -98,10 +106,14 @@ h2 {
     margin: 5px;
     background-color: rgba(131, 29, 199, 0.9);
     position: fixed;
-    margin-left: 70vw;
-    margin-bottom: 80vw;
+    margin-left: 65vw;
+    margin-top: 10px;
     color: whitesmoke;
     font-size: 20px;
+}
+
+.tips:hover {
+    background-color: rgba(99, 43, 253, 0.856);
 }
 
 .tips li {
