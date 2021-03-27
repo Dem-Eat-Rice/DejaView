@@ -1,6 +1,6 @@
 import React from "react";
 
-function Emotions() {
+function Emotions({ emotions, setEmotions }) {
     return (
         <div className="emotions">
             <label>Keywords</label>

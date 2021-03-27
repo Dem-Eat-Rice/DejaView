@@ -1,6 +1,6 @@
 import React from "react";
 
-function Title() {
+function Title({ title, setTitle }) {
     return (
         <div className="title">
             <label>Title</label>

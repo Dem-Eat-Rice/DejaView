@@ -1,6 +1,6 @@
 import React from "react";
 
-function Setting() {
+function Setting({ setting, setSetting }) {
     return (
         <div className="setting">
             <label>Keywords</label>

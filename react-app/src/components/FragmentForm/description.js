@@ -1,6 +1,6 @@
 import React from "react";
 
-function Description() {
+function Description({ description, setDescription }) {
     return (
         <div className="description">
             <label>Notes...</label>
