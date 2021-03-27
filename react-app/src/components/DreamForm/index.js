@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchSingleUserDream } from "../../store/users";
+import "./DreamForm.css";
 
 
 const createDream = async (title, keywords, notes, dreamer_id) => {
@@ -81,8 +82,8 @@ function DreamForm({ user }) {
                 style={{"resize": "none"}, {"white-space": "pre-line"}}
                 ></textarea>
             </div>
-            <div className="submit">
-                <button type="submit">Save Dream</button>
+            <div className="submit-button_dream-form">
+                <button type="submit">Record Dream</button>
             </div>
         </form>
     )
