@@ -10,7 +10,7 @@
     box-shadow:
       0 0 10px 2px #fff,  /* inner white */
       0 0 30px 20px #f0f, /* middle magenta */
-      0 0 50px 35px cyan; /* outer cyan */
+      0 0 50px 35px rgb(0, 204, 255); /* outer cyan */
 }
 
 .title input,
