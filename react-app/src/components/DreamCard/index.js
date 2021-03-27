@@ -84,20 +84,25 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
                     </Link>
                     </h2>
                 </div>
-                <div className="dream-keywords">
-                    <h4>Keywords: </h4>
-                    <p style={{ "whiteSpace": "pre-wrap" }}>
-                        {dream.keywords}
-                    </p>
+                <div className="dream-card_body">
+                    <div className="dream-keywords">
+                        <h3>Keywords: </h3>
+                        <p style={{ "whiteSpace": "pre-wrap" }}>
+                            {dream.keywords}
+                        </p>
+                    </div>
+                    <div className="dream-notes">
+                        <h3>Notes: </h3>
+                        <p style={{ "whiteSpace": "pre-wrap" }}>
+                            {dream.notes}
+                        </p>
+                    </div>
+
                 </div>
-                <div className="dream-notes">
-                    <h4>Notes: </h4>
-                    <p style={{ "whiteSpace": "pre-wrap" }}>
-                        {dream.notes}
-                    </p>
+                <div className="dream-card_buttons">
+                    <button className="edit-button" onClick={editOnClick}>Edit</button>
+                    <button value={dream.id} className="delete-button" onClick={deleteOnClick}>Delete</button>
                 </div>
-                <button className="edit-button" onClick={editOnClick}>Edit</button>
-                <button value={dream.id} className="delete-button" onClick={deleteOnClick}>Delete</button>
             </div>
         )
     } else {
@@ -112,13 +117,13 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
                             onChange={(e) => setTitle(e.target.value)}
                         ></input>
                     </h2>
-                    <h4>Keywords: </h4>
+                    <h3>Keywords: </h3>
                     <textarea
                         placeholder={dream.keywords}
                         onChange={(e) => setKeywords(e.target.value)}
                         rows="3" cols="50"
                     />
-                    <h4>Notes: </h4>
+                    <h3>Notes: </h3>
                     <textarea
                         placeholder={dream.notes}
                         onChange={(e) => setNotes(e.target.value)}
@@ -126,8 +131,10 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
                     />
                     <br />
                 </form>
-                <button value={dream.id} onClick={saveOnClick}>Save</button>
-                <button value={dream.id} onClick={cancelEditButtonClick}>Cancel</button>
+                <div classname="dream-card_buttons">
+                    <button value={dream.id} className="save-button" onClick={saveOnClick}>Save</button>
+                    <button value={dream.id} className="cancel-button" onClick={cancelEditButtonClick}>Cancel</button>
+                </div>
             </div>
         )
     }

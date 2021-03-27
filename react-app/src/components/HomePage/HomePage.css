@@ -43,7 +43,7 @@ h2 {
     border-radius: 5px;
     margin: 5px;
     background-color: rgba(131, 29, 199, 0.7);
-    width: 60vw;
+    width: 50vw;
     height: 100px;
     display: table;
 }
@@ -56,8 +56,12 @@ h2 {
 .dream-card p {
     margin: 0px;
     margin-bottom: 5px;
-    font-size: 14px;
+    font-size: 16px;
     /* display: table-column; */
+}
+
+.dream-keywords p {
+    font-size: large;
 }
 
 .dream-card h4 > p {

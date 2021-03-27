@@ -1,3 +1,64 @@
 h2, h4 {
     margin: 0px;
 }
+
+.dream-title,
+.dream-keywords,
+.dream-notes {
+    padding-left: 10px;
+}
+
+.dream-keywords,
+.dream-notes {
+    width: 50%;
+    margin: 10px;
+    border: 4px solid rgba(255, 255, 255, 0.226);
+    background-color: rgba(131, 29, 199, 0.35);
+    border-radius: 5px;
+}
+
+.dream-card > form input,
+.dream-card > form textarea {
+    width: 50%;
+    margin: 10px;
+    border: 4px solid rgba(255, 255, 255, 0.226);
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 5px;
+}
+
+.dream-card > form input::placeholder,
+.dream-card > form textarea::placeholder {
+    color: white;
+} 
+
+.dream-keywords {
+    display: flex;
+}
+
+.dream-keywords h3,
+.dream-keywords p {
+    padding: 5px;
+}
+
+.dream-keywords h3,
+.dream-notes h3 {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.edit-button,
+.delete-button,
+.save-button,
+.cancel-button {
+    margin: 5px;
+}
+
+.dream-card_buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dream-card_body {
+    display: flex;
+    justify-content: space-evenly;
+}
