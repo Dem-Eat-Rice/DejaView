@@ -14,3 +14,5 @@ function Setting() {
         </div>
     )
 }
+
+export default Setting;

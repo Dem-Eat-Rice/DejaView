@@ -14,3 +14,5 @@ function Emotions() {
         </div>
     )
 }
+
+export default Emotions;
