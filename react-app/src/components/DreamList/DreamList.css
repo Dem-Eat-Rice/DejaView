@@ -48,14 +48,7 @@ h2, h4 {
 
 .edit-button,
 .save-button,
-.cancel-button {
-    margin: 5px;
-    background-color: rgb(184, 60, 241);
-    border-top-color: white;
-    border-left-color: white;
-    color: white;
-}
-
+.cancel-button,
 .delete-button {
     margin: 5px;
     background-color: rgb(184, 60, 241);
