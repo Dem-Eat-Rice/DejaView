@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { getDreamFragments } from "../../store/dreams";
 import { useDispatch } from "react-redux";
+import Title from "./FormComponents/title";
+import Emotions from "./FormComponents/emotions";
+import Setting from "./FormComponents/setting";
+import Description from "./FormComponents/description";
 
 
 const createFragment = async (title, emotions, setting, description, user_id) => {
