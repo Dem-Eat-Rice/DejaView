@@ -77,10 +77,13 @@ h2, h4 {
 .dream-card_buttons {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
+    margin-right: 15px;
 }
 
 .dream-card_body {
     display: flex;
     justify-content: space-evenly;
+    padding-left: 10px;
+    padding-right: 10px;
 }
