@@ -30,10 +30,10 @@ h2 {
     text-align: center;
     margin: auto;
 }
-
+/* 
 .dream-form:hover {
     background-color: rgba(99, 43, 253, 0.856);
-}
+} */
 
 .dream-button {
     display: flex;
@@ -53,9 +53,9 @@ h2 {
     display: table;
 }
 
-.dream-card_container:hover {
+/* .dream-card_container:hover {
     background-color: rgb(99, 43, 253, 0.856)
-}
+} */
 
 .dream-card button {
     display: flex;
@@ -73,6 +73,11 @@ h2 {
     font-size: large;
     padding: 5px;
     width: 100%;
+}
+
+.dream-keywords:hover,
+.dream-notes:hover {
+    background-color: rgb(99, 43, 253, 0.856)
 }
 
 .dream-card h4 > p {
@@ -110,11 +115,13 @@ h2 {
     margin-top: 10px;
     color: whitesmoke;
     font-size: 20px;
+    box-shadow:
+      0 0 20px 5px #fff,  /* inner white */
+      0 0 40px 20px #f0f, /* middle magenta */
+      0 0 60px 35px rgb(89, 0, 255); /* outer cyan */
 }
 
-.tips:hover {
-    background-color: rgba(99, 43, 253, 0.856);
-}
+.tips:hover {}
 
 .tips li {
     margin-right: 25px;

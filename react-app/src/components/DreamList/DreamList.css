@@ -67,11 +67,10 @@ h2, h4 {
 .save-button:hover,
 .cancel-button:hover,
 .delete-button:hover {
-    margin: 5px;
-    background-color: rgba(99, 43, 253, 0.856);
-    border-top-color: white;
-    border-left-color: white;
-    color: white;
+    box-shadow:
+      0 0 20px 2px #fff,  /* inner white */
+      0 0 40px 20px rgb(89, 0, 255), /* middle magenta */
+      0 0 20px 5px #f0f; /* outer cyan */
 }
 
 .dream-card_buttons {

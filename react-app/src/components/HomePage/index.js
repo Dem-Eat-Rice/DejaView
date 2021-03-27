@@ -33,9 +33,9 @@ function HomePage() {
                 <ul style={{ "overflow-wrap": "break-word" }}>
                     <li> Try to be in the same position that you woke up in </li>
                     <br />
-                    <li> Try to recall any emotions and images </li>
+                    <li> Try to recall any emotions and images first </li>
                     <br />
-                    <li style={{ "font-weight": "bold" }}> Use this app to save what you have! </li>
+                    <li style={{ "font-weight": "bold" }}> Use this app to save what you remember! </li>
                 </ul>
             </div>
             <div className="dream-list">
