@@ -12,8 +12,9 @@ h2, h4 {
 .dream-notes {
     width: 50%;
     margin: 10px;
+    margin-top: 50px;
     border: 4px solid rgba(255, 255, 255, 0.226);
-    background-color: rgba(131, 29, 199, 0.35);
+    background-color: rgba(255, 255, 255, 0.35);
     border-radius: 5px;
 }
 
@@ -49,7 +50,7 @@ h2, h4 {
 }
 
 .dream-notes p {
-    padding-left: 55px;
+    padding: 5px;
 }
 
 .edit-button,
