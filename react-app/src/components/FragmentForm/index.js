@@ -48,10 +48,10 @@ function FragmentForm ({ user, dreamId }) {
 
     return (
         <form onSubmit={onSubmit}>
-
-
-
-
+            <Title title={title} setTitle={setTitle}/>
+            <Emotions emotions={emotions} setEmotions={setEmotions} />
+            <Setting setting={setting} setSetting={setSetting} />
+            <Description description={description} setDescription={setDescription} />
             <div className="submit-button">
                 <button type="submit">Save</button>
             </div>
