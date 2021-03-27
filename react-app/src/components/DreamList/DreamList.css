@@ -67,6 +67,7 @@ h2, h4 {
 .dream-card_buttons {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 3px;
 }
 
 .dream-card_body {
