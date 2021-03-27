@@ -7,11 +7,7 @@ const LogoutButton = ({setAuthenticated}) => {
     setAuthenticated(false);
   };
 
-  return <div>
-    <a onClick={onLogout}>
-      <img src={"https://icons8.com/icon/52533/icon"} />
-    </a>
-    </div>;
+  return <button onClick={onLogout}>Logout</button>;
 };
 
 export default LogoutButton;
