@@ -68,9 +68,9 @@ h2, h4 {
 .cancel-button:hover,
 .delete-button:hover {
     box-shadow:
-      0 0 20px 2px #fff,  /* inner white */
-      0 0 40px 20px rgb(89, 0, 255), /* middle magenta */
-      0 0 20px 5px #f0f; /* outer cyan */
+      0 0 4px 1px #fff,  /* inner white */
+      0 0 15px 5px rgb(153, 0, 255), /* middle magenta */
+      0 0 25px 15px rgb(89, 0, 255); /* outer cyan */
 }
 
 .dream-card_buttons {
@@ -85,4 +85,11 @@ h2, h4 {
     justify-content: space-evenly;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.dream-card:hover {
+    box-shadow:
+      0 0 4px 1px #fff,  /* inner white */
+      0 0 15px 5px rgb(153, 0, 255), /* middle magenta */
+      0 0 25px 15px rgb(89, 0, 255); /* outer cyan */
 }
