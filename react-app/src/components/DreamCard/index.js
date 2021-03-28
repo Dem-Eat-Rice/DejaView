@@ -84,15 +84,17 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
                     </Link>
                     </h2>
                 </div>
+                <div className="sub-titles">
+                    <h3>Keywords </h3>
+                    <h3>Notes </h3>
+                </div>
                 <div className="dream-card_body">
-                        <h3>Keywords: </h3>
                     <div className="dream-keywords">
                         <p style={{ "whiteSpace": "pre-wrap" }}>
                             {dream.keywords}
                         </p>
                     </div>
                     <div className="vert-line"></div>
-                        <h3>Notes: </h3>
                     <div className="dream-notes">
                         <p style={{ "whiteSpace": "pre-wrap" }}>
                             {dream.notes}
