@@ -23,11 +23,6 @@ function HomePage() {
         <div className="home-container">
             <h1>Hello {user.name}...</h1>
             <h2>QuickStart</h2>
-            <div className="page-body">
-                <div className="dream-form">
-                    <DreamForm className="homepage-form" user={user} />
-                </div>
-            </div>
             <div className="tips">
                 <h2>Tips</h2>
                 <ul style={{ "overflow-wrap": "break-word" }}>
@@ -37,6 +32,11 @@ function HomePage() {
                     <br />
                     <li style={{ "font-weight": "bold" }}> Use this app to save what you remember! </li>
                 </ul>
+            </div>
+            <div className="page-body">
+                <div className="dream-form">
+                    <DreamForm className="homepage-form" user={user} />
+                </div>
             </div>
             <div className="dream-list">
                 <h2>Dream Collection:</h2>

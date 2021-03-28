@@ -22,7 +22,7 @@ h2 {
 .dream-form {
     border: 2px solid white;
     background-color: rgba(131, 29, 199, 0.7);
-    border-radius: 5px;
+    border-radius: 20px;
     width: 300px;
     height: 280px;
     display: flex;
@@ -47,7 +47,7 @@ h2 {
 
 .dream-card_container {
     border: 2px solid rgb(255, 255, 255, 0.9);
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 5px;
     margin-bottom: 10px;
     background-color: rgba(131, 29, 199, 0.7);
@@ -107,15 +107,16 @@ h2 {
 .tips {
     word-wrap: normal;
     max-height: 100vw;
-    height: 300px;
-    width: 350px;
+    height: 345px;
+    width: 345px;
     border: 2px solid rgb(255, 255, 255, 0.9);
-    border-radius: 5px;
+    border-radius: 50%;
     margin: 5px;
+    margin-right: 150px;
+    margin-top: 90px;
     background-color: rgba(131, 29, 199, 0.9);
     position: fixed;
-    margin-left: 65vw;
-    margin-top: 10px;
+    margin-left: 66.5%;
     color: whitesmoke;
     font-size: 20px;
     box-shadow:
@@ -124,14 +125,14 @@ h2 {
       0 0 60px 35px rgb(89, 0, 255); /* outer cyan */
 }
 
-.tips:hover {}
-
 .tips li {
     margin-right: 25px;
+    font-size: 18px;
 }
 
-.tips h2 {
-    margin-top: 5px;
+.tips h2,
+.tips li {
+    margin-top: 15px;
 }
 
 .dream-list > h2 {
@@ -156,5 +157,10 @@ h2 a {
 
 textarea {
     resize: none;
+}
+
+.tips ul {
+    margin-top: 40px;
+    padding-left: 65px;
 }
 
