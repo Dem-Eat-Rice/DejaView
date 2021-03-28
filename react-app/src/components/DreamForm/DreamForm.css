@@ -4,6 +4,7 @@
     border-top-color: white;
     border-left-color: white;
     color: white;
+    border-radius: 5px;
 }
 
 .submit-button_dream-form button:hover{

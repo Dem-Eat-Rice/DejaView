@@ -61,6 +61,7 @@ h2, h4 {
     border-top-color: white;
     border-left-color: white;
     color: white;
+    border-radius: 5px;
 }
 
 .edit-button:hover,
