@@ -10,6 +10,7 @@ h2, h4 {
 
 .dream-keywords,
 .dream-notes {
+    display: inline-block;
     width: 50%;
     margin: 10px;
     margin-top: 50px;
@@ -104,4 +105,12 @@ h2, h4 {
       0 0 4px 1px #fff,  /* inner white */
       0 0 15px 5px rgb(153, 0, 255), /* middle magenta */
       0 0 25px 15px rgb(89, 0, 255); /* outer cyan */
+}
+
+.vert-line {
+    border-left: 4px solid rgb(93, 48, 255);
+    border-radius: 70%;
+    margin-right: 10px;
+    margin-top: 25px;
+    display: inline-block;
 }
