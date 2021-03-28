@@ -74,6 +74,15 @@ h2, h4 {
       0 0 25px 15px rgb(89, 0, 255); /* outer cyan */
 }
 
+.save-button,
+.cancel-button {
+    margin-left: 10px;
+}
+
+.cancel-button {
+    margin-bottom: 5px;
+}
+
 .dream-card_buttons {
     display: flex;
     justify-content: flex-end;
