@@ -53,6 +53,8 @@ h2, h4 {
 }
 
 .edit-button,
+.save-button,
+.cancel-button,
 .delete-button {
     display: flex;
     justify-content: flex-end;
@@ -63,22 +65,14 @@ h2, h4 {
     border-left-color: white;
     color: white;
     border-radius: 5px;
-}
-
-.save-button,
-.cancel-button {
-    margin: 5px;
-    background-color: rgb(184, 60, 241);
-    border-top-color: white;
-    border-left-color: white;
-    color: white;
-    border-radius: 5px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .edit-button:hover,
 .save-button:hover,
 .cancel-button:hover,
 .delete-button:hover {
+    background-color: rgb(89, 0, 255);;
     box-shadow:
       0 0 4px 1px #fff,  /* inner white */
       0 0 15px 5px rgb(153, 0, 255), /* middle magenta */

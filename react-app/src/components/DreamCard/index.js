@@ -131,7 +131,7 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
                     />
                     <br />
                 </form>
-                <div classname="dream-card_buttons">
+                <div className="dream-card_buttons">
                     <button value={dream.id} type="submit" className="save-button" onClick={saveOnClick}>Save</button>
                     <button value={dream.id} className="cancel-button" onClick={cancelEditButtonClick}>Cancel</button>
                 </div>
