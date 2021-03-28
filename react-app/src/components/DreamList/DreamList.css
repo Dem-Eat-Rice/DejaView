@@ -53,9 +53,20 @@ h2, h4 {
 }
 
 .edit-button,
-.save-button,
-.cancel-button,
 .delete-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+    margin: 5px;
+    background-color: rgb(184, 60, 241);
+    border-top-color: white;
+    border-left-color: white;
+    color: white;
+    border-radius: 5px;
+}
+
+.save-button,
+.cancel-button {
     margin: 5px;
     background-color: rgb(184, 60, 241);
     border-top-color: white;
@@ -74,13 +85,10 @@ h2, h4 {
       0 0 25px 15px rgb(89, 0, 255); /* outer cyan */
 }
 
-.save-button,
-.cancel-button {
-    margin-left: 10px;
-}
+
 
 .cancel-button {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 
 .dream-card_buttons {

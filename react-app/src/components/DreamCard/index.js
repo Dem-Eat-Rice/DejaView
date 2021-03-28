@@ -130,11 +130,11 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
                         rows="5" cols="100"
                     />
                     <br />
-                    <div classname="dream-card_buttons">
-                        <button value={dream.id} type="submit" className="save-button" onClick={saveOnClick}>Save</button>
-                        <button value={dream.id} className="cancel-button" onClick={cancelEditButtonClick}>Cancel</button>
-                    </div>
                 </form>
+                <div classname="dream-card_buttons">
+                    <button value={dream.id} type="submit" className="save-button" onClick={saveOnClick}>Save</button>
+                    <button value={dream.id} className="cancel-button" onClick={cancelEditButtonClick}>Cancel</button>
+                </div>
             </div>
         )
     }
