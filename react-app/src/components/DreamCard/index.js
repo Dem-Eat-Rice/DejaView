@@ -26,7 +26,7 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
         document.addEventListener("click", (e) => {
             console.log(e.target.className, e.target.type)
             if (editDream) {
-                if (e.target.type === "text" || e.target.type === "submit" || e.target.type === "textarea" || e.target.className === "") {
+                if (e.target.type === "text" || e.target.type === "submit" || e.target.type === "textarea" || !e.target.className) {
                     return null;
                 } else {
                     setEditDream(false)

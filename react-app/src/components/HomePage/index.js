@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../store/session";
-import DreamCard from "../DreamCard";
 import DreamForm from "../DreamForm";
 import DreamList from "../DreamList";
 import "./HomePage.css";
