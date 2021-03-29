@@ -21,7 +21,11 @@ function HomePage() {
 
     return (
         <div className="home-container">
-            <h1>Hello {user.name}...</h1>
+            <div className="greeting">
+                <h1>
+                  Welcome {user.name}...
+                </h1>
+            </div>
             <h2>QuickStart</h2>
             <div className="tips">
                 <h2>Tips</h2>
