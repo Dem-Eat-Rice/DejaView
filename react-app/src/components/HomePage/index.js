@@ -21,9 +21,10 @@ function HomePage() {
 
     return (
         <div className="home-container">
+            <div style={{ "height": "50px"}}></div>
             <div className="greeting">
                 <h1>
-                  Welcome {user.name}...
+                  {user.name}
                 </h1>
             </div>
             <h2>QuickStart</h2>
