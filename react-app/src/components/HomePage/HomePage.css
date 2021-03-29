@@ -21,7 +21,7 @@ h2 {
 
 .dream-form {
     border: 2px solid white;
-    background-color: rgba(131, 29, 199, 0.7);
+    background-color: rgba(138, 30, 211, 0.75);
     border-radius: 20px;
     height: 100%;
     display: flex;
@@ -31,6 +31,7 @@ h2 {
 }
 
 .dream-form:hover {
+    background-color: rgba(125, 20, 196, 0.881);
     box-shadow:
     0 0 4px 1px #fff,
     0 0 15px 5px rgb(153, 0, 255),
@@ -102,8 +103,8 @@ h2 {
 .tips {
     word-wrap: normal;
     max-height: 100vw;
-    height: 355px;
-    width: 355px;
+    height: 360px;
+    width: 360px;
     border: 2px solid rgb(255, 255, 255, 0.9);
     border-radius: 50%;
     margin: 5px;
@@ -118,6 +119,10 @@ h2 {
       0 0 20px 5px #fff,  
       0 0 40px 20px #f0f, 
       0 0 60px 35px rgb(89, 0, 255); 
+}
+
+.tips:hover {
+    background-color: rgba(131, 29, 199, 0.955);
 }
 
 .tips li {
@@ -175,12 +180,6 @@ textarea {
     0 0 25px 5px rgb(89, 0, 255), 
     0 0 25px 15px rgb(89, 0, 255); 
 }
-
-.dream-card form:hover {
-    background-color: rgba(110, 8, 179, 0.801);
-
-}
-
 
 button {
     font-size: 15px;
