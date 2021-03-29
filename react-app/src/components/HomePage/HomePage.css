@@ -102,8 +102,8 @@ h2 {
 .tips {
     word-wrap: normal;
     max-height: 100vw;
-    height: 345px;
-    width: 345px;
+    height: 355px;
+    width: 355px;
     border: 2px solid rgb(255, 255, 255, 0.9);
     border-radius: 50%;
     margin: 5px;
@@ -122,7 +122,7 @@ h2 {
 
 .tips li {
     margin-right: 25px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .tips h2,
@@ -169,10 +169,16 @@ textarea {
 }
 
 .dream-card:hover {
+    background-color: rgba(110, 8, 179, 0.6);
     box-shadow:
-    0 0 4px 1px #fff,
-    0 0 15px 5px rgb(153, 0, 255), 
+    0 0 12px 1px #fff,
+    0 0 25px 5px rgb(89, 0, 255), 
     0 0 25px 15px rgb(89, 0, 255); 
+}
+
+.dream-card form:hover {
+    background-color: rgba(110, 8, 179, 0.801);
+
 }
 
 
