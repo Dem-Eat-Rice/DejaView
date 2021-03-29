@@ -32,9 +32,9 @@ h2 {
 
 .dream-form:hover {
     box-shadow:
-    0 0 4px 1px #fff,  /* inner white */
-    0 0 15px 5px rgb(153, 0, 255), /* middle magenta */
-    0 0 25px 15px rgb(89, 0, 255); /* outer cyan */
+    0 0 4px 1px #fff,
+    0 0 15px 5px rgb(153, 0, 255),
+    0 0 25px 15px rgb(89, 0, 255); 
 }
 
 

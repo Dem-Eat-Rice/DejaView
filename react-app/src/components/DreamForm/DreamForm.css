@@ -10,9 +10,9 @@
 
 .submit-button_dream-form button:hover{
     box-shadow:
-      0 0 10px 2px #fff,  /* inner white */
-      0 0 30px 20px #f0f, /* middle magenta */
-      0 0 50px 35px rgb(0, 204, 255); /* outer cyan */
+      0 0 10px 2px #fff,
+      0 0 30px 20px #f0f, 
+      0 0 50px 35px rgb(0, 204, 255); 
 }
 
 .title input,
