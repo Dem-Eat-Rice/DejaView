@@ -79,9 +79,13 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
             <div className="dream-card">
                 <div className="dream-title">
                     <h2>
-                    <Link to={`/users/${user.id}/dreams/${dream.id}`}>
+                    {dream.title !== "" ? <Link to={`/users/${user.id}/dreams/${dream.id}`}>
                         {dream.title}
                     </Link>
+                    :
+                    <Link to={`/users/${user.id}/dreams/${dream.id}`}>
+                        {dream.created_at}
+                    </Link>}
                     </h2>
                 </div>
                 <div className="sub-titles">

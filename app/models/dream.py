@@ -25,5 +25,6 @@ class Dream(db.Model):
             'title': self.title,
             'keywords': self.keywords,
             'notes': self.notes,
-            'dreamer_id': self.dreamer_id
+            'dreamer_id': self.dreamer_id,
+            'created_at': self.created_at
         }
