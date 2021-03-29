@@ -42,13 +42,11 @@ a h1:hover {
 .page {
     display: absolute;
     display: flex;
-    /* background-color: ; */
     width: 98vw;
 }
 
 .home h1 {
     margin: 0px;
-    margin-top: 5px;
     margin-left: 5px;
     font-size: 40px;
     color: blueviolet;
@@ -61,4 +59,8 @@ a h1:hover {
 
 nav button {
     margin-top: 20px;
+}
+
+.active {
+    /* text-decoration: none; */
 }
