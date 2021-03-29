@@ -56,7 +56,6 @@ h2 {
     margin: 0px;
     margin-bottom: 5px;
     font-size: 16px;
-    /* display: table-column; */
 }
 
 .dream-keywords p {
@@ -79,7 +78,6 @@ h2 {
     display: flex;
     flex-flow: column;
     margin: auto;
-    /* align-content: center; */
 }
 
 .dream-list {
@@ -137,7 +135,6 @@ h2 a {
 }
 
 .home-container {
-    /* height: 100vw; */
     color: whitesmoke;
     width: 98.2vw;
     background: url("https://img.wallpapersafari.com/desktop/1920/1080/64/53/PM0xVJ.jpg") no-repeat center center fixed; 
@@ -175,8 +172,7 @@ textarea {
 
 .greeting {
     position: absolute;
-    /* margin: auto; */
-    margin-top: 130px;
+    margin-top: 125px;
     margin-left: 275px;
     padding: 10px;  
     width: fit-content;
