@@ -175,8 +175,9 @@ textarea {
 
 .greeting {
     position: absolute;
-    margin-top: 120px;
-    margin-left: 250px;
+    /* margin: auto; */
+    margin-top: 140px;
+    margin-left: 275px;
     padding: 10px;  
     width: fit-content;
     height: fit-content;
@@ -185,7 +186,7 @@ textarea {
 }
 
 .greeting h1 {
-    margin: 5px 50px;
+    margin: 1px 20px;
     padding-right: 5px;
 }
 

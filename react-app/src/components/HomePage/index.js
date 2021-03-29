@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../store/session";
+import DreamCard from "../DreamCard";
 import DreamForm from "../DreamForm";
 import DreamList from "../DreamList";
 import "./HomePage.css";
@@ -24,7 +25,7 @@ function HomePage() {
             <div style={{ "height": "50px"}}></div>
             <div className="greeting">
                 <h1>
-                  {user.name}
+                {user.name}
                 </h1>
             </div>
             <h2>QuickStart</h2>
