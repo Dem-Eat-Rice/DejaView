@@ -122,18 +122,25 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
                             id={`${dream.id}`}
                             placeholder={dream.title}
                             onChange={(e) => setTitle(e.target.value)}
+                            onFocus={(e) => e.target.placeholder = ""}
+                            onBlur={(e) => e.target.placeholder = dream.title}
                         ></input>
                     </h2>
                     <h3>Keywords: </h3>
                     <textarea
                         placeholder={dream.keywords}
                         onChange={(e) => setKeywords(e.target.value)}
+                        onFocus={(e) => e.target.placeholder = ""}
+                        onBlur={(e) => e.target.placeholder = dream.title}
                         rows="3" cols="50"
+
                     />
                     <h3>Notes: </h3>
                     <textarea
                         placeholder={dream.notes}
                         onChange={(e) => setNotes(e.target.value)}
+                        onFocus={(e) => e.target.placeholder = ""}
+                        onBlur={(e) => e.target.placeholder = dream.title}
                         rows="5" cols="100"
                     />
                     <br />

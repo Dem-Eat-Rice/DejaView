@@ -30,8 +30,8 @@ h2, h4 {
 
 .dream-card > form input::placeholder,
 .dream-card > form textarea::placeholder {
-    color: white;
-} 
+    color: rgb(189, 189, 189);
+}
 
 .dream-card h3 {
     margin: 0px
