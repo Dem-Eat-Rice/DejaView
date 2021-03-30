@@ -131,7 +131,7 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
                         placeholder={dream.keywords}
                         onChange={(e) => setKeywords(e.target.value)}
                         onFocus={(e) => e.target.placeholder = ""}
-                        onBlur={(e) => e.target.placeholder = dream.title}
+                        onBlur={(e) => e.target.placeholder = dream.keywords}
                         rows="3" cols="50"
 
                     />
@@ -140,7 +140,7 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
                         placeholder={dream.notes}
                         onChange={(e) => setNotes(e.target.value)}
                         onFocus={(e) => e.target.placeholder = ""}
-                        onBlur={(e) => e.target.placeholder = dream.title}
+                        onBlur={(e) => e.target.placeholder = dream.notes}
                         rows="5" cols="100"
                     />
                     <br />
