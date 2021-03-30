@@ -9,7 +9,7 @@
     height: 70px;
     border-top: 5px inset;
 
-  }
+}
   
   .footer-container_title {
     font-size: 20px;
@@ -27,6 +27,25 @@
   
   .icon {
     margin: auto;
+  }
+
+  #github {
+    /* margin: auto; */
+    background-color: rgb(73, 218, 175);
+    border-radius: 50%;
+  }
+
+  #linkedin {
+    /* margin: auto; */
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+  }
+  
+  #email {
+    /* margin: auto; */
+    background-color: rgb(73, 218, 175);
+    border-radius: 50%;
   }
 
   .icon-container {

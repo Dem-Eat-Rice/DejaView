@@ -14,9 +14,9 @@ const Footer = () => {
         <div className="footer-container_jimmy">
             <div className="name">Demeatrice James <br /> Sherrod</div>
             <div className="icon-container">
-                <SocialIcon className="icon" url="https://github.com/Dem-Eat-Rice" />
-                <SocialIcon className="icon" url="https://www.linkedin.com/in/demeatrice-james-sherrod-2650091a4" />
-                <SocialIcon className="icon" url="mailto:demeatricej.sherrod@gmail.com" />
+                <SocialIcon className="icon" id="github" url="https://github.com/Dem-Eat-Rice" />
+                <SocialIcon className="icon" id="linkedin" url="https://www.linkedin.com/in/demeatrice-james-sherrod-2650091a4" />
+                <SocialIcon className="icon" id="email" url="mailto:demeatricej.sherrod@gmail.com" />
             </div>
         </div>
     </div>
