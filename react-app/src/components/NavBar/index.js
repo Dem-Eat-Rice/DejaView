@@ -2,8 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import { useHistory } from "react-router-dom";
-import './NavBar.css';
+import SearchBar from "./SearchBar";
 import logo from "./logo.png";
+import './NavBar.css';
 
 const NavBar = ({ authenticated, setAuthenticated }) => {
   const history = useHistory();
