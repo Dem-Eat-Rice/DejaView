@@ -9,6 +9,7 @@ import HomePage from "./components/HomePage";
 import LoginPage from "./components/auth/LoginPage";
 import { authenticate } from "./services/auth";
 import SignUpPage from "./components/auth/SignUpPage";
+import Footer from "./components/Footer";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -57,6 +58,7 @@ function App() {
           <DreamForm />
         </ProtectedRoute> */}
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
