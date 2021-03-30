@@ -63,13 +63,13 @@ nav button {
 
 
 #glass {
-    border-radius: 13px;
-    height: 30px;
-    width: 30px;
+    border-radius: 12px;
+    height: 31px;
+    width: 32px;
     outline-style: none;
     position: absolute;
-    margin-left: -33px;
-    padding-top: 3px;
+    margin-left: -36px;
+    padding-top: 2px;
 } 
 
   .search {

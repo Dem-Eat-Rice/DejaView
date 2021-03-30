@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import magnifyingGlass from "./my.png"
+import magnifyingGlass from "./icon4.png"
 
 function SearchBar() {
 
