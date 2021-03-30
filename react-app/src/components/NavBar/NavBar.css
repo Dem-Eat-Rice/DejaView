@@ -93,6 +93,20 @@ nav button {
 
 
 
-.active {
-    /* text-decoration: none; */
+#nav-button {
+    background-color: rgb(255, 0, 128);
+    border-color: white;
+    color: white;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: x-large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#nav-button:hover {
+    background-color: rgb(255, 0, 128);
+    box-shadow:
+      0 0 4px 1px #fff,
+      0 0 15px 5px rgb(153, 0, 255), 
+      0 0 25px 15px rgb(255, 0, 85); 
 }
