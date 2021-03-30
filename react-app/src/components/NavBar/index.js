@@ -26,6 +26,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
               <h1>DejaView</h1>
             </NavLink>
           </div>
+            <SearchBar />
           <nav>
             <div>
                 <LogoutButton setAuthenticated={setAuthenticated} />

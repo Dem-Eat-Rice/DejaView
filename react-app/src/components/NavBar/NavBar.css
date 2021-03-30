@@ -61,6 +61,41 @@ nav button {
     margin-top: 20px;
 }
 
+
+#glass {
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: solid 1px;
+    border-bottom: solid;
+    border-color: gray;
+    border-width:1px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    outline-style: none;
+} 
+
+  .search {
+    margin: 0;
+    padding: 0px 0px 0px 6px;
+    width: 400px;
+    height: 27px;
+    border-top: 1px solid;
+    border-color: white;
+    border-radius: 15px;
+    background-color: rgb(184, 60, 241);
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    
+  }
+
+  .searchBar {
+    display: flex;
+    padding-top: 10px;
+  }
+
+
+
 .active {
     /* text-decoration: none; */
 }

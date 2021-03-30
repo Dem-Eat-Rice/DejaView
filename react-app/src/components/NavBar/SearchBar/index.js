@@ -6,7 +6,7 @@ function SearchBar() {
 
     return (
         <div class="searchBar">
-            <input className="search" type="text" placeholder="Search movies" />
+            <input className="search" type="text" placeholder="Search Dreams    " />
             <NavLink to="/search">
                 <img id="glass" alt='' src={magnifyingGlass} />
             </NavLink>
