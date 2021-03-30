@@ -8,6 +8,10 @@ body {
     background-color: black;
 }
 
+.errors {
+    color: red;
+}
+
 .login-form {
     display: absolute;
     margin: 130px;
