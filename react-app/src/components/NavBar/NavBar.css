@@ -5,7 +5,13 @@ nav {
 nav > ul {
     display: flex;
     justify-content: space-evenly;
-    width: 80vw;
+    width: 70vw;
+    font-size: x-large;
+    list-style: none;
+}
+
+a {
+    color:rgb(200, 176, 245)
 }
 
 ul .logout-button {
@@ -39,11 +45,11 @@ a h1:hover {
     0 0 25px 15px rgb(89, 0, 255); 
 }
 
-.page {
+/* .page {
     display: absolute;
     display: flex;
     width: 98vw;
-}
+} */
 
 .home h1 {
     margin: 0px;

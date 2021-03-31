@@ -137,10 +137,7 @@ h2 a {
 .home-container {
     color: whitesmoke;
     width: 98.2vw;
-    background: url("https://img.wallpapersafari.com/desktop/1920/1080/64/53/PM0xVJ.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background: url("https://img.wallpapersafari.com/desktop/1920/1080/64/53/PM0xVJ.jpg") no-repeat center fixed; 
     background-size: cover;
 }
 

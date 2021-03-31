@@ -50,7 +50,6 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
           <NavLink to="/">
             <h1>DejaView</h1>
           </NavLink>
-        </div>
         <nav>
           <ul>
             <li>
@@ -70,6 +69,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
             </li>
           </ul>
         </nav>
+        </div>
       </div>
     );
   }

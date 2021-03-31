@@ -1,7 +1,10 @@
 .page-container {
-    
-    background-image: url("https://images.fineartamerica.com/images-medium-large-5/view-of-the-night-lake-randall-branham.jpg");
-
+    width: 100vw;
+    height: 100vh;
+    background: url("https://images.fineartamerica.com/images-medium-large-5/view-of-the-night-lake-randall-branham.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    border-radius: 50%;
+    border: solid;
 }
 
 body {
@@ -14,14 +17,14 @@ body {
 
 .login-form {
     display: absolute;
-    margin: 130px;
-    margin-top: 15vw;
+    /* margin: 130px; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .login-page-form {
+    margin-top: 15vw;
     padding: 50px;
     padding-bottom: 20px;
     border: 2px solid rgb(0, 0, 0);
