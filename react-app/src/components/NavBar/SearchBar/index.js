@@ -6,10 +6,10 @@ function SearchBar() {
 
     return (
         <div class="searchBar">
-            <input className="search" type="text" placeholder="Search Dreams    " />
-            <NavLink to="/search">
-                <img id="glass" alt='' src={magnifyingGlass} />
-            </NavLink>
+            <form>
+                <input className="search" type="text" placeholder="Search Dreams" />
+                <input type="image" alt="submit" id="glass" src={magnifyingGlass} />
+            </form>
         </div>
     )
 }
