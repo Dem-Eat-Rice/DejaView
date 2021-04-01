@@ -1,9 +1,14 @@
 import React from "react";
 
-function SearchResults({ dream }) {
+function SearchResults({ dream, setSearchResults }) {
     
     return (
-        <div className="searched-dream">{dream.title}</div>
+        <div 
+        className="searched-dream"
+        onClick={() => {
+            setSearchResults(dream.title)
+        }}
+        >{dream.title}</div>
     )
 }
 

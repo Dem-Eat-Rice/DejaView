@@ -5,8 +5,8 @@ import "./SearchBar.css";
 
 function SearchBar({ user }) {
 
-    const [searchInput, setSearchInput] = useState([]);
-    const [showResults, setShowResults] = useState(false)
+    const [searchResults, setSearchResults] = useState([]);
+    const [showResults, setShowResults] = useState(false);
     const [searchBarPlaceholder, setSearchBarPlaceholder] = useState("Search Dreams by Title or Keywords...");
 
     useEffect(() => {
@@ -15,7 +15,7 @@ function SearchBar({ user }) {
 
     const preventSearchRefreshOnClick = async (e) => {
         e.preventDefault();
-        // loadDreams(searchInput);
+        // loadDreams(searchResults);
         // history.push(`/users/${user.id}/dreams/9`)
     }
 
@@ -25,8 +25,8 @@ function SearchBar({ user }) {
         if (dreamsArray) {
             const newDreamPromise = dreamsArray.filter(dream => {
                 return (
-                    dream.title.includes(input) ||
-                    dream.keywords.includes(input)
+                    dream.title.toLowerCase().includes(input.toLowerCase()) ||
+                    dream.keywords.toLowerCase().includes(input.toLowerCase())
                 )
             })
             return await newDreamPromise
@@ -53,17 +53,17 @@ function SearchBar({ user }) {
                         }}
                         onChange={async (e) => {
                             const searchDropBox = loadDreams(e.target.value);
-                            setSearchInput(await searchDropBox);
+                            setSearchResults(await searchDropBox);
                             setShowResults(true);
                         }}
                     />
                     <input type="image" alt="submit" onClick={preventSearchRefreshOnClick} id="glass" src={magnifyingGlass} />
 
 
-                    {Array.isArray(searchInput) ?
-                        searchInput.map(dream => {
+                    {Array.isArray(searchResults) ?
+                        searchResults.map(dream => {
                             return (
-                                <SearchResults key={dream.id} dream={dream} />
+                                <SearchResults setSearchResults={setSearchResults} key={dream.id} dream={dream} />
                             )
                         })
                         : null}
@@ -86,7 +86,7 @@ function SearchBar({ user }) {
                         onFocus={() => setSearchBarPlaceholder()}
                         onChange={async (e) => {
                             const searchDropBox = loadDreams(e.target.value);
-                            setSearchInput(await searchDropBox);
+                            setSearchResults(await searchDropBox);
                             setShowResults(true);
                         }}
                     />
