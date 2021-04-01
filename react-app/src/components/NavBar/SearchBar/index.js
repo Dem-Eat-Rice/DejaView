@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import magnifyingGlass from "./icon4.png";
 import SearchResults from "./SearchResults";
 import "./SearchBar.css";
+import { useHistory } from "react-router";
 
 function SearchBar({ user }) {
 
+    const history = useHistory();
+
     const [searchResults, setSearchResults] = useState([]);
-    const [searchValue, setSearchValue] = useState()
+    const [searchValue, setSearchValue] = useState();
+    const [hiddenValue, setHiddenValue] = useState();
     const [showResults, setShowResults] = useState(false);
     const [searchBarPlaceholder, setSearchBarPlaceholder] = useState("Search Dreams by Title or Keywords...");
 
@@ -29,6 +33,24 @@ function SearchBar({ user }) {
         return null;
     }
 
+    const cancelSearchOnClick = () => {
+        document.addEventListener("click", (e) => {
+            if (showResults) {
+                if (e.target.className == "search-results_container" || e.target.className == "searched-dream") {
+                    return null;
+                } else {
+                    setShowResults(false)
+                }
+            }
+        })
+    }
+
+    const submitSearch = (e) => {
+        // e.preventDefault();
+        const searchDiv = document.getElementById("search-inputv")
+        history.push(`/users/${user.id}/dreams/${hiddenValue}`)
+    }
+
     if (showResults) {
         return (
             <div class="searchBar">
@@ -37,8 +59,10 @@ function SearchBar({ user }) {
                         className="search"
                         id="search-input"
                         type="text"
+                        value={searchValue}
                         placeholder={() => searchBarPlaceholder}
                         onBlur={() => {
+                            // cancelSearchOnClick();
                             setSearchBarPlaceholder("Search Dreams by Title or Keywords...");
                         }}
                         onFocus={() => {
@@ -51,9 +75,9 @@ function SearchBar({ user }) {
                             setShowResults(true);
                         }}
                     />
-                    <input type="image" alt="submit" onClick={(e) => e.preventDefault()} id="glass" src={magnifyingGlass} />
+                    <input type="image" alt="submit" onClick={() => submitSearch()} id="glass" src={magnifyingGlass} />
 
-                    <div className="search-results_container">
+                    <div onClick={cancelSearchOnClick} className="search-results_container">
                         {Array.isArray(searchResults) ?
                             searchResults.map(dream => {
                                 return (
@@ -61,7 +85,7 @@ function SearchBar({ user }) {
                                     key={dream.id} 
                                     dream={dream}
                                     user={user}
-                                    setShowResults={setShowResults}
+                                    setHiddenValue={setHiddenValue}
                                     setSearchValue={setSearchValue}
                                     />
                                 )
