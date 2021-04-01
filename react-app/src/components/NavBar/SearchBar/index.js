@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import magnifyingGlass from "./icon4.png";
-import { fetchUserDreams } from "../../../store/users";
+import SearchResults from "./SearchResults";
 import "./SearchBar.css";
-import { useHistory } from "react-router";
 
 function SearchBar({ user }) {
 
     const [searchInput, setSearchInput] = useState([]);
-    const [searchBarPlaceholder, setSearchBarPlaceholder] = useState();
-    const history = useHistory();
+    const [searchBarPlaceholder, setSearchBarPlaceholder] = useState("Search Dreams by Title or Keywords...");
 
     useEffect(() => {
         
@@ -44,8 +42,8 @@ function SearchBar({ user }) {
                     id="search-input"
                     type="text"
                     placeholder={searchBarPlaceholder}
-                    // onBlur={setSearchBarPlaceholder()}
-                    // onFocus={setSearchBarPlaceholder()}
+                    onBlur={() => setSearchBarPlaceholder("Search Dreams by Title or Keywords...")}
+                    onFocus={() => setSearchBarPlaceholder()}
                     onChange={async (e) => {
                         const searchDropBox = loadDreams(e.target.value);
                         setSearchInput(await searchDropBox);
@@ -55,7 +53,11 @@ function SearchBar({ user }) {
                 {Array.isArray(searchInput) ? 
                 searchInput.map(dream => {
                     return (
-                        <div key={dream.id}className="searched-dream">{dream.title}</div>
+                        <>
+                            <div className="search-results_container">
+                                <SearchResults key={dream.id} dream={dream} />
+                            </div>
+                        </>
                     )
                 })
                 : null}
