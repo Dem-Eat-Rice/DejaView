@@ -22,7 +22,7 @@ function SearchBar({ user }) {
                return dream.title.includes(input)
             })
             // console.log(newDream)
-            console.log(...newDream)
+            return newDream
         }
         return null;
     }
@@ -36,7 +36,7 @@ function SearchBar({ user }) {
                 className="search" 
                 id="search-input" 
                 type="text" 
-                placeholder="Search Dreams"
+                placeholder="Search Dreams..."
                 onChange={(e) => setSearchInput(e.target.value)} 
                  />
                 <input type="image" alt="submit" onClick={preventSearchRefreshOnClick} id="glass" src={magnifyingGlass} />
