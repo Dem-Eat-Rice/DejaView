@@ -7,7 +7,12 @@ import { useHistory } from "react-router";
 function SearchBar({ user }) {
 
     const [searchInput, setSearchInput] = useState([]);
+    const [searchBarPlaceholder, setSearchBarPlaceholder] = useState();
     const history = useHistory();
+
+    useEffect(() => {
+        
+    }, [searchBarPlaceholder])
 
     const preventSearchRefreshOnClick = async (e) => {
         e.preventDefault();
@@ -19,19 +24,18 @@ function SearchBar({ user }) {
         const response = await fetch(`/api/users/${user.id}/dreams`)
         const dreamsArray = await response.json();
         if (dreamsArray) {
-            const newDream = dreamsArray.filter(dream => {
+            const newDreamPromise = dreamsArray.filter(dream => {
                 return (
                     dream.title.includes(input) ||
-                    dream.notes.includes(input) ||
                     dream.keywords.includes(input)
                 )
             })
-            return await newDream
+            return await newDreamPromise
         }
         return null;
     }
 
-    
+
     return (
         <div class="searchBar">
             <form>
@@ -39,22 +43,22 @@ function SearchBar({ user }) {
                     className="search"
                     id="search-input"
                     type="text"
-                    placeholder="Search Dreams..."
+                    placeholder={searchBarPlaceholder}
+                    // onBlur={setSearchBarPlaceholder()}
+                    // onFocus={setSearchBarPlaceholder()}
                     onChange={async (e) => {
-                        setSearchInput(e.target.value);
                         const searchDropBox = loadDreams(e.target.value);
-                        const thisInput = document.getElementById("search-input");
-                        console.log(thisInput, await searchDropBox)
-                        // if (!Array.isArray(searchDropBox)) {
-                        //     for (const dreams of searchDropBox) {
-                        //         return thisInput.append(dreams.title)        
-                        //     }
-                        // }
-                    }
-                }
+                        setSearchInput(await searchDropBox);
+                    }}
                 />
-
                 <input type="image" alt="submit" onClick={preventSearchRefreshOnClick} id="glass" src={magnifyingGlass} />
+                {Array.isArray(searchInput) ? 
+                searchInput.map(dream => {
+                    return (
+                        <div key={dream.id}className="searched-dream">{dream.title}</div>
+                    )
+                })
+                : null}
             </form>
         </div>
     )
