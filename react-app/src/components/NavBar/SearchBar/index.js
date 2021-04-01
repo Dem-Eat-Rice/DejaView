@@ -16,7 +16,7 @@ function SearchBar({ user }) {
 
     useEffect(() => {
 
-    }, [searchBarPlaceholder, showResults, searchValue, searchResults])
+    }, [searchBarPlaceholder, showResults, searchValue, searchResults, hiddenValue])
 
     const loadDreams = async (input) => {
         const response = await fetch(`/api/users/${user.id}/dreams`)
