@@ -9,7 +9,7 @@ function SearchBar({ user }) {
     const [searchBarPlaceholder, setSearchBarPlaceholder] = useState("Search Dreams by Title or Keywords...");
 
     useEffect(() => {
-        
+
     }, [searchBarPlaceholder])
 
     const preventSearchRefreshOnClick = async (e) => {
@@ -50,17 +50,15 @@ function SearchBar({ user }) {
                     }}
                 />
                 <input type="image" alt="submit" onClick={preventSearchRefreshOnClick} id="glass" src={magnifyingGlass} />
-                {Array.isArray(searchInput) ? 
-                searchInput.map(dream => {
-                    return (
-                        <>
-                            <div className="search-results_container">
-                                <SearchResults key={dream.id} dream={dream} />
-                            </div>
-                        </>
-                    )
-                })
-                : null}
+                    {Array.isArray(searchInput) ?
+                        searchInput.map(dream => {
+                            return (
+                                <>
+                                    <SearchResults key={dream.id} dream={dream} />
+                                </>
+                            )
+                        })
+                        : null}
             </form>
         </div>
     )
