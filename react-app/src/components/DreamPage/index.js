@@ -4,28 +4,34 @@ import { useSelector, useDispatch } from "react-redux";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { fetchSingleUserDream } from "../../store/users";
 import { getCurrentUser } from "../../store/session";
-import { getDreamFragments } from "../../store/dreams";
+import { fetchDream, getDreamFragments } from "../../store/dreams";
 import DreamForm from "../DreamForm";
 import FragmentForm from "../FragmentForm";
 import "./DreamPage.css";
 
 function DreamPage() {
 
+    const dispatch = useDispatch();
     const { userId, dreamId } = useParams();
 
-    const wholeDream = useSelector(state => {
-        return state.users
-    })
+    const [dream, setDream] = useState();
 
-    const dispatch = useDispatch();
+
+    const fetchDream = async(dreamId) => {
+        const response = await fetch(`api/dreams/${dreamId}`)
+        const dream = response.json()
+        return await dream
+    }
+
 
     useEffect(() => {
-        dispatch(fetchSingleUserDream(userId, dreamId))
+        fetchDream(dreamId)
     }, [dispatch, userId, dreamId]);
 
     return (
         <div className="dream-page-container">
             <h1> Dreams, Dreams, Dreams... </h1>
+            {/* <div style={{"color":"white"}}>{dream.title}</div> */}
             <div className="dream-header">
             </div>
             <div className="dream-body">

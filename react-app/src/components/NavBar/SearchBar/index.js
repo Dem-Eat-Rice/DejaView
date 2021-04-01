@@ -16,7 +16,7 @@ function SearchBar({ user }) {
 
     useEffect(() => {
 
-    }, [searchBarPlaceholder, showResults])
+    }, [searchBarPlaceholder, showResults, searchValue, searchResults])
 
     const loadDreams = async (input) => {
         const response = await fetch(`/api/users/${user.id}/dreams`)
@@ -39,30 +39,31 @@ function SearchBar({ user }) {
                 if (e.target.className == "search-results_container" || e.target.className == "searched-dream") {
                     return null;
                 } else {
+                    setSearchValue()
                     setShowResults(false)
                 }
             }
         })
     }
 
-    const submitSearch = (e) => {
-        // e.preventDefault();
-        const searchDiv = document.getElementById("search-inputv")
+    const submitSearch = () => {
         history.push(`/users/${user.id}/dreams/${hiddenValue}`)
     }
 
     if (showResults) {
         return (
-            <div class="searchBar">
+            <div className="searchBar">
                 <form>
                     <input
                         className="search"
                         id="search-input"
                         type="text"
                         value={searchValue}
-                        placeholder={() => searchBarPlaceholder}
+                        placeholder={searchBarPlaceholder}
                         onBlur={() => {
                             // cancelSearchOnClick();
+                            // setShowResults(false);
+                            // submitSearch()
                             setSearchBarPlaceholder("Search Dreams by Title or Keywords...");
                         }}
                         onFocus={() => {
@@ -85,6 +86,7 @@ function SearchBar({ user }) {
                                     key={dream.id} 
                                     dream={dream}
                                     user={user}
+                                    setShowResults={setShowResults}
                                     setHiddenValue={setHiddenValue}
                                     setSearchValue={setSearchValue}
                                     />
@@ -97,7 +99,7 @@ function SearchBar({ user }) {
         )
     } else {
         return (
-            <div class="searchBar">
+            <div className="searchBar">
                 <form>
                     <input
                         className="search"

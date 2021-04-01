@@ -96,7 +96,7 @@ nav button {
   .searchBar {
     display: flex;
     padding-top: 15px;
-    position: fixed;
+    position: absolute;
     margin-left: 40vw;
   }
 

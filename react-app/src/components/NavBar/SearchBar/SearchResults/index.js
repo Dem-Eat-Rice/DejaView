@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-function SearchResults({ dream, user, setHiddenValue, setSearchValue }) {
+function SearchResults({ dream, user, setShowResults, setHiddenValue, setSearchValue }) {
 
     return (
         <div 
@@ -11,7 +11,8 @@ function SearchResults({ dream, user, setHiddenValue, setSearchValue }) {
         className="searched-dream"
         onClick={() => {
             setSearchValue(dream.title);
-            setHiddenValue(dream.id)
+            setHiddenValue(dream.id);
+            setShowResults(true);
         }}
         ><Link to={`/users/${user.id}/dreams/${dream.id}`}>{dream.title}</Link>
         </div>

@@ -33,8 +33,8 @@ function UserDreamList({ user }) {
     <div>
       {dreamsList.map(dream => {
         return (
-          <div className="dream-card_container">
-            <DreamCard key={dream.id} 
+          <div key={dream.id} className="dream-card_container">
+            <DreamCard 
             user={user} 
             dream={dream}
             setDeleteDream={setDeleteDream} 
