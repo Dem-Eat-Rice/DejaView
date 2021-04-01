@@ -6,6 +6,7 @@ import "./SearchBar.css";
 function SearchBar({ user }) {
 
     const [searchResults, setSearchResults] = useState([]);
+    const [searchValue, setSearchValue] = useState()
     const [showResults, setShowResults] = useState(false);
     const [searchBarPlaceholder, setSearchBarPlaceholder] = useState("Search Dreams by Title or Keywords...");
 
@@ -45,7 +46,7 @@ function SearchBar({ user }) {
                         placeholder={() => searchBarPlaceholder}
                         onBlur={() => {
                             setSearchBarPlaceholder("Search Dreams by Title or Keywords...");
-                            setShowResults(false)
+                            // setShowResults(false)
                         }}
                         onFocus={() => {
                             setSearchBarPlaceholder("")
@@ -63,7 +64,15 @@ function SearchBar({ user }) {
                     {Array.isArray(searchResults) ?
                         searchResults.map(dream => {
                             return (
-                                <SearchResults setSearchResults={setSearchResults} key={dream.id} dream={dream} />
+                                <SearchResults 
+                                key={dream.id} 
+                                dream={dream}
+                                user={user}
+                                setShowResults={setShowResults}
+                                setSearchResults={setSearchResults}
+                                setSearchValue={setSearchValue}
+                                setSearchBarPlaceholder={setSearchBarPlaceholder}
+                                />
                             )
                         })
                         : null}
@@ -78,6 +87,7 @@ function SearchBar({ user }) {
                         className="search"
                         id="search-input"
                         type="text"
+                        value={searchValue}
                         placeholder={searchBarPlaceholder}
                         onBlur={() => {
                             setSearchBarPlaceholder("Search Dreams by Title or Keywords...");
