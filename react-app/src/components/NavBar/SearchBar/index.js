@@ -6,11 +6,12 @@ import "./SearchBar.css";
 function SearchBar({ user }) {
 
     const [searchInput, setSearchInput] = useState([]);
+    const [showResults, setShowResults] = useState(false)
     const [searchBarPlaceholder, setSearchBarPlaceholder] = useState("Search Dreams by Title or Keywords...");
 
     useEffect(() => {
 
-    }, [searchBarPlaceholder])
+    }, [searchBarPlaceholder, showResults])
 
     const preventSearchRefreshOnClick = async (e) => {
         e.preventDefault();
@@ -33,23 +34,32 @@ function SearchBar({ user }) {
         return null;
     }
 
+    if (showResults) {
+        return (
+            <div class="searchBar">
+                <form>
+                    <input
+                        className="search"
+                        id="search-input"
+                        type="text"
+                        placeholder={() => searchBarPlaceholder}
+                        onBlur={() => {
+                            setSearchBarPlaceholder("Search Dreams by Title or Keywords...");
+                            setShowResults(false)
+                        }}
+                        onFocus={() => {
+                            setSearchBarPlaceholder("")
+                            setShowResults(true)
+                        }}
+                        onChange={async (e) => {
+                            const searchDropBox = loadDreams(e.target.value);
+                            setSearchInput(await searchDropBox);
+                            setShowResults(true);
+                        }}
+                    />
+                    <input type="image" alt="submit" onClick={preventSearchRefreshOnClick} id="glass" src={magnifyingGlass} />
 
-    return (
-        <div class="searchBar">
-            <form>
-                <input
-                    className="search"
-                    id="search-input"
-                    type="text"
-                    placeholder={searchBarPlaceholder}
-                    onBlur={() => setSearchBarPlaceholder("Search Dreams by Title or Keywords...")}
-                    onFocus={() => setSearchBarPlaceholder()}
-                    onChange={async (e) => {
-                        const searchDropBox = loadDreams(e.target.value);
-                        setSearchInput(await searchDropBox);
-                    }}
-                />
-                <input type="image" alt="submit" onClick={preventSearchRefreshOnClick} id="glass" src={magnifyingGlass} />
+
                     {Array.isArray(searchInput) ?
                         searchInput.map(dream => {
                             return (
@@ -59,9 +69,35 @@ function SearchBar({ user }) {
                             )
                         })
                         : null}
-            </form>
-        </div>
-    )
+                </form>
+            </div>
+        )
+    } else {
+        return (
+            <div class="searchBar">
+                <form>
+                    <input
+                        className="search"
+                        id="search-input"
+                        type="text"
+                        placeholder={searchBarPlaceholder}
+                        onBlur={() => {
+                            setSearchBarPlaceholder("Search Dreams by Title or Keywords...");
+                            setShowResults(false)
+                        }}
+                        onFocus={() => setSearchBarPlaceholder()}
+                        onChange={async (e) => {
+                            const searchDropBox = loadDreams(e.target.value);
+                            setSearchInput(await searchDropBox);
+                            setShowResults(true);
+                        }}
+                    />
+                    <input type="image" alt="submit" onClick={preventSearchRefreshOnClick} id="glass" src={magnifyingGlass} />
+                    
+                </form>
+            </div>
+        )
+    }
 }
 
 export default SearchBar;
