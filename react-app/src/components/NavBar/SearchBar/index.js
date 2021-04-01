@@ -8,9 +8,10 @@ function SearchBar({ user }) {
 
     const [searchInput, setSearchInput] = useState([]);
     const history = useHistory();
+
     const preventSearchRefreshOnClick = async (e) => {
         e.preventDefault();
-        loadDreams(searchInput);
+        // loadDreams(searchInput);
         // history.push(`/users/${user.id}/dreams/9`)
     }
     
@@ -21,13 +22,12 @@ function SearchBar({ user }) {
             const newDream = dreamsArray.filter(dream => {
                return dream.title.includes(input)
             })
-            // console.log(newDream)
             return newDream
         }
         return null;
     }
 
-
+    const searchDropBox = loadDreams(searchInput)
 
     return (
         <div class="searchBar">
@@ -39,6 +39,9 @@ function SearchBar({ user }) {
                 placeholder="Search Dreams..."
                 onChange={(e) => setSearchInput(e.target.value)} 
                  />
+                 {searchDropBox.map(dream, key => {
+                     <div key={dream.id}>{dream.title}</div>
+                 })}
                 <input type="image" alt="submit" onClick={preventSearchRefreshOnClick} id="glass" src={magnifyingGlass} />
             </form>
         </div>
