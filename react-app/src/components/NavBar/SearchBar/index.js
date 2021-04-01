@@ -63,9 +63,7 @@ function SearchBar({ user }) {
                     {Array.isArray(searchInput) ?
                         searchInput.map(dream => {
                             return (
-                                <>
-                                    <SearchResults key={dream.id} dream={dream} />
-                                </>
+                                <SearchResults key={dream.id} dream={dream} />
                             )
                         })
                         : null}
@@ -93,7 +91,7 @@ function SearchBar({ user }) {
                         }}
                     />
                     <input type="image" alt="submit" onClick={preventSearchRefreshOnClick} id="glass" src={magnifyingGlass} />
-                    
+
                 </form>
             </div>
         )
