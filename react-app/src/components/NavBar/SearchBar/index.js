@@ -14,12 +14,6 @@ function SearchBar({ user }) {
 
     }, [searchBarPlaceholder, showResults])
 
-    const preventSearchRefreshOnClick = async (e) => {
-        e.preventDefault();
-        // loadDreams(searchResults);
-        // history.push(`/users/${user.id}/dreams/9`)
-    }
-
     const loadDreams = async (input) => {
         const response = await fetch(`/api/users/${user.id}/dreams`)
         const dreamsArray = await response.json();
@@ -46,7 +40,6 @@ function SearchBar({ user }) {
                         placeholder={() => searchBarPlaceholder}
                         onBlur={() => {
                             setSearchBarPlaceholder("Search Dreams by Title or Keywords...");
-                            // setShowResults(false)
                         }}
                         onFocus={() => {
                             setSearchBarPlaceholder("")
@@ -58,7 +51,7 @@ function SearchBar({ user }) {
                             setShowResults(true);
                         }}
                     />
-                    <input type="image" alt="submit" onClick={preventSearchRefreshOnClick} id="glass" src={magnifyingGlass} />
+                    <input type="image" alt="submit" onClick={(e) => e.preventDefault()} id="glass" src={magnifyingGlass} />
 
 
                     {Array.isArray(searchResults) ?
