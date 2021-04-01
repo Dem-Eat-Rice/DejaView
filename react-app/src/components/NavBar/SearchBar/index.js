@@ -53,22 +53,21 @@ function SearchBar({ user }) {
                     />
                     <input type="image" alt="submit" onClick={(e) => e.preventDefault()} id="glass" src={magnifyingGlass} />
 
-
-                    {Array.isArray(searchResults) ?
-                        searchResults.map(dream => {
-                            return (
-                                <SearchResults 
-                                key={dream.id} 
-                                dream={dream}
-                                user={user}
-                                setShowResults={setShowResults}
-                                setSearchResults={setSearchResults}
-                                setSearchValue={setSearchValue}
-                                setSearchBarPlaceholder={setSearchBarPlaceholder}
-                                />
-                            )
-                        })
-                        : null}
+                    <div className="search-results_container">
+                        {Array.isArray(searchResults) ?
+                            searchResults.map(dream => {
+                                return (
+                                    <SearchResults 
+                                    key={dream.id} 
+                                    dream={dream}
+                                    user={user}
+                                    setShowResults={setShowResults}
+                                    setSearchValue={setSearchValue}
+                                    />
+                                )
+                            })
+                            : null}
+                    </div>
                 </form>
             </div>
         )
@@ -93,7 +92,7 @@ function SearchBar({ user }) {
                             setShowResults(true);
                         }}
                     />
-                    <input type="image" alt="submit" onClick={preventSearchRefreshOnClick} id="glass" src={magnifyingGlass} />
+                    <input type="image" alt="submit" onClick={(e) => e.preventDefault()} id="glass" src={magnifyingGlass} />
 
                 </form>
             </div>
