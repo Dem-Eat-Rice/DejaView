@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 import logo from "./logo.png";
 import './NavBar.css';
 
-const NavBar = ({ authenticated, setAuthenticated }) => {
+const NavBar = ({ authenticated, setAuthenticated, user }) => {
   const history = useHistory();
 
   if (authenticated) {
@@ -26,7 +26,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
               <h1>DejaView</h1>
             </NavLink>
           </div>
-            <SearchBar />
+            <SearchBar user={user}/>
           <nav>
             <div>
                 <LogoutButton setAuthenticated={setAuthenticated} />

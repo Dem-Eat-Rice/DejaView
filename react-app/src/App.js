@@ -7,13 +7,19 @@ import UserDreamList from "./components/DreamList";
 import DreamPage from "./components/DreamPage";
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/auth/LoginPage";
+import { getCurrentUser } from "./store/session";
 import { authenticate } from "./services/auth";
 import SignUpPage from "./components/auth/SignUpPage";
 import Footer from "./components/Footer";
+import { useSelector } from "react-redux";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
+
+  const currentUser = useSelector(state => {
+    return state.session;
+  })
 
   useEffect(() => {
     (async() => {
@@ -23,6 +29,7 @@ function App() {
       }
       setLoaded(true);
     })();
+    getCurrentUser();
   }, []);
 
   if (!loaded) {
@@ -31,7 +38,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar authenticated={authenticated} setAuthenticated={setAuthenticated} />
+      <NavBar authenticated={authenticated} setAuthenticated={setAuthenticated} user={currentUser} />
       <Switch>
         <Route path="/login" exact={true}>
           <LoginPage
