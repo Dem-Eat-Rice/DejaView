@@ -20,3 +20,4 @@ function SearchResults({ dream, user, setShowResults, setHiddenValue, setSearchV
 }
 
 export default SearchResults;
+
