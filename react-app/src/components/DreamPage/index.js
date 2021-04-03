@@ -23,7 +23,6 @@ function DreamPage() {
         return await dream
     }
 
-
     useEffect(() => {
         fetchDream(dreamId)
     }, [dispatch, userId, dreamId]);
