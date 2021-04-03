@@ -30,7 +30,7 @@ function DreamPage() {
     return (
         <div className="dream-page-container">
             <h1> What's on your mind?... </h1>
-            <div style={{"color":"white"}}>{dream.title}</div>
+            {/* <div style={{"color":"white"}}>{dream.title}</div> */}
             <div className="dream-header">
             </div>
             <div className="dream-body">
