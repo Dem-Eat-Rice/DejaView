@@ -16,8 +16,7 @@ function SearchResults({ dream, user, setShowResults, setHiddenValue, setSearchV
         }}
         >\
         <Link to={`/users/${user.id}/dreams/${dream.id}`}>
-            {dream.title}
-            
+            {dream.title}     
         </Link>
         </div>
     )
