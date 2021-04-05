@@ -42,3 +42,8 @@ body {
     font-weight: bolder;
     padding-bottom: 5px;
 }
+
+.signup-link a {
+    color: blueviolet;
+    font-weight: bold;
+}
