@@ -70,7 +70,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           type="submit">Login</button>
         </div>
       </form>
-      <div>
+      <div className="signup-link">
         <Link to="/sign-up">
           Create an Account
         </Link>
