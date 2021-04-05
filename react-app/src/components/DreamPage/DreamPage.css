@@ -21,6 +21,11 @@
     overflow: auto;
 }
 
+.dream-page-container {
+    background: url("https://img1.goodfon.com/original/1920x1080/1/df/purple-pink-sky-sunset-twilight-dusk.jpg") no-repeat center fixed; 
+    background-size: cover;
+}
+
 .fragment-container {
     margin: 10px;
     margin-right: 10px;
