@@ -1,7 +1,7 @@
 .page-container {
-    width: 100vw;
+    width: auto;
     height: 100vh;
-    background: url("https://images.fineartamerica.com/images-medium-large-5/view-of-the-night-lake-randall-branham.jpg") no-repeat center center fixed; 
+    background: url("https://www.artinnaturephotography.com/images/xl/palm-trees-punaluu-hawaii-20110723_0507.jpg") no-repeat center center fixed; 
     background-size: cover;
     border-radius: 50%;
     border: solid;
@@ -17,7 +17,6 @@ body {
 
 .login-form {
     display: absolute;
-    /* margin: 130px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,6 +40,11 @@ body {
 #login {
     font-weight: bolder;
     padding-bottom: 5px;
+}
+
+.signup-link {
+    background-color: black;
+    border-radius: 5px;
 }
 
 .signup-link a {

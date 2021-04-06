@@ -4,11 +4,13 @@ import "./SignUpPage.css"
 
 function SignUpPage({ authenticated, setAuthenticated}) {
     return (
-        <div className="signup-form">
-            <SignUpForm 
-            authenticated={authenticated}
-            setAuthenticated={setAuthenticated}
-            />
+        <div className="signup-page-container">
+            <div className="signup-form">
+                <SignUpForm 
+                authenticated={authenticated}
+                setAuthenticated={setAuthenticated}
+                />
+            </div>
         </div>
     )
 }

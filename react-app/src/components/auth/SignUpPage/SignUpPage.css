@@ -1,17 +1,20 @@
-/* .page-container {
+.signup-page-container {
     max-height: 800px;
     height: 800px;
     max-width: 100vw;
     width: 95vw;
-    background-image: url("https://images.fineartamerica.com/images-medium-large-5/view-of-the-night-lake-randall-branham.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url("https://images.fineartamerica.com/images-medium-large-5/view-of-the-night-lake-randall-branham.jpg") no-repeat center center fixed;
     background-size: cover;
-    background-color: black
-} */
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+}
 
 .signup-form {
-    margin-top: 130px;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
