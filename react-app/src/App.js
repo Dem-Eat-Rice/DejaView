@@ -7,7 +7,7 @@ import UserDreamList from "./components/DreamList";
 import DreamPage from "./components/DreamPage";
 import HomePage from "./components/HomePage";
 import SplashPage from "./components/SplashPage";
-// import HomePageSelector from "./components/HomePageSelector"
+import HomePageContainer from "./components/HomePageContainer"
 import LoginPage from "./components/auth/LoginPage";
 import SignUpPage from "./components/auth/SignUpPage";
 import Footer from "./components/Footer";
@@ -42,9 +42,11 @@ function App() {
     <BrowserRouter>
       <NavBar authenticated={authenticated} setAuthenticated={setAuthenticated} user={currentUser} />
       <Switch>
-        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <SplashPage />
-        </ProtectedRoute>
+        <Route path="/" exact={true} authenticated={authenticated}>
+          <HomePageContainer
+          authenticated={authenticated}
+          />
+        </Route>
         <Route path="/login" exact={true}>
           <LoginPage
             authenticated={authenticated}
