@@ -5,7 +5,9 @@ function SplashPage ({ authenticated, setAuthenticated}) {
 
     return (
         <div className="splash-page-container">
-            <div>
+            <div className="app-intro">
+            </div>
+            <div className="get-started">
             </div>
         </div>
     )
