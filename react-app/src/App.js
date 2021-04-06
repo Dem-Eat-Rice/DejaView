@@ -6,11 +6,13 @@ import UsersList from "./components/UsersList";
 import UserDreamList from "./components/DreamList";
 import DreamPage from "./components/DreamPage";
 import HomePage from "./components/HomePage";
+import SplashPage from "./components/SplashPage";
+// import HomePageSelector from "./components/HomePageSelector"
 import LoginPage from "./components/auth/LoginPage";
-import { getCurrentUser } from "./store/session";
-import { authenticate } from "./services/auth";
 import SignUpPage from "./components/auth/SignUpPage";
 import Footer from "./components/Footer";
+import { getCurrentUser } from "./store/session";
+import { authenticate } from "./services/auth";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -40,6 +42,9 @@ function App() {
     <BrowserRouter>
       <NavBar authenticated={authenticated} setAuthenticated={setAuthenticated} user={currentUser} />
       <Switch>
+        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
+          <SplashPage />
+        </ProtectedRoute>
         <Route path="/login" exact={true}>
           <LoginPage
             authenticated={authenticated}
@@ -54,9 +59,6 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <UserDreamList />
-        </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <HomePage />
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId/dreams/:dreamId" exact={true} authenticated={authenticated}>
           <DreamPage />
