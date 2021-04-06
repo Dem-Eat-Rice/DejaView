@@ -1,6 +1,6 @@
 .splash-page-container {
-    background: url("90457.jpg") no-repeat center center fixed;
+    background: url("moonBG.jpg") no-repeat center center ;
     background-size: cover;
     width: 98.4vw;
-    height: 100vw;
+    height: 93vh;
 }
