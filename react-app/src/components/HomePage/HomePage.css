@@ -21,7 +21,7 @@ h2 {
 
 .dream-form {
     border: 2px solid white;
-    background-color: rgba(114, 30, 211, 0.75);
+    background-color: rgba(129, 30, 211, 0.75);
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -46,7 +46,7 @@ h2 {
     border-radius: 15px;
     margin: 5px;
     margin-bottom: 10px;
-    background-color: rgba(114, 30, 211, 0.7);
+    background-color: rgba(129, 30, 211, 0.7);
     width: 50vw;
     height: 100px;
     display: table;
@@ -99,7 +99,7 @@ h2 {
     margin: 5px;
     margin-right: 150px;
     margin-top: 115px;
-    background-color: rgba(114, 30, 211, 0.9);
+    background-color: rgba(129, 30, 211, 0.9);
     position: fixed;
     margin-left: 66.5%;
     color: whitesmoke;
