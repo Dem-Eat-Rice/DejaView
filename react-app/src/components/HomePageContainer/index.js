@@ -5,7 +5,6 @@ import SplashPage from "../SplashPage";
 
 function HomePageContainer({ authenticated }) {
 
-  const homePageSelector = () => {
   if (authenticated) {
     return (
       <HomePage />
@@ -15,13 +14,6 @@ function HomePageContainer({ authenticated }) {
       <SplashPage />
     )
   }
-}
-
-  return (
-    <div className="potato">
-      {homePageSelector()}
-    </div>
-    )
 };
 
 export default HomePageContainer;
