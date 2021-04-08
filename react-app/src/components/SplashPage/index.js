@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 
 function SplashPage () {
 
+    const history = useHistory();
+
     return (
         <div className="splash-page-container">
             <div className="app-intro">
@@ -17,7 +19,11 @@ function SplashPage () {
                 <br />
                 recall your dreams~
                 </div>
-                <div className="start-button">Let's get to it!</div>
+                <div 
+                className="start-button"
+                onClick={(e) => history.push("/login")}
+                >Get Started Here!
+                </div>
             </div>
         </div>
     )

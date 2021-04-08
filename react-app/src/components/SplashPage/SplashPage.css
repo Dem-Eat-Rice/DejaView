@@ -14,10 +14,27 @@
     font-size: 50px;
     color: rgb(185, 143, 224);
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .intro {
     width: 100%;
+    background-color: rgba(86, 28, 128, 0.527);
+}
+
+.start-button {
+    font-size: 30px;
+    width: 180px;
+    margin: auto;
+    margin-top: 20px;
+    border: solid;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.start-button:hover {
     background-color: rgba(86, 28, 128, 0.527);
 }
 
