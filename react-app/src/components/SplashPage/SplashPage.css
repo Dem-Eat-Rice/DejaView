@@ -3,4 +3,24 @@
     background-size: cover;
     width: 98.4vw;
     height: 93vh;
+    display: flex;
+    align-items: flex-start;
+    align-content: space-between;
+    text-align: center;
 }
+
+.app-intro {
+    padding-top: 160px;
+    font-size: 50px;
+    color: rgb(185, 143, 224);
+    width: 100%;
+}
+
+.intro {
+    width: 100%;
+    background-color: rgba(86, 28, 128, 0.527);
+}
+
+
+  
+  
