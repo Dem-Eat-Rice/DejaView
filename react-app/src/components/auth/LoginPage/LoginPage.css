@@ -51,3 +51,14 @@ body {
     color: blueviolet;
     font-weight: bold;
 }
+
+.login-button button {
+    color:rgba(171, 119, 206, 0.85);
+    background-color: black;
+    font-family: cursive;
+    font-size: 20px;
+    border-radius: 15px;
+    border-color: blanchedalmond;
+    border-bottom: none;
+    border-right: none;
+}
