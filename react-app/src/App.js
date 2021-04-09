@@ -5,8 +5,6 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import UserDreamList from "./components/DreamList";
 import DreamPage from "./components/DreamPage";
-import HomePage from "./components/HomePage";
-import SplashPage from "./components/SplashPage";
 import HomePageContainer from "./components/HomePageContainer"
 import LoginPage from "./components/auth/LoginPage";
 import SignUpPage from "./components/auth/SignUpPage";

@@ -17,11 +17,11 @@ function DreamPage() {
     const [dream, setDream] = useState();
 
 
-    const fetchDream = async(dreamId) => {
-        const response = await fetch(`api/dreams/${dreamId}`)
-        const dream = response.json()
-        return await dream
-    }
+    // const fetchDream = async(dreamId) => {
+    //     const response = await fetch(`api/dreams/${dreamId}`)
+    //     const dream = response.json()
+    //     return await dream
+    // }
 
     useEffect(() => {
         fetchDream(dreamId)
