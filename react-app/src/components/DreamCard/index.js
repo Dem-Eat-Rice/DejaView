@@ -13,7 +13,7 @@ function DreamCard({ user, dream, setDeleteDream, setEditTitle, setEditKeywords,
         setTitle(title);
         setKeywords(keywords);
         setNotes(notes);
-    }, [editDream, dream])
+    }, [editDream, dream, title, keywords, notes])
 
 
 
