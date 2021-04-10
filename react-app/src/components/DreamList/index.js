@@ -18,8 +18,7 @@ function UserDreamList({ user }) {
   const [editTitle, setEditTitle] = useState();
   const [editKeywords, setEditKeywords] = useState();
   const [editNotes, setEditNotes] = useState();
-
-  
+ 
   useEffect(() => {
     dispatch(fetchUserDreams(user.id));
     setDeleteDream(false);
