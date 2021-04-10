@@ -26,6 +26,7 @@ function UserDreamList({ user }) {
     setEditKeywords(false);
     setEditNotes(false)
   }, [dispatch, user.id, deleteDream, editTitle, editKeywords, editNotes]);
+  
   return (
     <div>
       {dreamsList.map(dream => {
