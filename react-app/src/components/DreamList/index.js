@@ -9,11 +9,10 @@ import "./DreamList.css";
 function UserDreamList({ user }) {
 
   const dispatch = useDispatch();
-  
+
   const dreamsList = useSelector(state => {
     return state.users
   });
-
   const [deleteDream, setDeleteDream] = useState();
   const [editTitle, setEditTitle] = useState();
   const [editKeywords, setEditKeywords] = useState();
