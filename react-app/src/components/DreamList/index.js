@@ -24,7 +24,6 @@ function UserDreamList({ user }) {
     setDeleteDream(false);
     setEditTitle(false);
     setEditKeywords(false);
-
     setEditNotes(false);
   }, [dispatch, user.id, deleteDream, editTitle, editKeywords, editNotes]);
   
