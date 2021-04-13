@@ -123,3 +123,12 @@ nav button {
       0 0 15px 5px rgb(153, 0, 255), 
       0 0 25px 15px rgb(255, 0, 85); 
 }
+
+.login-signup a {
+    position: absolute;
+    text-decoration: none;
+    border: 4px solid rgb(222, 183, 245);
+    border-radius: 15px;
+    padding: 4px;
+    margin-top: -14px
+}

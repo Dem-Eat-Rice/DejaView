@@ -52,17 +52,17 @@ const NavBar = ({ authenticated, setAuthenticated, user }) => {
           </NavLink>
         <nav>
           <ul>
-            <li>
+            {/* <li>
               <NavLink to="/" exact={true} activeClassName="active">
                 Home
               </NavLink>
-            </li>
-            <li>
+            </li> */}
+            <li className="login-signup">
               <NavLink to="/login" exact={true} activeClassName="active">
                 Login
               </NavLink>
             </li>
-            <li>
+            <li className="login-signup">
               <NavLink to="/sign-up" exact={true} activeClassName="active">
                 Sign Up
               </NavLink>
