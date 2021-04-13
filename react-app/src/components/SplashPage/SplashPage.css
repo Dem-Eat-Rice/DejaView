@@ -25,10 +25,6 @@
     align-content: center;
 }
 
-.intro span{
-    animation: fadeIn linear 4s;
-}
-
 .intro {
     font-family: cursive;
     padding: 25px;
