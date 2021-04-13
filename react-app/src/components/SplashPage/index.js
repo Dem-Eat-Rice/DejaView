@@ -10,14 +10,14 @@ function SplashPage () {
         <div className="splash-page-container">
             <div className="app-intro">
                 <div className="intro">
-                    Have you ever had trouble remembering a dream?
+                    <span>Have you ever had trouble remembering a dream?</span>
                 <br />
                 <br />
-                Welcome to <span style={{"font-family":"cursive", "font-weight": "bold", "color":"whitesmoke", "text-decoration":"underline"}}>DejaView</span>,
+                <span>Welcome to</span> <span style={{"font-family":"cursive", "font-weight": "bold", "color":"whitesmoke", "text-decoration":"underline"}}>DejaView</span>,
                 <br />
-                an app to help you record, organize, and
+                <span>an app to help you record, organize, and</span>
                 <br />
-                recall your dreams~
+                <span>recall your dreams~</span>
                 </div>
                 <div 
                 className="start-button"

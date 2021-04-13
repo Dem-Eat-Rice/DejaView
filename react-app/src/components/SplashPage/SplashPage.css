@@ -7,6 +7,12 @@
     align-items: flex-start;
     align-content: space-between;
     text-align: center;
+    animation: fadeIn linear 7s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 .app-intro {
@@ -17,6 +23,10 @@
     display: flex;
     flex-wrap: wrap;
     align-content: center;
+}
+
+.intro span{
+    animation: fadeIn linear 4s;
 }
 
 .intro {
