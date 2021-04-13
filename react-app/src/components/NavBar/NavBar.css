@@ -30,6 +30,9 @@ ul .logout-button {
     display: flex;
     width: 365px;
     height: 50px;
+    border-right: solid 255px rgb(153, 0, 255);
+    border-radius: 50%;
+    border-style: double;
 }
 
 a h1 {
@@ -95,7 +98,8 @@ nav button {
 
   .searchBar {
     display: flex;
-    padding-top: 15px;
+    padding-top: 5px;
+    margin-bottom: 10px;
     position: absolute;
     margin-left: 40vw;
   }

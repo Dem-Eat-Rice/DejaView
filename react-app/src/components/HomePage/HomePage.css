@@ -170,8 +170,8 @@ textarea {
 
 .greeting {
     position: absolute;
-    margin-top: 125px;
-    margin-left: 285px;
+    margin-top: 15vh;
+    margin-left: 15vw;
     padding: 10px;  
     width: fit-content;
     height: fit-content;
