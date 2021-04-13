@@ -7,7 +7,7 @@
     align-items: flex-start;
     align-content: space-between;
     text-align: center;
-    animation: fadeIn linear 7s;
+    animation: fadeIn linear 8s;
 }
 
 @keyframes fadeIn {
