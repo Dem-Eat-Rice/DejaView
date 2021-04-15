@@ -8,7 +8,6 @@
     align-content: space-between;
     text-align: center;
     animation: fadeIn linear 8s;
-    
 }
 
 @keyframes fadeIn {
