@@ -6,7 +6,6 @@
     display: flex;
     align-items: flex-start;
     align-content: space-between;
-    
     text-align: center;
     animation: fadeIn linear 8s;
 }
