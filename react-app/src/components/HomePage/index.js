@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser } from "../../store/session";
 import DreamForm from "../DreamForm";
@@ -13,10 +13,12 @@ function HomePage() {
         return state.session
     })
 
-    useEffect(() => {
-        dispatch(getCurrentUser())
+    const [currentUser, setCurrentUser] = useState();
 
-    }, [dispatch])
+    useEffect(() => {
+        dispatch(getCurrentUser());
+        setCurrentUser(user);
+    }, [dispatch, currentUser])
 
 
     return (
