@@ -7,6 +7,7 @@ import { getCurrentUser } from "../../store/session";
 import { fetchDream, getDreamFragments } from "../../store/dreams";
 import DreamForm from "../DreamForm";
 import FragmentForm from "../FragmentForm";
+import DreamCard from "../DreamCard";
 import "./DreamPage.css";
 
 function DreamPage() {
@@ -16,13 +17,6 @@ function DreamPage() {
 
     const [dream, setDream] = useState();
 
-
-    // const fetchDream = async(dreamId) => {
-    //     const response = await fetch(`api/dreams/${dreamId}`)
-    //     const dream = response.json()
-    //     return await dream
-    // }
-
     useEffect(() => {
         fetchDream(dreamId)
     }, [dispatch, userId, dreamId]);
@@ -30,8 +24,8 @@ function DreamPage() {
     return (
         <div className="dream-page-container">
             <h1> What's on your mind?... </h1>
-            {/* <div style={{"color":"white"}}>{dream.title}</div> */}
             <div className="dream-header">
+                {/* <DreamCard /> */}
             </div>
             <div className="dream-body">
                 <div className="fragment-container">

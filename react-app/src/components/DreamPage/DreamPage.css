@@ -1,6 +1,6 @@
 .dream-header {
-    margin-top: 15px;
-    margin-left: 450px;
+    margin: auto;
+    margin-top: 30px;
     width: 800px;
     height: 200px;
     border: 3px solid white;
@@ -13,7 +13,6 @@
     height: 480px;
     margin-top: 30px;
     margin-left: 150px;
-    padding-bottom: 20px;
     border: 3px solid white;
     border-radius: 5px;
     display: flex;
@@ -25,6 +24,7 @@
     background: url("https://images.hdqwalls.com/download/beautiful-blue-purple-sky-4k-9g-1920x1080.jpg") no-repeat center fixed; 
     background-size: cover;
     width: 98.4vw;
+    padding-bottom: 15px;
 }
 
 .dream-page-container h1 {
