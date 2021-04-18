@@ -44,7 +44,10 @@ body {
 
 .signup-link {
     background-color: black;
-    border-radius: 5px;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    width: 275px;
 }
 
 .signup-link a {
