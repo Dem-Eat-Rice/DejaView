@@ -187,3 +187,11 @@ textarea {
 button {
     font-size: 15px;
 }
+
+.dream-card_placeholder {
+    font-size: 40px;
+    border: solid;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: rgba(110, 8, 179, 0.6);
+}

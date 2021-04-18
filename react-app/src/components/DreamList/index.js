@@ -28,7 +28,7 @@ function UserDreamList({ user }) {
   
   return (
     <div>
-      {dreamsList.map(dream => {
+      {dreamsList.length ? dreamsList.map(dream => {
         return (
           <div key={dream.id} className="dream-card_container">
             <DreamCard 
@@ -41,7 +41,9 @@ function UserDreamList({ user }) {
             />
           </div>
         )
-      })}
+      })
+      : <div className="dream-card_placeholder">Your dreams will be logged here!</div>
+      }
     </div>
   );
 }
