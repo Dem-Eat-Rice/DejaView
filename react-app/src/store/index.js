@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session.js';
 import usersReducer from './users.js';
 import dreamsReducer from './dreams.js';
+import fragmentsReducer from './fragments.js';
 
 const rootReducer = combineReducers({
 	session: sessionReducer,
     users: usersReducer,
-	dreams: dreamsReducer
+	dreams: dreamsReducer,
+	fragments: fragmentsReducer
 });
 
 let enhancer;
