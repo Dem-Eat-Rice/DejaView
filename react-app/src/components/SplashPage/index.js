@@ -13,7 +13,7 @@ function SplashPage () {
                     Have you ever had trouble remembering a dream?
                 <br />
                 <br />
-                Welcome to <span style={{"font-family":"cursive", "font-weight": "bold", "color":"whitesmoke", "text-decoration":"underline"}}>DejaView</span>,
+                Welcome to <span style={{"font-family":"Helvetica", "font-weight": "bold", "color":"whitesmoke", "text-decoration":"underline"}}>DejaView</span>,
                 <br />
                 an app to help you record, organize, and
                 <br />
