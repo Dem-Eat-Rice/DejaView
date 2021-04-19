@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getDreamFragments } from "../../store/dreams";
+import { getDreamFragments } from "../../store/fragments";
 import { useDispatch } from "react-redux";
 import Title from "./FormComponents/title";
 import Emotions from "./FormComponents/emotions";

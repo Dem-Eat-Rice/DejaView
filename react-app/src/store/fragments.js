@@ -21,7 +21,7 @@ const reducer = (state=initialState, action) => {
     let newState;
     switch (action.type) {
         case SET_DREAM_FRAGMENTS:
-            newState = {state, ...action.fragment};
+            newState = action.fragment;
             return newState;
         default:
             return state;

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, Redirect, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { fetchSingleUserDream } from "../../store/users";
-import { getCurrentUser } from "../../store/session";
 import { fetchDream } from "../../store/dreams";
+import { getDreamFragments } from "../../store/fragments";
 import DreamForm from "../DreamForm";
 import FragmentForm from "../FragmentForm";
 import DreamCard from "../DreamCard";
@@ -18,7 +17,8 @@ function DreamPage() {
     const [dream, setDream] = useState();
 
     useEffect(() => {
-        dispatch(fetchDream(dreamId))
+        dispatch(fetchDream(dreamId));
+        dispatch(getDreamFragments(dreamId));
     }, [dispatch, userId, dreamId]);
 
     return (
