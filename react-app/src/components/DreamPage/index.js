@@ -14,26 +14,43 @@ function DreamPage() {
     const dispatch = useDispatch();
     const { userId, dreamId } = useParams();
 
-    const [dream, setDream] = useState();
+    const currentDream = useSelector(state => {
+        return state.dreams
+    });
 
+    const dreamFragments = useSelector(state => {
+        return state.fragments
+    });
+    
     useEffect(() => {
         dispatch(fetchDream(dreamId));
         dispatch(getDreamFragments(dreamId));
+
     }, [dispatch, userId, dreamId]);
 
     return (
         <div className="dream-page-container">
-            <h1> What's on your mind?... </h1>
+            <h1> {currentDream.title}</h1>
             <div className="dream-header">
-                {/* <DreamCard /> */}
+                <div className="keywords_fragment-page">
+                    Reminders for you: 
+                    <br />
+                    <br />
+                    {currentDream.keywords}
+                </div>
+                <div className="notes_fragment-page">
+                    <br />
+                    <br />
+                    {currentDream.notes}
+                </div>
             </div>
             <div className="dream-body">
                 <div className="fragment-container">
-                    <div className="input-frag">
+                    <div className="emotions-frag">
                     </div>
-                    <div className="input-frag">
+                    <div className="setting-frag">
                     </div>
-                    <div className="input-frag">
+                    <div className="description-frag">
                     </div>
                 </div>
                 <div className="fragment-container">
