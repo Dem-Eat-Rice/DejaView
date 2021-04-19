@@ -40,12 +40,14 @@ function DreamPage() {
                 </div>
                 <div className="notes_fragment-page">
                     <br />
-                    <br />
                     {currentDream.notes}
                 </div>
             </div>
             <div className="dream-body">
                 <div className="fragment-container">
+                    <div className="title-frag">
+                        {dreamFragments.title}
+                    </div>
                     <div className="emotions-frag">
                     </div>
                     <div className="setting-frag">
