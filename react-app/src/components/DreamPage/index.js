@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { fetchSingleUserDream } from "../../store/users";
 import { getCurrentUser } from "../../store/session";
-import { fetchDream, getDreamFragments } from "../../store/dreams";
+import { fetchDream } from "../../store/dreams";
 import DreamForm from "../DreamForm";
 import FragmentForm from "../FragmentForm";
 import DreamCard from "../DreamCard";
@@ -18,7 +18,7 @@ function DreamPage() {
     const [dream, setDream] = useState();
 
     useEffect(() => {
-        fetchDream(dreamId)
+        dispatch(fetchDream(dreamId))
     }, [dispatch, userId, dreamId]);
 
     return (

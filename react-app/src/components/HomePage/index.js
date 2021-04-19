@@ -17,7 +17,6 @@ function HomePage() {
 
     useEffect(() => {
         dispatch(getCurrentUser());
-        
         setCurrentUser(user);
 
     }, [dispatch, currentUser])
