@@ -9,11 +9,11 @@
 }
 
 .dream-body {
-    max-width: 80vw;
-    width: 80vw;
+    width: 90vw;
     height: 480px;
+    margin: auto;
     margin-top: 30px;
-    margin-left: 150px;
+    /* margin-left: 150px; */
     border: 3px solid rgba(255, 255, 255, 0.7);
     border-radius: 5px;
     display: flex;
@@ -36,14 +36,12 @@
 .fragment-container {
     margin: 10px;
     margin-right: 10px;
-    margin-bottom: 0px;
     margin-top: 5px;
     min-width: 20vw;
     width: 350px;
     height: 445px;
     border: 3px solid rgba(255, 255, 255, 0.7);
     background-color: rgba(0, 0, 0, 0.75);
-
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
@@ -76,11 +74,20 @@
 }
 
 .keywords_fragment-page, .notes_fragment-page {
-    border: 3px solid rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     font-size: 25px;
     width: 100%;
     height: auto;
     padding: 10px 0px 0px 15px;
     background-color: rgba(0, 0, 0, 0.75);
     overflow-y: auto;
+    color: white;
+}
+
+.keywords_fragment-page {
+    border-right-style: groove;
+}
+
+.notes_fragment-page {
+    border-left-style: groove;
 }

@@ -33,7 +33,7 @@ function DreamPage() {
             <h1> {currentDream.title}</h1>
             <div className="dream-header">
                 <div className="keywords_fragment-page">
-                    Reminders for you: 
+                    Reminders: 
                     <br />
                     <br />
                     {currentDream.keywords}
