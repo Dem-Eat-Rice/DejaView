@@ -58,6 +58,10 @@ function DreamPage() {
                         <FragmentCard /> 
                     <div fragment container />
                     The FragmentCard will be a 
+
+                    First, display the information
+                    Second, make it draggable
+                    Third, make it editable.
             */}
 
             {/* <FragmentList /> */}
