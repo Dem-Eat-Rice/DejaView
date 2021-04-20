@@ -47,7 +47,8 @@ body {
     margin: auto;
     padding: 5px;
     text-align: center;
-    width: 275px;
+    width: 260px;
+    border-radius: 5px;
 }
 
 .signup-link a {
