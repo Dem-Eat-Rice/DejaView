@@ -29,7 +29,7 @@ function FragmentList() {
   const deleteOnClick = async (e) => {
     e.preventDefault();
     setDeleteDream("");
-    await fetch(`/api/dreams/${e.target.value}`, {
+    await fetch(`/api/fragments/${e.target.value}`, {
       method: "DELETE"
     });
   }
@@ -40,7 +40,7 @@ function FragmentList() {
 
   const saveOnClick = async (e) => {
     e.preventDefault();
-    await fetch(`/api/dreams/${e.target.value}`, {
+    await fetch(`/api/fragments/${e.target.value}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -60,23 +60,7 @@ function FragmentList() {
   if (editDream === false) {
     return (
         <div>
-          {/* {dreams.map(dream => {
-            return (
-              <>
-                <div className="dream-card">
-                  <h4>Title</h4>
-                  <p>{dream.title}</p>
-                  <h4>Keywords: </h4>
-                  <p style={{"whiteSpace": "pre-line"}}>{dream.keywords}</p>
-                  <h4>Notes: </h4>
-                  <p style={{"whiteSpace": "pre-line"}}>{dream.notes}</p>
-                  <br/>
-                  <button value={dream.id} onClick={editOnClick}>Edit</button>
-                  <button value={dream.id} onClick={deleteOnClick}>Delete</button>
-                </div>
-              </>
-            )
-          })} */}
+          {}
         </div>
     );
   } else {

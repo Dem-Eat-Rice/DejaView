@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import magnifyingGlass from "./icon4.png";
 import SearchResults from "./SearchResults";
 import "./SearchBar.css";
-import { useHistory } from "react-router";
 
 function SearchBar({ user }) {
 
@@ -62,8 +62,6 @@ function SearchBar({ user }) {
                         placeholder={searchBarPlaceholder}
                         onBlur={() => {
                             // cancelSearchOnClick();
-                            // setShowResults(false);
-                            // submitSearch()
                             setSearchBarPlaceholder("Search Dreams by Title or Keywords...");
                         }}
                         onFocus={() => {
@@ -76,7 +74,7 @@ function SearchBar({ user }) {
                             setShowResults(true);
                         }}
                     />
-                    <input type="image" alt="submit" onClick={() => submitSearch()} id="glass" src={magnifyingGlass} />
+                    <input type="image" alt="submit" onClick={submitSearch} id="glass" src={magnifyingGlass} />
 
                     <div onClick={cancelSearchOnClick} className="search-results_container">
                         {Array.isArray(searchResults) ?

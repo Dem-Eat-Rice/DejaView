@@ -1,6 +1,6 @@
 .dream-header {
     margin: auto;
-    margin-top: 30px;
+    margin-top: 15px;
     width: 800px;
     height: 200px;
     border: 3px solid rgba(255, 255, 255, 0.7);
@@ -31,6 +31,8 @@
 .dream-page-container h1 {
     text-align: center;
     padding-top: 15px;
+    margin-bottom: 10px;
+    margin-top: 0;
 }
 
 .fragment-container {
