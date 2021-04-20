@@ -59,6 +59,8 @@
     border-radius: 5px;
     height: 50%;
     width: 98%;
+    overflow-y: auto;
+    /* overflow-x: auto; */
 }
 
 .setting-frag {
@@ -70,7 +72,7 @@
     height: 15%;
     width: 98%;
     text-align: center;
-
+    overflow-y: auto;
 }
 
 .emotions-frag {
@@ -82,12 +84,12 @@
     height: 10%;
     width: 98%;
     text-align: center;
-
+    overflow-y: auto;
 }
 
 .title-frag {
     margin: 15px;
-    /* margin-top: 2px; */
+    /* margin-top: 1px; */
     margin-bottom: 0px;
     border: 3px solid rgba(255, 255, 255, 0.7);
     border-radius: 5px;
@@ -95,6 +97,7 @@
     width: 98%;
     color: white;
     text-align: center;
+    overflow-x: auto;
 }
 
 .keywords_fragment-page, .notes_fragment-page {
