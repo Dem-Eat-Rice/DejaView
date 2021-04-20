@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import DreamForm from "../DreamForm";
-import DreamPage from "../DreamPage";
-import "./DreamList.css";
+import { FragmentForm } from "../FragmentForm";
+import "./FragmentList.css";
 
 function FragmentList() {
 
@@ -25,7 +24,7 @@ function FragmentList() {
 
   useEffect(() => {
     setDeleteDream();
-  }, [dispatch, editDream, user.id, deleteDream, title, keywords, notes]);
+  }, [dispatch, editDream, deleteDream, title, keywords, notes]);
 
   const deleteOnClick = async (e) => {
     e.preventDefault();
@@ -61,7 +60,7 @@ function FragmentList() {
   if (editDream === false) {
     return (
         <div>
-          {dreams.map(dream => {
+          {/* {dreams.map(dream => {
             return (
               <>
                 <div className="dream-card">
@@ -77,13 +76,13 @@ function FragmentList() {
                 </div>
               </>
             )
-          })}
+          })} */}
         </div>
     );
   } else {
     return (
       <div>
-        {dreams.map(dream => {
+        {/* {dreams.map(dream => {
           return (
             <>
               <div className="dream-card">
@@ -115,7 +114,7 @@ function FragmentList() {
               </div>
             </>
           )
-        })}
+        })} */}
       </div>
   );  }
 }

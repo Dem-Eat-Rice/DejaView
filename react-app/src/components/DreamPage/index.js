@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+// import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { FragmentList } from "../FragmentList";
 import { fetchDream } from "../../store/dreams";
 import { getDreamFragments } from "../../store/fragments";
@@ -48,6 +48,16 @@ function DreamPage() {
                 inside of that fragment-container should be 
                     -A Form
                         -Each form will be composed of the input components
+
+                    I would pass in the correct functions/state from the 
+                    FragmentList(index.js) to each of the form input components...I think? 
+
+                    for each fragment in the fragmentList
+                    you'll create a 
+                    <div fragment container>
+                        <FragmentCard /> 
+                    <div fragment container />
+                    The FragmentCard will be a 
             */}
 
             {/* <FragmentList /> */}
