@@ -3,9 +3,9 @@
     background-color: rgb(65, 18, 165);
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding: 35px;
-    width: 94.2vw;
+    width: 100vw;
     height: 70px;
     border-top: 5px inset;
 }
@@ -13,7 +13,6 @@
   .footer-container_title {
     font-size: 20px;
     position: absolute;
-    margin-left: -1400px;
   }
   
   .name {
@@ -29,20 +28,17 @@
   }
 
   #github {
-    /* margin: auto; */
     background-color: rgb(73, 218, 175);
     border-radius: 50%;
   }
 
   #linkedin {
-    /* margin: auto; */
     background-color: white;
     border-radius: 50%;
     border: none;
   }
   
   #email {
-    /* margin: auto; */
     background-color: rgb(0, 217, 255);
     border-radius: 50%;
   }
@@ -53,4 +49,10 @@
       padding-bottom: 20px;
       padding-top: 10px;
   }
+
+.footer-container_jimmy {
+  margin: auto;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
   
