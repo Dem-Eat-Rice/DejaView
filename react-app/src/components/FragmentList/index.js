@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FragmentForm } from "../FragmentForm";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import FragmentCard from "../FragmentCard"
 import "./FragmentList.css";
 
 function FragmentList() {
@@ -12,7 +14,7 @@ function FragmentList() {
   })
 
   const fragments = useSelector(state => {
-      return state.fragments
+    return state.fragments
   })
 
 
@@ -57,49 +59,17 @@ function FragmentList() {
     setEditDream(false);
   }
 
-  if (editDream === false) {
-    return (
-        <div>
-          {}
-        </div>
-    );
-  } else {
-    return (
-      <div>
-        {/* {dreams.map(dream => {
-          return (
-            <>
-              <div className="dream-card">
-                <h2>
-                  <h4>Title</h4>
-                  <input 
-                  placeholder={dream.title}
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  ></input>
-                </h2>
-                <h4>Keywords: </h4>
-                  <textarea 
-                  placeholder={dream.keywords}
-                  value={keywords}
-                  onChange={(e) => setKeywords(e.target.value)}
-                  rows="3" cols="10"
-                  />
-                <h4>Notes: </h4>
-                  <textarea 
-                  placeholder={dream.notes}
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
-                  rows="3"
-                  />
-                <br/>
-                <button value={dream.id} onClick={saveOnClick}>Save</button>
-                <button value={dream.id} onClick={deleteOnClick}>Delete</button>
-              </div>
-            </>
-          )
-        })} */}
-      </div>
-  );  }
+
+  return (
+    <>
+      {fragments.map((fragment) => {
+        return (
+          <div className="fragment-container">
+            <FragmentCard fragment={fragment} />
+          </div>
+        )
+      })}
+    </>
+  );
 }
 export default FragmentList;

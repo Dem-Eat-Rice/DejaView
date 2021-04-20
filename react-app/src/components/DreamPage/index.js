@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 // import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { FragmentList } from "../FragmentList";
+import FragmentList from "../FragmentList";
 import { fetchDream } from "../../store/dreams";
 import { getDreamFragments } from "../../store/fragments";
 import "./DreamPage.css";
@@ -19,7 +19,7 @@ function DreamPage() {
     const dreamFragments = useSelector(state => {
         return state.fragments
     });
-    
+
     useEffect(() => {
         dispatch(fetchDream(dreamId));
         dispatch(getDreamFragments(dreamId));
@@ -31,18 +31,19 @@ function DreamPage() {
             <h1> {currentDream.title}</h1>
             <div className="dream-header">
                 <div className="keywords_fragment-page">
-                    Reminders: 
+                    Reminders:
                     <br />
                     <br />
                     {currentDream.keywords}
                 </div>
                 <div className="notes_fragment-page">
                     <br />
+                    <br />
                     {currentDream.notes}
                 </div>
             </div>
-            <div className="dream-body"> 
-            {/* 
+            <div className="dream-body">
+                {/* 
             Starting here. For everything inside of "dreamFragments",
             I want to display a fragment-container
                 inside of that fragment-container should be 
@@ -64,29 +65,8 @@ function DreamPage() {
                     Third, make it editable.
             */}
 
-            {/* <FragmentList /> */}
-                <div className="fragment-container">
-                    <div className="title-frag">
-                        {dreamFragments.title}
-                    </div>
-                    <div className="emotions-frag">
-                    </div>
-                    <div className="setting-frag">
-                    </div>
-                    <div className="description-frag">
-                    </div>
-                </div>
-                <div className="fragment-container">
-                    <div className="input-frag">
-                    </div>
-                    <div className="input-frag">
-                    </div>
-                </div>
-                <div className="fragment-container">
-                </div>
-                <div className="fragment-container">
-                </div>
-            </div>                         
+                <FragmentList />
+            </div>
         </div>
     )
 }

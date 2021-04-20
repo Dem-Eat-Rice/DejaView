@@ -17,8 +17,8 @@
     border: 3px solid rgba(255, 255, 255, 0.7);
     border-radius: 5px;
     display: flex;
-    justify-content: space-between;
-    overflow: auto;
+    justify-content: flex-start;
+    overflow-x: auto;
 }
 
 .dream-page-container {
@@ -73,7 +73,6 @@
     border-radius: 5px;
     height: 15%;
     width: 98%;
-    text-align: center;
     overflow-y: auto;
 }
 
@@ -85,7 +84,6 @@
     border-radius: 5px;
     height: 10%;
     width: 98%;
-    text-align: center;
     overflow-y: auto;
 }
 
@@ -99,6 +97,15 @@
     color: white;
     text-align: center;
     overflow-x: auto;
+
+}
+
+.title-content_fragment,
+.emotions-content_fragment,
+.setting-content_fragment,
+.description-content_fragment {
+    margin: 5px;
+    color: white;
 }
 
 .keywords_fragment-page, .notes_fragment-page {
