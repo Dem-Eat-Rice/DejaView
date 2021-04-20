@@ -5,7 +5,7 @@ import DreamForm from "../DreamForm";
 import DreamPage from "../DreamPage";
 import "./DreamList.css";
 
-function UserDreamList() {
+function FragmentList() {
 
   const dispatch = useDispatch();
   const currentDream = useSelector(state => {
@@ -119,4 +119,4 @@ function UserDreamList() {
       </div>
   );  }
 }
-export default UserDreamList;
+export default FragmentList;

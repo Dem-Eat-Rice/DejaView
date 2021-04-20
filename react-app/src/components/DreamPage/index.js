@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { FragmentList } from "../FragmentList";
 import { fetchDream } from "../../store/dreams";
 import { getDreamFragments } from "../../store/fragments";
-import DreamForm from "../DreamForm";
-import FragmentForm from "../FragmentForm";
-import DreamCard from "../DreamCard";
 import "./DreamPage.css";
 
 function DreamPage() {
@@ -43,7 +41,16 @@ function DreamPage() {
                     {currentDream.notes}
                 </div>
             </div>
-            <div className="dream-body">
+            <div className="dream-body"> 
+            {/* 
+            Starting here. For everything inside of "dreamFragments",
+            I want to display a fragment-container
+                inside of that fragment-container should be 
+                    -A Form
+                        -Each form will be composed of the input components
+            */}
+
+            {/* <FragmentList /> */}
                 <div className="fragment-container">
                     <div className="title-frag">
                         {dreamFragments.title}
