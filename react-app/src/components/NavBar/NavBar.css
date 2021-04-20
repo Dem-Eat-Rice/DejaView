@@ -30,7 +30,7 @@ ul .logout-button {
     display: flex;
     width: 365px;
     height: 50px;
-    border-right: solid 255px rgba(153, 0, 255, 0.651);
+    border-right: solid 155px rgba(153, 0, 255, 0.651);
     border-radius: 50%;
     border-style: double;
 }
