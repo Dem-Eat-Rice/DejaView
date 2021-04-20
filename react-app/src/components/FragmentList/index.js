@@ -5,14 +5,17 @@ import DreamForm from "../DreamForm";
 import DreamPage from "../DreamPage";
 import "./DreamList.css";
 
-import { fetchUserDreams } from "../../store/users"
-
-function UserDreamList({ user }) {
+function UserDreamList() {
 
   const dispatch = useDispatch();
-  const dreams = useSelector(state => {
-    return state.users
+  const currentDream = useSelector(state => {
+    return state.dreams
   })
+
+  const fragments = useSelector(state => {
+      return state.fragments
+  })
+
 
   const [deleteDream, setDeleteDream] = useState();
   const [editDream, setEditDream] = useState(false);
@@ -22,12 +25,7 @@ function UserDreamList({ user }) {
 
   useEffect(() => {
     setDeleteDream();
-    dispatch(fetchUserDreams(user.id))
   }, [dispatch, editDream, user.id, deleteDream, title, keywords, notes]);
-  
-  if (!user) {
-    return null;
-  }
 
   const deleteOnClick = async (e) => {
     e.preventDefault();
