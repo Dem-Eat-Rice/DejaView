@@ -61,15 +61,20 @@ function FragmentList() {
 
 
   return (
-    <>
-      {fragments.map((fragment) => {
-        return (
-          <div className="fragment-container">
-            <FragmentCard fragment={fragment} />
-          </div>
-        )
-      })}
-    </>
-  );
+    fragments.map((fragment, index) => {
+      return (
+        <Draggable key={fragment.id} draggableId={index} index={index}>
+          {(provided) => (
+            <div className="fragment-container"
+            ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
+            >
+              {/* <FragmentCard fragment={fragment} /> */}
+            </div>
+          )}
+        </Draggable>
+
+      )
+    })
+  )
 }
 export default FragmentList;

@@ -3,7 +3,7 @@ import React from "react";
 function FragmentCard ({ fragment }) {
 
     return (
-        <>
+        <div className="fragment-card_container">
             <div className="title-frag">
               <div className="title-content_fragment">
                 {fragment.title}
@@ -32,7 +32,7 @@ function FragmentCard ({ fragment }) {
                 {fragment.description}
               </div>
             </div>
-        </>
+        </div>
     )
 }
 

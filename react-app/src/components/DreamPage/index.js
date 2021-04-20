@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-// import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import FragmentList from "../FragmentList";
 import { fetchDream } from "../../store/dreams";
 import { getDreamFragments } from "../../store/fragments";
@@ -42,33 +42,62 @@ function DreamPage() {
                     {currentDream.notes}
                 </div>
             </div>
-            <div className="dream-body">
-                {/* 
-            Starting here. For everything inside of "dreamFragments",
-            I want to display a fragment-container
-                inside of that fragment-container should be 
-                    -A Form
-                        -Each form will be composed of the input components
+            <DragDropContext>
+                <Droppable droppableId="whole-fragments">
+                    {(provided) => (
+                        <div className="dream-body"
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
+                        >
+                            {/* <Draggable index="0"
+                                draggableId="0"
+                            >
+                                {(provided) => (
+                                        <div className="fragment-container"
+                                        style={{"color":"white"}}
+                                            ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
+                                        >HELLO</div>
+                                )}
+                            </Draggable>
 
-                    I would pass in the correct functions/state from the 
-                    FragmentList(index.js) to each of the form input components...I think? 
-
-                    for each fragment in the fragmentList
-                    you'll create a 
-                    <div fragment container>
-                        <FragmentCard /> 
-                    <div fragment container />
-                    The FragmentCard will be a 
-
-                    First, display the information
-                    Second, make it draggable
-                    Third, make it editable.
-            */}
-
-                <FragmentList />
-            </div>
+                            <Draggable index="1"
+                                draggableId="1"
+                            >
+                                {(provided) => (
+                                    <div className="fragment-container"
+                                    ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
+                                    >GOODBYE</div>
+                                )}
+                            </Draggable> */}
+                            <FragmentList />
+                        </div>
+                    )}
+                </Droppable>
+            </DragDropContext>
         </div>
     )
 }
 
 export default DreamPage;
+
+{/* 
+Starting here. For everything inside of "dreamFragments",
+I want to display a fragment-container
+inside of that fragment-container should be 
+    -A Form
+        -Each form will be composed of the input components
+
+    I would pass in the correct functions/state from the 
+    FragmentList(index.js) to each of the form input components...I think? 
+
+    for each fragment in the fragmentList
+    you'll create a 
+    <div fragment container>
+        <FragmentCard /> 
+    <div fragment container />
+    The FragmentCard will be a 
+
+    First, display the information
+    Second, make it draggable
+    Third, make it editable.
+*/}
