@@ -1,6 +1,7 @@
 import React from "react";
+import { Draggable } from "react-beautiful-dnd";
 
-function FragmentCard({ fragment }) {
+function FragmentCard({ fragment, index }) {
 
     return (
         <div className="fragment-card_container">
@@ -9,23 +10,22 @@ function FragmentCard({ fragment }) {
             </div>
             <div className="emotions-frag">
                 Emotions:
-              <br />
+                    <br />
                 {fragment.emotions}
             </div>
             <div className="setting-frag">
                 Setting:
-              <br />
+                    <br />
                 <div>
                     {fragment.setting}
                 </div>
             </div>
             <div className="description-frag">
-                    Description:
-                <br />
-                    {fragment.description}
+                Description:
+                        <br />
+                {fragment.description}
             </div>
         </div>
     )
 }
-
 export default FragmentCard;

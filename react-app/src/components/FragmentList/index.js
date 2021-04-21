@@ -67,7 +67,6 @@ function FragmentList({ fragments }) {
           <div className="fragment-container">
             <FragmentCard fragment={fragment} />
           </div>
-  
         )
       })}
     </DragDropContext>
