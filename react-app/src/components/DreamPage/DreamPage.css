@@ -61,8 +61,7 @@
 .description-frag {
     /* flex-flow: column wrap; */
     margin-left: 0px;
-    margin-top: 2.5px;
-    margin-bottom: 2.5px;
+    margin-bottom: 0px;
     border: 3px solid rgba(255, 255, 255, 0.7);
     border-radius: 5px;
     height: 50%;
@@ -73,8 +72,7 @@
 
 .setting-frag {
     margin-left: 0px;
-    margin-top: 2.5px;
-    margin-bottom: 2.5px;
+    margin-bottom: 5px;
     border: 3px solid rgba(255, 255, 255, 0.7);
     border-radius: 5px;
     height: 15%;
@@ -85,8 +83,7 @@
 .emotions-frag {
     margin: 5px;
     margin-left: 0px;
-    margin-top: 2.5px;
-    margin-bottom: 2.5px;
+    margin-bottom: 5px;
     border: 3px solid rgba(255, 255, 255, 0.7);
     border-radius: 5px;
     height: 10%;
