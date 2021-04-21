@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import DreamForm from "../DreamForm";
-import DreamPage from "../DreamPage";
-import "./DreamList.css";
+import { FragmentForm } from "../FragmentForm";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import FragmentCard from "../FragmentCard"
+import "./FragmentList.css";
 
-function UserDreamList() {
+function FragmentList({ fragments }) {
 
   const dispatch = useDispatch();
   const currentDream = useSelector(state => {
     return state.dreams
   })
 
-  const fragments = useSelector(state => {
-      return state.fragments
-  })
+  // const fragments = useSelector(state => {
+  //   return state.fragments
+  // })
 
 
   const [deleteDream, setDeleteDream] = useState();
@@ -25,12 +26,12 @@ function UserDreamList() {
 
   useEffect(() => {
     setDeleteDream();
-  }, [dispatch, editDream, user.id, deleteDream, title, keywords, notes]);
+  }, [dispatch, editDream, deleteDream, title, keywords, notes]);
 
   const deleteOnClick = async (e) => {
     e.preventDefault();
     setDeleteDream("");
-    await fetch(`/api/dreams/${e.target.value}`, {
+    await fetch(`/api/fragments/${e.target.value}`, {
       method: "DELETE"
     });
   }
@@ -41,7 +42,7 @@ function UserDreamList() {
 
   const saveOnClick = async (e) => {
     e.preventDefault();
-    await fetch(`/api/dreams/${e.target.value}`, {
+    await fetch(`/api/fragments/${e.target.value}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -58,65 +59,16 @@ function UserDreamList() {
     setEditDream(false);
   }
 
-  if (editDream === false) {
-    return (
-        <div>
-          {dreams.map(dream => {
-            return (
-              <>
-                <div className="dream-card">
-                  <h4>Title</h4>
-                  <p>{dream.title}</p>
-                  <h4>Keywords: </h4>
-                  <p style={{"whiteSpace": "pre-line"}}>{dream.keywords}</p>
-                  <h4>Notes: </h4>
-                  <p style={{"whiteSpace": "pre-line"}}>{dream.notes}</p>
-                  <br/>
-                  <button value={dream.id} onClick={editOnClick}>Edit</button>
-                  <button value={dream.id} onClick={deleteOnClick}>Delete</button>
-                </div>
-              </>
-            )
-          })}
+
+  return (
+    fragments.map((fragment, index) => {
+      return (
+        <div className="fragment-container">
+          <FragmentCard fragment={fragment} />
         </div>
-    );
-  } else {
-    return (
-      <div>
-        {dreams.map(dream => {
-          return (
-            <>
-              <div className="dream-card">
-                <h2>
-                  <h4>Title</h4>
-                  <input 
-                  placeholder={dream.title}
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  ></input>
-                </h2>
-                <h4>Keywords: </h4>
-                  <textarea 
-                  placeholder={dream.keywords}
-                  value={keywords}
-                  onChange={(e) => setKeywords(e.target.value)}
-                  rows="3" cols="10"
-                  />
-                <h4>Notes: </h4>
-                  <textarea 
-                  placeholder={dream.notes}
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
-                  rows="3"
-                  />
-                <br/>
-                <button value={dream.id} onClick={saveOnClick}>Save</button>
-                <button value={dream.id} onClick={deleteOnClick}>Delete</button>
-              </div>
-            </>
-          )
-        })}
-      </div>
-  );  }
+
+      )
+    })
+  )
 }
-export default UserDreamList;
+export default FragmentList;
