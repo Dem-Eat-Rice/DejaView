@@ -61,14 +61,16 @@ function FragmentList({ fragments }) {
 
 
   return (
-    fragments.map((fragment, index) => {
-      return (
-        <div className="fragment-container">
-          <FragmentCard fragment={fragment} />
-        </div>
-
-      )
-    })
+    <DragDropContext>
+      {fragments.map((fragment, index) => {
+        return (
+          <div className="fragment-container">
+            <FragmentCard fragment={fragment} />
+          </div>
+  
+        )
+      })}
+    </DragDropContext>
   )
 }
 export default FragmentList;
