@@ -42,38 +42,9 @@ function DreamPage() {
                     {currentDream.notes}
                 </div>
             </div>
-            <DragDropContext>
-                <Droppable droppableId="whole-fragments">
-                    {(provided) => (
-                        <div className="dream-body"
-                            {...provided.droppableProps}
-                            ref={provided.innerRef}
-                        >
-                            {/* <Draggable index="0"
-                                draggableId="0"
-                            >
-                                {(provided) => (
-                                        <div className="fragment-container"
-                                        style={{"color":"white"}}
-                                            ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
-                                        >HELLO</div>
-                                )}
-                            </Draggable>
-
-                            <Draggable index="1"
-                                draggableId="1"
-                            >
-                                {(provided) => (
-                                    <div className="fragment-container"
-                                    ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
-                                    >GOODBYE</div>
-                                )}
-                            </Draggable> */}
-                            <FragmentList />
-                        </div>
-                    )}
-                </Droppable>
-            </DragDropContext>
+            <div className="dream-body">
+                <FragmentList fragments={dreamFragments} />
+            </div>
         </div>
     )
 }

@@ -6,16 +6,16 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import FragmentCard from "../FragmentCard"
 import "./FragmentList.css";
 
-function FragmentList() {
+function FragmentList({ fragments }) {
 
   const dispatch = useDispatch();
   const currentDream = useSelector(state => {
     return state.dreams
   })
 
-  const fragments = useSelector(state => {
-    return state.fragments
-  })
+  // const fragments = useSelector(state => {
+  //   return state.fragments
+  // })
 
 
   const [deleteDream, setDeleteDream] = useState();
@@ -63,15 +63,9 @@ function FragmentList() {
   return (
     fragments.map((fragment, index) => {
       return (
-        <Draggable key={fragment.id} draggableId={index} index={index}>
-          {(provided) => (
-            <div className="fragment-container"
-            ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
-            >
-              {/* <FragmentCard fragment={fragment} /> */}
-            </div>
-          )}
-        </Draggable>
+        <div className="fragment-container">
+          <FragmentCard fragment={fragment} />
+        </div>
 
       )
     })
