@@ -1,7 +1,7 @@
 .splash-page-container {
     background: url("moonBG.jpg") no-repeat center center ;
     background-size: cover;
-    width: 98.4vw;
+    width: 100vw;
     height: 93vh;
     display: flex;
     align-items: flex-start;
