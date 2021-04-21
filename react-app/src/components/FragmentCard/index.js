@@ -1,21 +1,31 @@
 import React from "react";
 
-function FragmentCard () {
+function FragmentCard({ fragment }) {
 
     return (
         <div className="fragment-card_container">
-            <div>
-
+            <div className="title-frag">
+                {fragment.title}
             </div>
-            <div>
-
+            <div className="emotions-frag">
+                Emotions:
+              <br />
+                {fragment.emotions}
             </div>
-            <div>
-
+            <div className="setting-frag">
+                Setting:
+              <br />
+                <div>
+                    {fragment.setting}
+                </div>
             </div>
-            <div>
-
+            <div className="description-frag">
+                    Description:
+                <br />
+                    {fragment.description}
             </div>
         </div>
     )
 }
+
+export default FragmentCard;
