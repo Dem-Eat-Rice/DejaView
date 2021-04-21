@@ -59,7 +59,8 @@
 }
 
 .description-frag {
-    /* flex-flow: column wrap; */
+    padding-left: 3px;
+    padding-top: 3px;
     margin-left: 0px;
     margin-bottom: 0px;
     border: 3px solid rgba(255, 255, 255, 0.7);
@@ -67,10 +68,12 @@
     height: 50%;
     width: 98%;
     overflow-y: auto;
-    /* overflow-x: auto; */
 }
 
-.setting-frag {
+.setting-frag,
+.emotions-frag {
+    padding-left: 3px;
+    padding-top: 3px;
     margin-left: 0px;
     margin-bottom: 5px;
     border: 3px solid rgba(255, 255, 255, 0.7);
@@ -80,18 +83,8 @@
     overflow-y: auto;
 }
 
-.emotions-frag {
-    margin: 5px;
-    margin-left: 0px;
-    margin-bottom: 5px;
-    border: 3px solid rgba(255, 255, 255, 0.7);
-    border-radius: 5px;
-    height: 10%;
-    width: 98%;
-    overflow-y: auto;
-}
-
 .title-frag {
+    padding-left: 3px;
     padding-top: 5px;
     margin: 5px;
     margin-left: 0px;
