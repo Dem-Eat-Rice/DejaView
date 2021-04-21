@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Redirect, Link } from 'react-router-dom';
 import { signUp } from '../../services/auth';
 
-const SignUpForm = ({authenticated, setAuthenticated}) => {
+const SignUpForm = ({ authenticated, setAuthenticated }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [errors, setErrors] = useState([])
 
   const onSignUp = async (e) => {
     e.preventDefault();
@@ -14,6 +15,8 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
       const user = await signUp(name, email, password);
       if (!user.errors) {
         setAuthenticated(true);
+      } else {
+        setErrors(user.errors)
       }
     }
   };
@@ -40,11 +43,16 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
 
   return (
     <div>
-      <form 
-      onSubmit={onSignUp}
-      className="signup-page-form"
+      <form
+        onSubmit={onSignUp}
+        className="signup-page-form"
       >
-        <div id="signup">SIGN-UP</div>
+      <div id="signup">SIGN-UP</div>
+        <div className="errors">
+          {errors.map((error) => (
+            <div>{error}</div>
+          ))}
+        </div>
         <br />
         <div>
           <input
@@ -87,13 +95,13 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           ></input>
         </div>
         <br />
-        <div  className="signup-button">
+        <div className="signup-button">
           <button type="submit">Sign Up</button>
         </div>
       </form>
       <div>
-      <Link to="/login">
-        Already have an account?
+        <Link to="/login">
+          Already have an account?
       </Link>
       </div>
     </div>
