@@ -107,7 +107,7 @@
     color: white;
 }
 
-.keywords_fragment-page, .notes_fragment-page {
+.reminders_fragment-page {
     border: 1px solid rgba(255, 255, 255, 0.7);
     font-size: 25px;
     width: 100%;
@@ -124,4 +124,17 @@
 
 .notes_fragment-page {
     border-left-style: groove;
+}
+
+.fragment-form {
+    color: white;
+}
+
+.fragment-form_container {
+    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
 }

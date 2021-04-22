@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import User, Dream, Fragment
+from app.models import User, Dream, Fragment, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from app.forms import FragmentForm
@@ -21,7 +21,7 @@ def post_fragment():
 
     if form.validate_on_submit():
         new_fragment = Fragment()
-        new_dream.user_id = request.json["user_id"]
+        new_fragment.user_id = request.json["user_id"]
         form.populate_obj(new_fragment)
         db.session.add(new_fragment)
         db.session.commit()

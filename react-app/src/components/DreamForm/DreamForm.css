@@ -16,13 +16,30 @@
 }
 
 .title input,
-.keywords input {
+.keywords input,
+.fragment-form input {
     width: 50%;
     margin: 5px;
     border: 3px solid rgba(255, 255, 255, 0.226);
     background-color: rgba(255, 255, 255, 0.35);
     border-radius: 5px;
     color: white;
+}
+
+.fragment-form textarea {
+    background-color: rgba(255, 255, 255, 0.35);
+    border: 3px solid rgba(255, 255, 255, 0.226);
+    border-radius: 5px;
+    color: white;
+}
+
+.fragment-form button {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .notes textarea {

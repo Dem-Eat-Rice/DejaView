@@ -5,6 +5,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import FragmentList from "../FragmentList";
 import { fetchDream } from "../../store/dreams";
 import { getDreamFragments } from "../../store/fragments";
+import FragmentForm from "../FragmentForm";
 import "./DreamPage.css";
 
 function DreamPage() {
@@ -20,6 +21,8 @@ function DreamPage() {
         return state.fragments
     });
 
+    const [fragments, setFragments] = useState();
+
     useEffect(() => {
         dispatch(fetchDream(dreamId));
         dispatch(getDreamFragments(dreamId));
@@ -30,13 +33,14 @@ function DreamPage() {
         <div className="dream-page-container">
             <h1> {currentDream.title}</h1>
             <div className="dream-header">
-                <div className="keywords_fragment-page">
+                <div className="fragment-form_container">
+                    <FragmentForm dreamFragments={dreamFragments} setFragments={setFragments}/>
+                </div>
+                <div className="reminders_fragment-page">
                     Reminders:
                     <br />
                     <br />
                     {currentDream.keywords}
-                </div>
-                <div className="notes_fragment-page">
                     <br />
                     <br />
                     {currentDream.notes}

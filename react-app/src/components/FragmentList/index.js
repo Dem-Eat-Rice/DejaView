@@ -13,11 +13,6 @@ function FragmentList({ fragments }) {
     return state.dreams
   })
 
-  // const fragments = useSelector(state => {
-  //   return state.fragments
-  // })
-
-
   const [deleteDream, setDeleteDream] = useState();
   const [editDream, setEditDream] = useState(false);
   const [title, setTitle] = useState();
