@@ -67,3 +67,13 @@ def dream(id):
         Dreams_Fragment.dream_id == id).all()
     frag = [fragment.to_dict() for fragment in fragments]
     return jsonify(frag)
+
+
+# ===================DREAMS_FRAGMENTS=================== #
+
+@dreams_routes.route("/fragemnts/all")
+def dreams_fragment():
+    new_dreams_fragemnt = Dreams_Fragment(dream_id=id, fragment_id=request.json['fragment_id'])
+    db.session.add(dreams_fragment)
+    db.session.commit()
+    return new_dreams_fragemnt.to_dict()
