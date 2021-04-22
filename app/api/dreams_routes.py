@@ -71,9 +71,10 @@ def dream(id):
 
 # ===================DREAMS_FRAGMENTS=================== #
 
-@dreams_routes.route("/fragments/all", methods=["POST"])
-def dreams_fragment():
-    new_dreams_fragment = Dreams_Fragment(dream_id=id, fragment_id=request.json['fragment_id'])
+@dreams_routes.route("/<int:id>/fragments/add", methods=["POST"])
+def dreams_fragment(id):
+    new_dreams_fragment = Dreams_Fragment(dream_id=id, fragment_id=request.json["fragment_id"])
+    # print(new_dreams_fragment, "THIS IS WHAT YOU'RE LOOKING FORRRRRR")
     db.session.add(new_dreams_fragment)
     db.session.commit()
-    return new_dreams_fragment.to_dict()
+    return {"message": "success"}

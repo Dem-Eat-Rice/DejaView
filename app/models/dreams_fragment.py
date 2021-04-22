@@ -9,8 +9,6 @@ class Dreams_Fragment(db.Model):
         'dreams.id'), nullable=False)
     fragment_id = db.Column(
         db.Integer, db.ForeignKey('fragments.id'), nullable=False)
-    created_at = db.Column(db.DateTime, server_default=db.func.now())
-    updated_at = db.Column(db.DateTime, onupdate=db.func.now())
 
     def to_dict(self):
         return {

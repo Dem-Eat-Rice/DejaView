@@ -27,7 +27,20 @@ const createFragment = async (title, emotions, setting, description, user_id) =>
 }
 
 
-function FragmentForm({ dreamFragemnts, setFragments }) {
+function FragmentForm() {
+
+    const connectFragmentToDream = async (dream_id, fragment_id) => {
+        const response = await fetch(`/api/dreams/${dream_id}/fragments/add`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                fragment_id
+            }),
+        });
+        return await response.json();
+    }
 
     const { userId, dreamId } = useParams();
 
@@ -40,13 +53,13 @@ function FragmentForm({ dreamFragemnts, setFragments }) {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await createFragment(title, emotions, setting, description, userId)
+        const fragment = await createFragment(title, emotions, setting, description, userId);
+        await connectFragmentToDream(dreamId, fragment.id)
         setTitle("");
         setEmotions("");
         setSetting("");
         setDescription("");
         dispatch(getDreamFragments(dreamId))
-        console.log("hello")
 
     }
 
