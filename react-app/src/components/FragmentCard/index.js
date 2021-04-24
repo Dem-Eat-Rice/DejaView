@@ -4,6 +4,7 @@ import { Draggable } from "react-beautiful-dnd";
 function FragmentCard({ fragment, index }) {
 
     return (
+        
         <div className="fragment-card_container">
             <div className="title-frag">
                 {fragment.title}
@@ -28,5 +29,4 @@ function FragmentCard({ fragment, index }) {
         </div>
     )
 }
-
 export default FragmentCard;
