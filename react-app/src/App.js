@@ -43,6 +43,7 @@ function App() {
         <Route path="/" exact={true} authenticated={authenticated}>
           <HomePageContainer
           authenticated={authenticated}
+          currentUser={currentUser}
           />
         </Route>
         <Route path="/login" exact={true}>

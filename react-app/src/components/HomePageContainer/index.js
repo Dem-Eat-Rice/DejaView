@@ -3,11 +3,11 @@ import HomePage from "../HomePage";
 import SplashPage from "../SplashPage";
 
 
-function HomePageContainer({ authenticated }) {
+function HomePageContainer({ authenticated, currentUser }) {
 
   if (authenticated) {
     return (
-      <HomePage />
+      <HomePage user={currentUser} />
     );
   } else {
     return (

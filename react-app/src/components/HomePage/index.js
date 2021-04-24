@@ -5,13 +5,9 @@ import DreamForm from "../DreamForm";
 import DreamList from "../DreamList";
 import "./HomePage.css";
 
-function HomePage() {
+function HomePage({ user }) {
 
     const dispatch = useDispatch();
-
-    const user = useSelector(state => {
-        return state.session
-    })
 
     const [currentUser, setCurrentUser] = useState();
 
