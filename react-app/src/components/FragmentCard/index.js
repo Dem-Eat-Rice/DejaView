@@ -28,4 +28,5 @@ function FragmentCard({ fragment, index }) {
         </div>
     )
 }
+
 export default FragmentCard;

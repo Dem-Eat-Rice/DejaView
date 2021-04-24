@@ -29,12 +29,16 @@ function DreamPage() {
 
     }, [dispatch, userId, dreamId]);
 
+    const onDragEnd = result => {
+        console.log('hello')
+    }
+
     return (
         <div className="dream-page-container">
             <h1> {currentDream.title}</h1>
             <div className="dream-header">
                 <div className="fragment-form_container">
-                    <FragmentForm dreamFragments={dreamFragments} setFragments={setFragments}/>
+                    <FragmentForm dreamFragments={dreamFragments} setFragments={setFragments} />
                 </div>
                 <div className="reminders_fragment-page">
                     Reminders:
@@ -46,9 +50,20 @@ function DreamPage() {
                     {currentDream.notes}
                 </div>
             </div>
-            <div className="dream-body">
-                <FragmentList fragments={dreamFragments} />
-            </div>
+            <DragDropContext onDragEnd={onDragEnd}>
+                <Droppable droppableId="droppable-area">
+                    {(provided) => (
+                        <div 
+                        className="dream-body"
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                        >
+                            <FragmentList fragments={dreamFragments} />
+                            {provided.placeholder}
+                        </div>
+                    )}
+                </Droppable>
+            </DragDropContext>
         </div>
     )
 }
