@@ -15,13 +15,18 @@ function FragmentList({ fragments }) {
 
   const [deleteDream, setDeleteDream] = useState();
   const [editDream, setEditDream] = useState(false);
-  const [title, setTitle] = useState();
-  const [keywords, setKeywords] = useState();
-  const [notes, setNotes] = useState();
+  const [editTitle, setEditTitle] = useState();
+  const [editSetting, setEditSetting] = useState();
+  const [editEmotions, setEditEmotions] = useState();
+  const [editDescription, setEditDescription] = useState();
 
   useEffect(() => {
-    setDeleteDream();
-  }, [dispatch, editDream, deleteDream, title, keywords, notes]);
+    setDeleteDream(false);
+    setEditTitle(false);
+    setEditSetting(false);
+    setEditEmotions(false);
+    setEditDescription(false);
+  }, [dispatch, editDream, deleteDream, editTitle, editSetting, editEmotions, editDescription]);
 
   const deleteOnClick = async (e) => {
     e.preventDefault();
@@ -43,14 +48,16 @@ function FragmentList({ fragments }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        title,
-        keywords,
-        notes
+        editTitle,
+        editSetting,
+        editEmotions,
+        editDescription
       })
     })
-    setTitle(title);
-    setKeywords(keywords);
-    setNotes(notes);
+    setEditTitle(editTitle);
+    setEditSetting(editSetting);
+    setEditEmotions(editEmotions);
+    setEditDescription(editDescription);
     setEditDream(false);
   }
 
@@ -66,7 +73,11 @@ function FragmentList({ fragments }) {
             {...provided.dragHandleProps}
             {...provided.draggableProps}
             >
-              <FragmentCard fragment={fragment} index={index} />
+              <FragmentCard 
+              fragment={fragment} 
+              index={index}
+
+              />
             </div>
           )}
         </ Draggable>
