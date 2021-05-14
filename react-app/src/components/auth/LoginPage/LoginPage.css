@@ -75,5 +75,9 @@ input {
     font-size: medium;
     border-radius: 5px;
     margin-bottom: 15px;
-    background-color: rgb(48, 48, 48);
+    background-color: rgba(48, 48, 48, 0.788);
+}
+
+input::placeholder {
+    color: rgb(114, 114, 114)
 }

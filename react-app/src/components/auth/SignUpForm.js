@@ -53,7 +53,6 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             <div>{error}</div>
           ))}
         </div>
-        <br />
         <div>
           <input
             type="text"
@@ -63,7 +62,6 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             value={name}
           ></input>
         </div>
-        <br />
         <div>
           <input
             type="text"
@@ -73,7 +71,6 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             value={email}
           ></input>
         </div>
-        <br />
         <div>
           <input
             type="password"
@@ -83,7 +80,6 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             value={password}
           ></input>
         </div>
-        <br />
         <div>
           <input
             type="password"
@@ -94,7 +90,6 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             required={true}
           ></input>
         </div>
-        <br />
         <div className="signup-button">
           <button type="submit">Sign Up</button>
         </div>
