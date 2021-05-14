@@ -39,6 +39,7 @@ body {
 
 #login {
     font-weight: bolder;
+    font-size: larger;
     padding-bottom: 5px;
 }
 
@@ -47,7 +48,7 @@ body {
     margin: auto;
     padding: 5px;
     text-align: center;
-    width: 260px;
+    width: 290px;
     border-radius: 5px;
 }
 
@@ -65,4 +66,14 @@ body {
     border-color: blanchedalmond;
     border-bottom: none;
     border-right: none;
+    margin-left: 5px;
+}
+
+input {
+    padding: 5px;
+    color: rgb(201, 201, 201);
+    font-size: medium;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: rgb(48, 48, 48);
 }

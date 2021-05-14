@@ -54,7 +54,6 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             onChange={updateEmail}
           />
         </div>
-        <br />
         <div>
           <input
             name="password"
