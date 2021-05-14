@@ -81,3 +81,9 @@ input {
 input::placeholder {
     color: rgb(114, 114, 114)
 }
+
+#glass {
+    background-color: rgb(148, 65, 224);
+    border: 1px;
+    padding: 1px;
+}
