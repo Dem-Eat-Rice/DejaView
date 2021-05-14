@@ -65,9 +65,8 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           />
         </div>
         <div className="login-button">
+          <button type="submit">Login</button>
           <DemoButton setAuthenticated={setAuthenticated}/>
-          <button 
-          type="submit">Login</button>
         </div>
       </form>
     </div>
