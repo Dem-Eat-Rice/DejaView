@@ -50,7 +50,7 @@ This is the backend for the Flask React project.
    ```
 
 *ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
+   psycopg2-binary MUST remain a dev dependency because you can't install it on alpine-linux.
    There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
 ***
 
