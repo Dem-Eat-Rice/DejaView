@@ -1,3 +1,4 @@
+# Change to node:latest in order to deploy on Heroku. Node version must match local environment.
 FROM node:12 AS build-stage
 
 WORKDIR /react-app
