@@ -79,7 +79,7 @@ function DreamForm({ user }) {
                 value={notes}
                 onChange={e => setNotes(e.target.value)}
                 rows="5" cols="35"
-                style={{"resize": "none"}, {"white-space": "pre-line"}}
+                style={{"resize": "none", "whiteSpace": "pre-line"}}
                 ></textarea>
             </div>
             <div className="submit-button_dream-form">

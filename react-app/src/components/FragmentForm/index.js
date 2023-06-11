@@ -104,7 +104,7 @@ function FragmentForm() {
                     value={description}
                     onChange={e => setDescription(e.target.value)}
                     rows="5" cols="35"
-                    style={{ "resize": "none", "white-space": "pre-wrap" }}
+                    style={{ "resize": "none", "whiteSpace": "pre-wrap" }}
                 ></textarea>
             </div>
             <div className="submit-button">

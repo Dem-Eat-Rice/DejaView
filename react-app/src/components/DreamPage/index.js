@@ -51,18 +51,9 @@ function DreamPage() {
                 </div>
             </div>
             <DragDropContext onDragEnd={onDragEnd}>
-                <Droppable droppableId="droppable-area">
-                    {(provided) => (
-                        <div 
-                        className="dream-body"
-                        ref={provided.innerRef}
-                        {...provided.droppableProps}
-                        >
-                            <FragmentList fragments={dreamFragments} />
-                            {provided.placeholder}
-                        </div>
-                    )}
-                </Droppable>
+                <div className="dream-body">
+                    <FragmentList fragments={dreamFragments} />
+                </div>
             </DragDropContext>
         </div>
     )
