@@ -29,8 +29,23 @@ function DreamPage() {
 
     }, [dispatch, userId, dreamId]);
 
-    const onDragEnd = result => {
-        console.log('hello', result)
+    const onDragEnd = results => {
+        const {source, destination} = results
+        
+        if (!destination) return;   
+        
+        if (source.droppableId === destination.droppableId && source.index === destination.index) return;
+        
+        const reOrderedFragments = [...dreamFragments];
+        const sourceIndex = source.index;
+        const destinationIndex = destination.index
+
+
+        const [removedFragment] = reOrderedFragments.splice(sourceIndex, 1);
+        reOrderedFragments.splice(destinationIndex, 0, removedFragment)
+
+        return setFragments(reOrderedFragments)
+
     }
 
     return (

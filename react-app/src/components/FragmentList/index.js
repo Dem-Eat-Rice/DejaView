@@ -91,6 +91,7 @@ function FragmentList({ fragments }) {
               </ Draggable>
             )
           })}
+          {provided.placeholder}
         </div>
 
       )}
