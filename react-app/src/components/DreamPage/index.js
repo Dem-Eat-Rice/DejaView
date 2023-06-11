@@ -21,14 +21,13 @@ function DreamPage() {
         return state.fragments
     });
 
-    const [fragments, setFragments] = useState();
-    const [stateHolder, setStateHolder] = useState()
-
+    const [fragments, setFragments] = useState(...dreamFragments);
+    
     useEffect(() => {
         dispatch(fetchDream(dreamId));
         dispatch(getDreamFragments(dreamId));
 
-    }, [dispatch, userId, dreamId, stateHolder]);
+    }, [dispatch, userId, dreamId, fragments]);
 
     const onDragEnd = results => {
         const {source, destination} = results
@@ -44,8 +43,10 @@ function DreamPage() {
         
         const [removedFragment] = reOrderedFragments.splice(sourceIndex, 1);
         reOrderedFragments.splice(destinationIndex, 0, removedFragment)
-        console.log(setStateHolder)
-        return setStateHolder(reOrderedFragments)
+        console.log(fragments)
+        console.log(reOrderedFragments)
+        return setFragments(reOrderedFragments)
+        
 
     }
 
