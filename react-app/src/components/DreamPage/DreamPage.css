@@ -50,7 +50,6 @@
     border-radius: 5px;
     display: flex;
     justify-content: center;
-    overflow-y: auto;
     color: white;
 }
 
@@ -69,7 +68,6 @@
     border-radius: 5px;
     height: 50%;
     width: 98%;
-    overflow-y: auto;
 }
 
 .setting-frag,
@@ -82,7 +80,6 @@
     border-radius: 5px;
     height: 15%;
     width: 98%;
-    overflow-y: auto;
 }
 
 .title-frag {
@@ -97,7 +94,6 @@
     width: 98%;
     color: white;
     text-align: center;
-    overflow-x: auto;
 
 }
 
