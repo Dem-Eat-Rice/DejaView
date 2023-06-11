@@ -29,12 +29,12 @@ function HomePage({ user }) {
             <h2>QuickStart</h2>
             <div className="tips">
                 <h2>Tips</h2>
-                <ul style={{ "overflow-wrap": "break-word" }}>
+                <ul style={{ "overflowWrap": "break-word" }}>
                     <li> Try to be in the same position that you woke up in </li>
                     <br />
                     <li> Try to recall any emotions and images first </li>
                     <br />
-                    <li style={{ "font-weight": "bold" }}> Use this app to save what you remember! </li>
+                    <li style={{ "fontWeight": "bold" }}> Use this app to save what you remember! </li>
                 </ul>
             </div>
             <div className="page-body">

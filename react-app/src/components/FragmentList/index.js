@@ -85,6 +85,7 @@ function FragmentList({ fragments }) {
                     <FragmentCard 
                     fragment={fragment} 
                     index={index}
+                    
                     />
                   </div>
                 )}
