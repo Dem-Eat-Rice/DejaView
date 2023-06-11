@@ -30,7 +30,7 @@ function DreamPage() {
     }, [dispatch, userId, dreamId]);
 
     const onDragEnd = result => {
-        console.log('hello')
+        console.log('hello', result)
     }
 
     return (
