@@ -21,11 +21,12 @@ function DreamPage() {
         return state.fragments
     });
 
-    const [fragments, setFragments] = useState(...dreamFragments);
+    const [fragments, setFragments] = useState();
     
     useEffect(() => {
         dispatch(fetchDream(dreamId));
         dispatch(getDreamFragments(dreamId));
+        
 
     }, [dispatch, userId, dreamId, fragments]);
 
@@ -36,18 +37,14 @@ function DreamPage() {
         
         if (source.droppableId === destination.droppableId && source.index === destination.index) return;
         
-        const reOrderedFragments = [...dreamFragments];
         const sourceIndex = source.index;
         const destinationIndex = destination.index;
-        
-        
-        const [removedFragment] = reOrderedFragments.splice(sourceIndex, 1);
-        reOrderedFragments.splice(destinationIndex, 0, removedFragment)
-        console.log(fragments)
-        console.log(reOrderedFragments)
-        return setFragments(reOrderedFragments)
-        
 
+        const [removedFragment] = dreamFragments.splice(sourceIndex, 1);
+        dreamFragments.splice(destinationIndex, 0, removedFragment)
+        setFragments(fragments)
+
+        return      
     }
 
     return (
